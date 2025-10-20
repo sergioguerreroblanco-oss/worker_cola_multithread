@@ -15,6 +15,7 @@
 /* Project libraries */
 
 #include "thread_safe_queue.h"
+#include "logger.h"
 
 /*****************************************************************************/
 
@@ -43,6 +44,7 @@ void ThreadSafeQueue<T>::pop(T& data) {
 
     if (closed && buffer.empty()) return;
 
+    Logger::info("[Thread Safe Queue] Task extracted successfully");
     data = std::move(buffer.front());
     buffer.pop_front();
 }
@@ -58,8 +60,10 @@ nonstd::optional<T> ThreadSafeQueue<T>::try_pop() {
     if (!closed && !buffer.empty()) {
         T data = std::move(buffer.front());
         buffer.pop_front();
+        Logger::info("[Thread Safe Queue] Task extracted successfully");
         return data;
     }
+    Logger::info("[Thread Safe Queue] No task extracted");
     return nonstd::nullopt;
 }
 
@@ -90,6 +94,7 @@ size_t ThreadSafeQueue<T>::size() const {
 template <typename T>
 void ThreadSafeQueue<T>::clear() {
     std::lock_guard<std::mutex> lock(mtx);
+    Logger::info("[Thread Safe Queue] Tasks cleaned");
     buffer.clear();
 }
 
@@ -101,6 +106,7 @@ template <typename T>
 void ThreadSafeQueue<T>::close() {
     std::lock_guard<std::mutex> lock(mtx);
     closed = true;
+    Logger::info("[Thread Safe Queue] Task queue closed");
     cv.notify_all();
 }
 

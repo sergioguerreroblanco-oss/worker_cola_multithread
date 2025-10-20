@@ -24,7 +24,6 @@
 #include <string>
 #include <thread>
 #include <unordered_map>
-#include <iostream>
 
 /* Project libraries */
 

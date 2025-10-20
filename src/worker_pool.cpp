@@ -14,6 +14,7 @@
 /* Project libraries */
 
 #include "worker_pool.h"
+#include "logger.h"
 
 /*****************************************************************************/
 
@@ -43,6 +44,7 @@ void WorkerPool::start(const int number_workers) {
     if (running) return;
 
     running = true;
+    Logger::info("[Worker Pool] Starting " + std::to_string(number_workers) + " workers");
     for (int i = 0; i < number_workers; i++)
     {
         std::string name = std::string(DEFAULT_WORKER_NAME) + std::to_string(i);
@@ -72,6 +74,8 @@ void WorkerPool::stop() {
 
     running = false;
 
+    Logger::info("[Worker Pool] Stop request done");
+
     task_queue.close();
 
     for (auto& worker_pair : workers) {
@@ -94,7 +98,7 @@ void WorkerPool::run(const std::string& worker_name) {
             try {
                 task();
             } catch (const std::exception& e) {
-                std::cerr << "[" << worker_name << "] Exception: " << e.what() << std::endl;
+                Logger::error("[Worker Pool][" + worker_name + "] Exception: " + e.what());
             }
         }
     }
