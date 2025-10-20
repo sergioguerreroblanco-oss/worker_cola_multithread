@@ -39,7 +39,10 @@ void ThreadSafeQueue<T>::pop(T& data) {
     std::unique_lock<std::mutex> lock(mtx);
 
     // Wait until new data is added
-    cv.wait(lock, [this] { return !buffer.empty(); });
+    cv.wait(lock, [this] { return closed || !buffer.empty(); });
+
+    if (closed && buffer.empty()) return;
+
     data = std::move(buffer.front());
     buffer.pop_front();
 }
@@ -52,7 +55,7 @@ template <typename T>
 nonstd::optional<T> ThreadSafeQueue<T>::try_pop() {
     std::lock_guard<std::mutex> lock(mtx);
 
-    if (!buffer.empty()) {
+    if (!closed && !buffer.empty()) {
         T data = std::move(buffer.front());
         buffer.pop_front();
         return data;
@@ -88,6 +91,17 @@ template <typename T>
 void ThreadSafeQueue<T>::clear() {
     std::lock_guard<std::mutex> lock(mtx);
     buffer.clear();
+}
+
+/**
+ * @details
+ * @return
+ */
+template <typename T>
+void ThreadSafeQueue<T>::close() {
+    std::lock_guard<std::mutex> lock(mtx);
+    closed = true;
+    cv.notify_all();
 }
 
 /*****************************************************************************/

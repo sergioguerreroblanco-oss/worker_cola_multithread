@@ -119,6 +119,12 @@ class ThreadSafeQueue {
      */
     void clear();
 
+    /**
+     * @brief
+     * @param
+     */
+    void close();
+
     /******************************************************************/
 
     /* Private Attributes */
@@ -138,6 +144,11 @@ class ThreadSafeQueue {
      * @brief Condition variable.
      */
     std::condition_variable cv;
+
+    /**
+     * @brief Flag used for the gratheful shutdown
+     */
+    bool closed = false;
 
     /******************************************************************/
 };

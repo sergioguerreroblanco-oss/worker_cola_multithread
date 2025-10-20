@@ -72,15 +72,14 @@ void WorkerPool::stop() {
 
     running = false;
 
-    for (size_t i = 0; i < workers.size(); ++i) {
-        task_queue.push([] {});
-    }
+    task_queue.close();
 
     for (auto& worker_pair : workers) {
         auto& thread = worker_pair.second;
         if (thread.joinable()) thread.join();
     }
 
+    workers.clear();
 }
 
 /**
