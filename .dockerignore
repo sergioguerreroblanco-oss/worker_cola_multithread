@@ -1,0 +1,30 @@
+# Local build folders
+build
+out
+.vs
+
+# Versioning control
+.git
+.gitignore
+
+# Temporal files of Visual Studio / Windows
+*.suo
+*.user
+*.ipch
+*.obj
+*.pdb
+*.idb
+*.aps
+*.ncb
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.tmp
+*.log
+
+# System files
+Thumbs.db
+Desktop.ini

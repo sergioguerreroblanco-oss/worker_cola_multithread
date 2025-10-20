@@ -1,0 +1,45 @@
+# ============================
+# === Build directories ===
+# ============================
+# Ignore local build outputs (never commit binaries)
+build/
+out/
+docs/html/
+docs/latex/
+html/
+latex/
+Testing/
+
+# ============================
+# === IDE-specific files ===
+# ============================
+# Ignore Visual Studio temporary and configuration files
+.vs/
+*.suo
+*.user
+*.ipch
+*.obj
+*.pdb
+*.idb
+*.aps
+*.ncb
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+
+# ============================
+# === Temporary files ===
+# ============================
+# Ignore logs and temporary files generated during dev
+*.tmp
+*.log
+
+# ============================
+# === OS-specific files ===
+# ============================
+# Ignore common Windows Explorer system files
+Thumbs.db
+Desktop.ini

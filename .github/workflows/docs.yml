@@ -1,0 +1,39 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y doxygen graphviz make \
+            texlive-latex-base texlive-fonts-recommended \
+            texlive-fonts-extra texlive-latex-extra
+
+      - name: Generate HTML & LaTeX
+        run: |
+          doxygen docs/Doxyfile
+
+      - name: Build PDF
+        run: |
+          if [ -d "docs/latex" ]; then
+            make -C docs/latex
+          fi
+
+      - name: Upload documentation (HTML + PDF)
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: |
+            docs/html/
+            docs/latex/refman.pdf
