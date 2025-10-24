@@ -1,0 +1,18 @@
+# Forzar finales de línea coherentes
+* text=auto
+
+# Archivos fuente C/C++
+*.cpp text eol=lf
+*.h   text eol=lf
+*.hpp text eol=lf
+*.ipp text eol=lf
+
+# Ficheros de configuración y scripts
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf
+
+# Markdown, CMake y otros
+*.md text eol=lf
+CMakeLists.txt text eol=lf

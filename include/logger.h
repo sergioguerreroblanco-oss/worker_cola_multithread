@@ -38,7 +38,8 @@
  * @class Logger
  * @brief A thread-safe static logger utility with configurable severity levels.
  */
-class Logger {
+class Logger
+{
     /******************************************************************/
 
     /* Public Data Types */
@@ -48,11 +49,12 @@ class Logger {
      * @enum Level
      * @brief Severity levels for log messages.
      */
-    enum class Level {
-        DBG = 0,  /**< Debug messages, most verbose. */
-        INFO = 1, /**< Informational messages about normal operation. */
-        WARN = 2, /**< Warning messages indicating potential issues. */
-        ERROR = 3 /**< Error messages indicating failures. */
+    enum class Level
+    {
+        DBG   = 0, /**< Debug messages, most verbose. */
+        INFO  = 1, /**< Informational messages about normal operation. */
+        WARN  = 2, /**< Warning messages indicating potential issues. */
+        ERROR = 3  /**< Error messages indicating failures. */
     };
 
     /******************************************************************/
@@ -120,8 +122,8 @@ class Logger {
     /* Private Attributes */
 
    private:
-    static std::mutex mtx; /**< Mutex for synchronizing log output. */
-    static Level minLevel; /**< Minimum level required to print messages. */
+    static std::mutex mtx;      /**< Mutex for synchronizing log output. */
+    static Level      minLevel; /**< Minimum level required to print messages. */
 
     /******************************************************************/
 };

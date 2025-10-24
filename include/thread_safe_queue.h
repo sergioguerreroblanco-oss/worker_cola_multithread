@@ -4,10 +4,10 @@
  * @date        <2025-09-26>
  * @version     1.0.0
  *
- * @brief       
+ * @brief
  *
  * @details
- * 
+ *
  */
 
 /*****************************************************************************/
@@ -31,11 +31,12 @@
 
 /**
  * @class ThreadSafeQueue
- * @brief 
- * @tparam 
+ * @brief
+ * @tparam
  */
 template <typename T>
-class ThreadSafeQueue {
+class ThreadSafeQueue
+{
     /******************************************************************/
 
     /* Public Methods */
@@ -84,14 +85,14 @@ class ThreadSafeQueue {
     ThreadSafeQueue& operator=(ThreadSafeQueue&&) = delete;
 
     /**
-     * @brief 
-     * @param 
+     * @brief
+     * @param
      */
     void push(T&& data);
 
     /**
-     * @brief 
-     * @param 
+     * @brief
+     * @param
      */
     bool pop(T& data);
 
@@ -101,13 +102,13 @@ class ThreadSafeQueue {
      */
     nonstd::optional<T> try_pop();
 
-     /**
+    /**
      * @brief
      * @param
      */
     bool empty() const;
 
-     /**
+    /**
      * @brief
      * @param
      */

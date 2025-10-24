@@ -4,7 +4,7 @@
  * @date        <2025-09-26>
  * @version     1.0.0
  *
- * @brief       
+ * @brief
  *
  * @details
  */
@@ -40,7 +40,8 @@
  * and delegating the retrieved data to the associated IWorkerAction.
  * It supports graceful shutdown or immediate stop.
  */
-class WorkerPool {
+class WorkerPool
+{
     /******************************************************************/
 
     /* Private Constants */
@@ -58,8 +59,8 @@ class WorkerPool {
    public:
     /**
      * @brief Construct
-     * @param 
-     * @param 
+     * @param
+     * @param
      */
     explicit WorkerPool(ThreadSafeQueue<std::function<void()>>& queue);
 
@@ -102,17 +103,17 @@ class WorkerPool {
     WorkerPool& operator=(WorkerPool&&) = delete;
 
     /**
-     * @brief 
+     * @brief
      */
     void start(const int number_workers);
 
-     /**
+    /**
      * @brief
      */
     void submit(std::function<void()> task);
 
     /**
-     * @brief 
+     * @brief
      */
     void stop();
 

@@ -4,7 +4,7 @@
  * @date        <2025-09-26>
  * @version     1.0.0
  *
- * @brief       
+ * @brief
  *
  * @details
  */
@@ -14,6 +14,7 @@
 /* Project libraries */
 
 #include "worker_pool.h"
+
 #include "logger.h"
 
 /*****************************************************************************/
@@ -25,13 +26,16 @@
  *          Initializes references to the queue and action, and sets the worker name.
  */
 WorkerPool::WorkerPool(ThreadSafeQueue<std::function<void()>>& queue)
-    : task_queue(queue), running(false) {}
+    : task_queue(queue), running(false)
+{
+}
 
 /**
  * @details Ensures the worker thread has finished
  *          before destruction (joins the thread if needed)
  */
-WorkerPool::~WorkerPool() {
+WorkerPool::~WorkerPool()
+{
     stop();
     workers.clear();
 }
@@ -40,8 +44,10 @@ WorkerPool::~WorkerPool() {
  * @details Starts the worker by setting the running flag to true
  *          and launching a dedicated thread that executes the run() loop.
  */
-void WorkerPool::start(const int number_workers) {
-    if (running) return;
+void WorkerPool::start(const int number_workers)
+{
+    if (running)
+        return;
 
     running = true;
     Logger::info("[Worker Pool] Starting " + std::to_string(number_workers) + " workers");
@@ -49,15 +55,17 @@ void WorkerPool::start(const int number_workers) {
     {
         std::string name = std::string(DEFAULT_WORKER_NAME) + std::to_string(i);
 
-         workers.emplace(name, std::thread([this, name]() { run(name); }));
+        workers.emplace(name, std::thread([this, name]() { run(name); }));
     }
 }
 
 /**
- * @details 
+ * @details
  */
 void WorkerPool::submit(std::function<void()> task)
-{ task_queue.push(std::move(task)); }
+{
+    task_queue.push(std::move(task));
+}
 
 /**
  * @details Stops the worker activity by setting its running flag to false.
@@ -69,17 +77,21 @@ void WorkerPool::submit(std::function<void()> task)
  *       This simplifies the design and avoids pushing
  *       shutdown logic into the queue.
  */
-void WorkerPool::stop() {
-    if (!running) return;
+void WorkerPool::stop()
+{
+    if (!running)
+        return;
 
     running = false;
 
     Logger::info("[Worker Pool] Stop requested, waiting for remaining tasks...");
     auto start = std::chrono::steady_clock::now();
-    while (!task_queue.empty()) {
+    while (!task_queue.empty())
+    {
         std::this_thread::sleep_for(std::chrono::milliseconds(5));
 
-        if (std::chrono::steady_clock::now() - start > std::chrono::seconds(1)) {
+        if (std::chrono::steady_clock::now() - start > std::chrono::seconds(1))
+        {
             Logger::warn("[Worker Pool] Timeout waiting for queue to drain.");
             break;
         }
@@ -88,9 +100,11 @@ void WorkerPool::stop() {
     task_queue.close();
     Logger::info("[Worker Pool] Task queue drained, closing...");
 
-    for (auto& worker_pair : workers) {
+    for (auto& worker_pair : workers)
+    {
         auto& thread = worker_pair.second;
-        if (thread.joinable()) thread.join();
+        if (thread.joinable())
+            thread.join();
     }
 
     workers.clear();
@@ -99,15 +113,21 @@ void WorkerPool::stop() {
 /**
  * @details Main worker loop.
  */
-void WorkerPool::run(const std::string& worker_name) {
-    for (;;) {
+void WorkerPool::run(const std::string& worker_name)
+{
+    for (;;)
+    {
         std::function<void()> task;
 
-        if (!task_queue.pop(task)) break;
+        if (!task_queue.pop(task))
+            break;
 
-        try {
+        try
+        {
             task();
-        } catch (const std::exception& e) {
+        }
+        catch (const std::exception& e)
+        {
             Logger::error("[Worker Pool][" + worker_name + "] Exception: " + e.what());
         }
     }

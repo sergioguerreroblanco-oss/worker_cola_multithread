@@ -1,5 +1,35 @@
+# ---- Base & Language ----
 BasedOnStyle: Google
-IndentWidth: 4
-ColumnLimit: 100
 Language: Cpp
-Standard: Cpp11
+
+# ---- Indentation & Spacing ----
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+
+# ---- Braces & Control Flow ----
+BreakBeforeBraces: Allman
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+
+# ---- Pointers & References ----
+PointerAlignment: Left
+DerivePointerAlignment: false
+SpaceBeforeParens: ControlStatements
+
+# ---- Includes ----
+SortIncludes: true
+IncludeBlocks: Regroup
+
+# ---- Alignment ----
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignOperands: true
+
+# ---- Comments & Namespaces ----
+CommentPragmas: '^!'
+FixNamespaceComments: true
+SpacesBeforeTrailingComments: 2
+KeepEmptyLinesAtTheStartOfBlocks: false
