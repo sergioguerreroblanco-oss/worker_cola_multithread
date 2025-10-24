@@ -19,9 +19,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY . .
 
 # Build & run tests
-RUN cmake --preset release \
- && cmake --build --preset release -j$(nproc) \
- && ctest --preset release --output-on-failure
+RUN cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release -G "Ninja" \
+ && cmake --build build/release -j$(nproc) \
+ && cd build/release && ctest --output-on-failure
 
 # ---------------------------------------------------------------
 # Stage 2: Runtime
