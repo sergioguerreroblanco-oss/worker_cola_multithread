@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🐳_20docker_0',['🐳 Docker',['../index.html#autotoc_md21',1,'']]]
+  ['🏗_20architecture_0',['🏗 Architecture',['../index.html#autotoc_md6',1,'']]]
 ];

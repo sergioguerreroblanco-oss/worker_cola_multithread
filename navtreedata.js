@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "worker_cola_multithread", "index.html", [
-    [ "Cola & Worker", "index.html", "index" ],
+    [ "Worker & Thread-Safe Queue", "index.html", "index" ],
     [ "Test List", "d4/df6/test.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

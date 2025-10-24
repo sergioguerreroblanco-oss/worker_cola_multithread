@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>worker_cola_multithread: Cola &amp; Worker</title>
+<title>worker_cola_multithread: Worker &amp; Thread-Safe Queue</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,235 +90,235 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Cola &amp; Worker </div></div>
+  <div class="headertitle"><div class="title">Worker &amp; Thread-Safe Queue </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="https://github.com/sergioguerreroblanco-oss/cola-worker-test/actions/workflows/ci.yml/badge.svg" alt="CI" style="pointer-events: none;" class="inline"/></p>
-<p>Cola &amp; Worker is a C++ project that demonstrates a producer–consumer pattern with a bounded, thread-safe queue and multiple worker threads. <br  />
- It has been designed as part of a technical test, but structured in a professional way, including <b>templates, abstract interfaces, unit tests, logging, Docker support, CI/CD pipelines, and modern C++ practices such as <code>optional</code> for safe return values.</b></p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="https://github.com/sergioguerreroblanco-oss/worker_cola_multithread/actions/workflows/ci.yml/badge.svg" alt="CI" style="pointer-events: none;" class="inline"/></p>
+<p><b>Worker &amp; Queue</b> is a modern C++14 project demonstrating a <b>multithreaded worker pool</b> that executes queued tasks concurrently using a <b>thread-safe queue</b>. <br  />
+ It was developed as a <b>technical test</b> but structured as a production-quality module, including <b>unit testing, logging, Docker support, CI/CD integration, and clean CMake presets</b>.</p>
 <hr  />
 <h1><a class="anchor" id="autotoc_md2"></a>
 ✨ Core Features</h1>
 <ul>
-<li>**Thread-safe bounded queue (<code>Cola&lt;T&gt;</code>)** <br  />
+<li>**Thread-safe generic queue (<code><a class="el" href="da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>&lt;T&gt;</code>)** <br  />
 <ul>
-<li>Generic template with configurable maximum size (default: 5). <br  />
+<li>Implements synchronized access using <code>std::mutex</code> and <code>std::condition_variable</code>. <br  />
 </li>
-<li>FIFO with automatic removal of the oldest element when the limit is reached. <br  />
+<li>Provides <code>push()</code>, <code>pop()</code>, <code>try_pop()</code>, <code>empty()</code>, <code>size()</code>, <code>clear()</code>, and <code>close()</code> methods. <br  />
 </li>
-<li><code>pop()</code> supports <b>configurable timeout</b> and returns a <code>nonstd::optional&lt;T&gt;</code>: <br  />
+<li>Supports blocking <code>pop()</code> that waits for new data or shutdown signals. <br  />
+</li>
+<li>Designed for safe use across multiple producers and consumers.</li>
+</ul>
+</li>
+<li>**Worker Pool (<code><a class="el" href="d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a></code>)** <br  />
 <ul>
-<li><code>value()</code> when an element is available. <br  />
+<li>A simple yet efficient thread pool built around <code><a class="el" href="da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>&lt;std::function&lt;void()&gt;&gt;</code>. <br  />
 </li>
-<li><code>nullopt</code> when the queue remains empty during the wait period. <br  />
+<li>Spawns multiple worker threads that consume and execute submitted tasks concurrently. <br  />
+</li>
+<li>Provides lifecycle control via <code>start()</code>, <code>submit()</code>, and <code>stop()</code>. <br  />
+</li>
+<li>Ensures graceful shutdown and task draining before termination. <br  />
 </li>
 </ul>
 </li>
-<li>The queue remains deliberately minimal (“dumb”): it does not implement shutdown logic. <br  />
-</li>
-</ul>
-</li>
-<li>**Workers (<code>Worker&lt;T&gt;</code>)** <br  />
+<li>**Logging System (<code><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></code>)** <br  />
 <ul>
-<li>Each worker runs in its own thread and consumes data from the queue concurrently. <br  />
+<li>Thread-safe static utility for centralized logging. <br  />
 </li>
-<li>Automatically handles <b>timeout</b> scenarios. <br  />
+<li>Configurable minimum log level (<code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>). <br  />
 </li>
-<li>Supports clean termination when <code>stop()</code> is called. <br  />
+<li>Adds timestamp and severity to each log line. <br  />
 </li>
-<li>Behavior is delegated through the <b>abstract interface</b> <code>IWorkerAction&lt;T&gt;</code>. <br  />
-</li>
-</ul>
-</li>
-<li><b>Extensibility via Interfaces</b> <br  />
-<ul>
-<li><code>IWorkerAction&lt;T&gt;</code> defines key events: <code>trabajo()</code>, <code>colaVacia()</code>, and <code>onStop()</code>. <br  />
-</li>
-<li>Makes it easy to inject different behaviors without modifying the <code>Worker</code> class. <br  />
-</li>
-</ul>
-</li>
-<li><b>Concrete Action Example</b> <br  />
-<ul>
-<li><code>PrintWorkerAction&lt;T&gt;</code> implements the interface to log worker events. <br  />
-</li>
-<li>Provided as a demonstration, but can be easily replaced with custom actions. <br  />
-</li>
-</ul>
-</li>
-<li><b>Thread-safe <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></b> <br  />
-<ul>
-<li>Centralized utility with log levels (<code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>). <br  />
-</li>
-<li>Reusable across any action or additional component. <br  />
-</li>
+<li>Used across all components for consistent diagnostics.</li>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<hr  />
+<h1><a class="anchor" id="autotoc_md4"></a>
 🌟 Project Highlights</h1>
 <ul>
-<li><b>Unit tests</b> with GoogleTest, validating queue size limits, FIFO behavior, and timeout handling. <br  />
+<li><b>Unit testing</b> with GoogleTest (<code>ctest</code> integrated). <br  />
 </li>
-<li><b>Centralized logging</b> (<code><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></code>) with thread safety and severity levels (DEBUG, INFO, WARN, ERROR). <br  />
+<li><b>Thread-safe design</b>: no data races or undefined behavior in queue or pool. <br  />
 </li>
-<li><b>Automatic documentation</b> with Doxygen-ready headers. <br  />
+<li><b>CMake presets</b> for consistent builds (<code>debug</code> / <code>release</code>). <br  />
 </li>
-<li><b>Continuous Integration</b> with GitHub Actions:<ul>
-<li><b>ci.yml</b> → build, run tests, and validate Docker image.</li>
-<li><b>docs.yml</b> → generate and upload HTML/PDF documentation.</li>
+<li><b>Cross-platform</b>: builds cleanly on Linux, Windows, and inside Docker. <br  />
+</li>
+<li><b>CI integration</b> via GitHub Actions:<ul>
+<li>Builds and runs all unit tests automatically.</li>
+<li>Validates Docker image reproducibility.</li>
 </ul>
 </li>
-<li><b>Reproducible builds</b> with Docker, using a Debian/Ubuntu base image. <br  />
-</li>
-<li><b>Cross-platform compatibility</b>: builds on Windows (MSVC), Linux (g++) and Clang, and inside Docker. <br  />
-</li>
-<li><b>Strict compiler warnings</b>: <code>/W4</code> on MSVC, <code>-Wall -Wextra -Wpedantic</code> on GCC/Clang. <br  />
-</li>
-<li><b>CMake presets</b> to simplify builds across environments. <br  />
-</li>
-<li><b>C++14 compliant</b>: although <code>std::optional</code> is part of C++ 17, this project integrates the <a href="https://github.com/martinmoene/optional-lite">optional-lite</a> third-party library to provide equivalent functionality while preserving C++ 14 compatibility. <br  />
-</li>
+<li><b>Reproducible builds</b> using a minimal <b>Ubuntu 22.04</b> image and <b>CMake 3.28</b>.</li>
+<li><b>Strict compiler flags</b> (<code>-Wall -Wextra -Wpedantic</code>) to enforce quality and correctness.</li>
+<li><b>C++14 compliance</b> — no dependency on newer standards.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 🏗 Architecture</h1>
-<p>The following diagram illustrates the internal architecture of the project.</p><ul>
-<li><b>Main Thread</b> simulates a producer pushing values into the queue at fixed intervals.</li>
-<li><b>Cola&lt;T&gt;</b> is a thread-safe bounded queue that stores up to 5 elements and synchronizes access among threads.</li>
-<li><b>Worker&lt;T&gt;</b> consumes values from the queue and delegates the actual handling of events to an action (strategy pattern).</li>
-<li><b>IWorkerAction</b> defines the contract for worker actions.</li>
-<li><b>PrintWorkerAction</b> implements this contract by logging messages. <div class="fragment"><div class="line">flowchart LR</div>
+<p>The following diagram illustrates the internal architecture of the project:</p>
+<p>Main Thread acts as the producer — it submits tasks (lambdas or callable functions) to the <a class="el" href="da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>.</p>
+<p>ThreadSafeQueue&lt;T&gt; safely synchronizes access to the task queue among multiple producers and worker threads.</p>
+<p><a class="el" href="d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> manages a configurable number of worker threads.</p>
+<p>Each Worker Thread repeatedly calls pop() to retrieve and execute tasks until the queue is closed.</p>
+<p>The <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> provides synchronized output from all threads, ensuring readable and timestamped logs. </p><div class="fragment"><div class="line">flowchart LR</div>
 <div class="line">    subgraph Main [Main Thread]</div>
-<div class="line">        P[Producer - push values every 200ms]</div>
+<div class="line">        P[&quot;Producer - submits std::function&amp;lt;void()&amp;gt; tasks&quot;]</div>
 <div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    subgraph Cola [Thread-Safe Queue]</div>
-<div class="line">        Q[(Cola&lt;T&gt; - max 5 elements)]</div>
+<div class="line">    subgraph Queue [&quot;ThreadSafeQueue&amp;lt;std::function&amp;lt;void()&amp;gt;&amp;gt;&quot;]</div>
+<div class="line">        Q[&quot;FIFO Queue - synchronized access&quot;]</div>
 <div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    subgraph Workers [Worker Threads]</div>
-<div class="line">        W1[Worker&lt;T&gt; - thread]</div>
-<div class="line">        W2[Worker&lt;T&gt; - thread]</div>
-<div class="line">        W3[Worker&lt;T&gt; - thread]</div>
+<div class="line">    subgraph WorkerPool [WorkerPool]</div>
+<div class="line">        direction TB</div>
+<div class="line">        WP[&quot;Spawns N worker threads&quot;]</div>
+<div class="line">        W1[&quot;Worker Thread #1&quot;]</div>
+<div class="line">        W2[&quot;Worker Thread #2&quot;]</div>
+<div class="line">        W3[&quot;Worker Thread #3&quot;]</div>
 <div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    subgraph Actions [Worker Actions]</div>
-<div class="line">        A1[IWorkerAction&lt;T&gt;]</div>
-<div class="line">        A2[PrintWorkerAction&lt;T&gt;]</div>
+<div class="line">    subgraph Logger [Logger]</div>
+<div class="line">        L[&quot;Thread-safe Logging&quot;]</div>
 <div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    P --&gt;|&quot;push()&quot;| Q</div>
-<div class="line">    Q --&gt;|&quot;pop()&quot;| W1</div>
-<div class="line">    Q --&gt;|&quot;pop()&quot;| W2</div>
-<div class="line">    Q --&gt;|&quot;pop()&quot;| W3</div>
-<div class="line"> </div>
-<div class="line">    W1 --&gt; A1</div>
-<div class="line">    W2 --&gt; A1</div>
-<div class="line">    W3 --&gt; A1</div>
-<div class="line">    A2 --&gt;|implements| A1</div>
-</div><!-- fragment --></li>
-</ul>
-<hr  />
-<h1><a class="anchor" id="autotoc_md7"></a>
+<div class="line">    P --&gt;|&quot;submit()&quot;| Q</div>
+<div class="line">    WP --&gt;|&quot;start()&quot;| W1</div>
+<div class="line">    WP --&gt;|&quot;start()&quot;| W2</div>
+<div class="line">    WP --&gt;|&quot;start()&quot;| W3</div>
+<div class="line">    W1 --&gt;|&quot;pop() + execute()&quot;| Q</div>
+<div class="line">    W2 --&gt;|&quot;pop() + execute()&quot;| Q</div>
+<div class="line">    W3 --&gt;|&quot;pop() + execute()&quot;| Q</div>
+<div class="line">    W1 --&gt;|&quot;info()/error()&quot;| L</div>
+<div class="line">    W2 --&gt;|&quot;info()/error()&quot;| L</div>
+<div class="line">    W3 --&gt;|&quot;info()/error()&quot;| L</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md8"></a>
 🗂 Class Diagram</h1>
 <div class="fragment"><div class="line">classDiagram</div>
-<div class="line">    class Cola~T~ {</div>
-<div class="line">        -deque&lt;T&gt; buffer</div>
-<div class="line">        -mutex mtx</div>
-<div class="line">        -condition_variable cv</div>
-<div class="line">        -size_t max_size</div>
-<div class="line">        +Cola(size_t max_size = 5)</div>
-<div class="line">        +void push(T dato)</div>
-<div class="line">        +optional&lt;T&gt; pop(chrono::seconds timeout)</div>
-<div class="line">        +size_t get_size() const</div>
-<div class="line">        +bool is_empty() const</div>
+<div class="line">    class ThreadSafeQueue~T~ {</div>
+<div class="line">        - deque&amp;lt;T&amp;gt; buffer</div>
+<div class="line">        - mutable mutex mtx</div>
+<div class="line">        - condition_variable cv</div>
+<div class="line">        - bool closed</div>
+<div class="line">        + ThreadSafeQueue()</div>
+<div class="line">        + void push(T&amp;amp;&amp;amp; data)</div>
+<div class="line">        + bool pop(T&amp;amp; data)</div>
+<div class="line">        + optional&amp;lt;T&amp;gt; try_pop()</div>
+<div class="line">        + bool empty() const</div>
+<div class="line">        + size_t size() const</div>
+<div class="line">        + void clear()</div>
+<div class="line">        + void close()</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    class Worker~T~ {</div>
-<div class="line">        -Cola&lt;T&gt;&amp; cola</div>
-<div class="line">        -IWorkerAction&lt;T&gt;&amp; action</div>
-<div class="line">        -string name</div>
-<div class="line">        -thread thread</div>
-<div class="line">        -atomic&lt;bool&gt; running</div>
-<div class="line">        +Worker(Cola&lt;T&gt;&amp; c, IWorkerAction&lt;T&gt;&amp; a, string name=&quot;Worker&quot;)</div>
-<div class="line">        +void start()</div>
-<div class="line">        +void stop()</div>
-<div class="line">        -void run()</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    class IWorkerAction~T~ {</div>
-<div class="line">        &lt;&lt;interface&gt;&gt;</div>
-<div class="line">        +void trabajo(string workerName, T dato)</div>
-<div class="line">        +void colaVacia(string workerName, chrono::seconds timeout)</div>
-<div class="line">        +void onStop(string workerName)</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    class PrintWorkerAction~T~ {</div>
-<div class="line">        +void trabajo(string workerName, T dato)</div>
-<div class="line">        +void colaVacia(string workerName, chrono::seconds timeout)</div>
-<div class="line">        +void onStop(string workerName)</div>
+<div class="line">    class WorkerPool {</div>
+<div class="line">        - ThreadSafeQueue&amp;lt;std::function&amp;lt;void()&amp;gt;&amp;gt;&amp;amp; task_queue</div>
+<div class="line">        - atomic&amp;lt;bool&amp;gt; running</div>
+<div class="line">        - unordered_map&amp;lt;string, thread&amp;gt; workers</div>
+<div class="line">        + WorkerPool(ThreadSafeQueue&amp;lt;std::function&amp;lt;void()&amp;gt;&amp;gt;&amp;amp; queue)</div>
+<div class="line">        + void start(int number_workers)</div>
+<div class="line">        + void submit(std::function&amp;lt;void()&amp;gt; task)</div>
+<div class="line">        + void stop()</div>
+<div class="line">        - void run(const string&amp;amp; worker_name)</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    class Logger {</div>
-<div class="line">        -static mutex mtx</div>
-<div class="line">        -static Level minLevel</div>
-<div class="line">        +static void set_min_level(Level lvl)</div>
-<div class="line">        +static void debug(const string&amp; msg)</div>
-<div class="line">        +static void info(const string&amp; msg)</div>
-<div class="line">        +static void warn(const string&amp; msg)</div>
-<div class="line">        +static void error(const string&amp; msg)</div>
-<div class="line">        +static void log(Level lvl, const string&amp; msg)</div>
+<div class="line">        - static mutex mtx</div>
+<div class="line">        - static Level minLevel</div>
+<div class="line">        + static void set_min_level(Level lvl)</div>
+<div class="line">        + static void debug(const string&amp;amp; msg)</div>
+<div class="line">        + static void info(const string&amp;amp; msg)</div>
+<div class="line">        + static void warn(const string&amp;amp; msg)</div>
+<div class="line">        + static void error(const string&amp;amp; msg)</div>
+<div class="line">        + static void log(Level lvl, const string&amp;amp; msg)</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    Cola &lt;.. Worker : uses</div>
-<div class="line">    Worker --&gt; IWorkerAction : delegates</div>
-<div class="line">    PrintWorkerAction ..|&gt; IWorkerAction</div>
-<div class="line">    PrintWorkerAction ..&gt; Logger : logs to</div>
-</div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md9"></a>
+<div class="line">    %% Relationships</div>
+<div class="line">    WorkerPool --&gt; ThreadSafeQueue : uses</div>
+<div class="line">    WorkerPool ..&gt; Logger : logs to</div>
+<div class="line">    ThreadSafeQueue ..&gt; Logger : logs to</div>
+</div><!-- fragment --><p> 🔍 Explanation</p><ul>
+<li>ThreadSafeQueue&lt;T&gt; — synchronized queue for safe producer/consumer access.</li>
+<li><a class="el" href="d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> — manages multiple worker threads that consume and execute tasks from the queue.</li>
+<li><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> — shared static utility providing thread-safe logging.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md10"></a>
 🛠 Build Instructions</h1>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Windows (Visual Studio 2022)</h2>
 <ol type="1">
-<li>Open <b>Visual Studio 2022</b>. <br  />
+<li>Open Visual Studio 2022.</li>
+<li>Choose “Open Folder” → select the project root (worker_cola_multithread/).</li>
+<li>Visual Studio automatically detects CMakePresets.json.</li>
+<li>In the toolbar, select a configuration:<ul>
+<li>debug → includes unit tests (BUILD_TESTING=ON).</li>
+<li>release → optimized build.</li>
+</ul>
 </li>
-<li><em>Open Folder</em> → select the project root (<code>cola-worker-test/</code>). <br  />
-</li>
-<li>Visual Studio will detect <code>CMakePresets.json</code>. <br  />
-</li>
-<li>In the toolbar, select a configuration (<code>debug</code> or <code>release</code>). <br  />
-</li>
-<li>Build (Ctrl+Shift+B). <br  />
-</li>
-<li>Run the generated binary <code>cola_worker[.exe]</code> from <code>build/&lt;config&gt;/</code>.</li>
+<li>Build the project (Ctrl + Shift + B).</li>
+<li>The executable will be generated at:</li>
+</ol>
+<div class="fragment"><div class="line">build/&lt;preset&gt;/cola_worker[.exe]</div>
+</div><!-- fragment --><ol type="1">
+<li>Run it directly from Visual Studio or from the command line.</li>
 </ol>
 <hr  />
-<h2><a class="anchor" id="autotoc_md12"></a>
-Windows (PowerShell)</h2>
-<div class="fragment"><div class="line">Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</div>
-<div class="line">.\scripts\build.ps1 -preset release   # Build Release</div>
-<div class="line">.\scripts\build.ps1 -preset debug     # Build Debug (with tests)</div>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Windows (PowerShell/CLI)</h2>
+<p>You can also build manually from a terminal with CMake presets:</p>
+<div class="fragment"><div class="line">cmake --preset release    # Configure for Release</div>
+<div class="line">cmake --build --preset release -j  # Build using Ninja or MSBuild</div>
+<div class="line"> </div>
+<div class="line">cmake --preset debug      # Configure for Debug (with tests)</div>
+<div class="line">cmake --build --preset debug -j</div>
+<div class="line">ctest --preset debug      # Run unit tests</div>
 </div><!-- fragment --> <hr  />
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Linux / WSL (Debian/Ubuntu based)</h2>
-<p>Install required tools: </p><div class="fragment"><div class="line">sudo apt update</div>
+<p>Install dependencies: </p><div class="fragment"><div class="line">sudo apt update</div>
 <div class="line">sudo apt install -y build-essential cmake ninja-build git</div>
-</div><!-- fragment --><p> Clone repository (first time only): </p><div class="fragment"><div class="line">git clone https://github.com/sergioguerreroblanco-oss/cola-worker-test.git</div>
-<div class="line">cd cola-worker-test</div>
-</div><!-- fragment --><p> Build project: </p><div class="fragment"><div class="line">chmod +x scripts/build.sh</div>
-<div class="line">./scripts/build.sh --preset release   # Build Release</div>
-<div class="line">./scripts/build.sh --preset debug     # Build Debug (with tests)</div>
+</div><!-- fragment --><p> Clone and build: </p><div class="fragment"><div class="line">git clone https://github.com/sergioguerreroblanco-oss/worker_cola_multithread.git</div>
+<div class="line">cd worker_cola_multithread</div>
+<div class="line"> </div>
+<div class="line">cmake --preset release</div>
+<div class="line">cmake --build --preset release -j$(nproc)</div>
+<div class="line"> </div>
+<div class="line"># Debug build (includes unit tests)</div>
+<div class="line">cmake --preset debug</div>
+<div class="line">cmake --build --preset debug -j$(nproc)</div>
+<div class="line">ctest --preset debug</div>
+</div><!-- fragment --><p> The resulting binary will be located in: </p><div class="fragment"><div class="line">build/release/cola_worker</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md16"></a>
+Docker (fully reproducible environment)</h2>
+<p>The project includes a Dockerfile that performs a clean build and runs tests automatically: </p><div class="fragment"><div class="line">docker build -t cola-worker:local .</div>
+<div class="line">docker run --rm cola-worker:local</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 🧪 Unit Tests</h1>
-<p>Unit tests are implemented with GoogleTest and integrated into the CMake build system via CTest. They validate the main behavior of the queue (Cola&lt;T&gt;):</p><ul>
-<li>Maximum size enforcement.</li>
-<li>FIFO ordering.</li>
-<li>Timeout behavior.</li>
-<li>Shutdown behavior.</li>
+<p>Unit tests are implemented with GoogleTest and integrated into the CMake build system via CTest. They validate the core behavior of both <a class="el" href="da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a> and <a class="el" href="d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> to ensure thread-safe operation and correct synchronization between producer and consumer threads.</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+✅ Covered Scenarios</h2>
+<ul>
+<li><a class="el" href="da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a><ul>
+<li>push() / pop() correctly transfer ownership of elements.</li>
+<li>try_pop() safely handles empty queues.</li>
+<li>close() unblocks waiting threads gracefully.</li>
+<li>size() and empty() reflect real state under concurrency.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+</li>
+<li><a class="el" href="d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a><ul>
+<li>All submitted tasks are executed.</li>
+<li>Supports variable worker counts.</li>
+<li>Handles shutdown correctly, waiting for ongoing tasks.</li>
+<li>Properly joins all threads at stop.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Running Tests (Windows)</h2>
 <p>On Windows, the project has been validated with Visual Studio 2022. Tests can be executed directly from Test Explorer: </p><div class="fragment"><div class="line">→ Test → Run All Tests</div>
 </div><!-- fragment --><p>Alternatively, you can also build and run tests using the provided CMake presets: </p><div class="fragment"><div class="line">cmake --preset debug</div>
@@ -331,123 +331,133 @@ Running Tests (Windows)</h2>
 </ol>
 </blockquote>
 <p>&gt;<code>bash &lt;blockquote&gt;&amp;zwj;winget install Ninja-build.Ninja &lt;/blockquote&gt;&gt;</code></p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Running Tests (Linux / Docker)</h2>
 <p>After building the project, run the following command inside the build directory:</p>
 <div class="fragment"><div class="line">cd build/debug</div>
 <div class="line">ctest --output-on-failure</div>
 </div><!-- fragment --><p>This will automatically discover and execute all registered GoogleTest cases.</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Example output:</h2>
-<p>(example output inside container) </p><div class="fragment"><div class="line">Test project C:/cola-worker-test/build/debug</div>
-<div class="line">    Start 1: ColaTest.KeepMaxBufferSize</div>
-<div class="line">1/5 Test #1: ColaTest.KeepMaxBufferSize .........................................   Passed    0.01 sec</div>
-<div class="line">    Start 2: ColaTest.PopReturnsTimeout</div>
-<div class="line">2/5 Test #2: ColaTest.PopReturnsTimeout .........................................   Passed    1.01 sec</div>
-<div class="line">    Start 3: MultipleSequences/ColaFifoTest.ExtractsInOrder/{ 10, 20 }</div>
-<div class="line">3/5 Test #3: MultipleSequences/ColaFifoTest.ExtractsInOrder/{ 10, 20 } ..........   Passed    0.01 sec</div>
-<div class="line">    Start 4: MultipleSequences/ColaFifoTest.ExtractsInOrder/{ 1, 2, 3, 4, 5 }</div>
-<div class="line">4/5 Test #4: MultipleSequences/ColaFifoTest.ExtractsInOrder/{ 1, 2, 3, 4, 5 } ...   Passed    0.01 sec</div>
-<div class="line">    Start 5: MultipleSequences/ColaFifoTest.ExtractsInOrder/{ 42 }</div>
-<div class="line">5/5 Test #5: MultipleSequences/ColaFifoTest.ExtractsInOrder/{ 42 } ..............   Passed    0.01 sec</div>
-<div class="line">100% tests passed, 0 tests failed out of 5</div>
-<div class="line">Total Test time (real) =   1.05 sec</div>
+<p>(example output inside container) </p><div class="fragment"><div class="line">Test project C:/worker_cola_multithread/build/debug</div>
+<div class="line">    Start 1: ThreadSafeQueue.PushPopWorks</div>
+<div class="line">1/9 Test #1: ThreadSafeQueue.PushPopWorks ...........................................................   Passed    0.01 sec</div>
+<div class="line">    Start 2: ThreadSafeQueue.GracefulClose</div>
+<div class="line">2/9 Test #2: ThreadSafeQueue.GracefulClose ..........................................................   Passed    0.01 sec</div>
+<div class="line">    Start 3: ThreadSafeQueue.TryPopNonBlocking</div>
+<div class="line">3/9 Test #3: ThreadSafeQueue.TryPopNonBlocking ......................................................   Passed    0.01 sec</div>
+<div class="line">    Start 4: ThreadSafeQueue.TryPopConcurrentReaders</div>
+<div class="line">4/9 Test #4: ThreadSafeQueue.TryPopConcurrentReaders ................................................   Passed    0.01 sec</div>
+<div class="line">    Start 5: WorkerPool.ExecutesAllTasks</div>
+<div class="line">5/9 Test #5: WorkerPool.ExecutesAllTasks ............................................................   Passed    0.52 sec</div>
+<div class="line">    Start 6: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/1</div>
+<div class="line">6/9 Test #6: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/1 ...   Passed    0.32 sec</div>
+<div class="line">    Start 7: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/2</div>
+<div class="line">7/9 Test #7: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/2 ...   Passed    0.31 sec</div>
+<div class="line">    Start 8: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/4</div>
+<div class="line">8/9 Test #8: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/4 ...   Passed    0.31 sec</div>
+<div class="line">    Start 9: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/8</div>
+<div class="line">9/9 Test #9: WorkerPoolVariations/WorkerPoolParamTest.ExecutesAllTasksWithDifferentWorkerCounts/8 ...   Passed    0.32 sec</div>
+<div class="line">100% tests passed, 0 tests failed out of 9</div>
+<div class="line">Total Test time (real) =   1.83 sec</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 🐳 Docker</h1>
 <p>This project includes a Dockerfile to provide a reproducible build and test environment.</p>
 <p>Requires Docker installed and running on your system.</p>
 <p>Build image:</p>
-<div class="fragment"><div class="line">build -t cola-worker:dev .</div>
+<div class="fragment"><div class="line">build -t worker_cola_multithread:dev .</div>
 </div><!-- fragment --><p>Run tests inside container:</p>
-<div class="fragment"><div class="line">run --rm cola-worker:dev</div>
+<div class="fragment"><div class="line">run --rm worker_cola_multithread:dev</div>
 </div><!-- fragment --><p>Run main binary:</p>
-<div class="fragment"><div class="line">run --rm cola-worker:dev ./build/cola_worker</div>
+<div class="fragment"><div class="line">run --rm worker_cola_multithread:dev ./build/release/cola_worker</div>
 </div><!-- fragment --><p>By default, the container builds the project in /app/build/. The binary can be invoked as shown.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 🔄 Continuous Integration</h1>
 <p>This project provides two GitHub Actions workflows under .github/workflows/:</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 ci.yml</h2>
-<ul>
-<li>Builds and runs unit tests on ubuntu-latest using CMake and g++.</li>
-<li>Builds the Docker image and executes the binary/tests inside the container.</li>
+<p>This workflow performs the following steps:</p><ul>
+<li>Builds the project on ubuntu-latest using CMake + Ninja and g++.</li>
+<li>Runs all unit tests using CTest (with detailed failure output).</li>
+<li>Builds the Docker image and verifies that it executes correctly inside a container.</li>
 </ul>
-<p>This ensures that:</p>
-<ul>
-<li>The code always compiles on a clean environment.</li>
-<li>All unit tests pass successfully on each push/pull request.</li>
-<li>The project works both in native Linux and inside a reproducible Docker container.</li>
+<p>✅ Ensures that:</p><ul>
+<li>The codebase compiles cleanly on a fresh Linux environment.</li>
+<li>All unit tests pass consistently.</li>
+<li>The Docker image remains functional and up-to-date.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 docs.yml</h2>
-<ul>
-<li>Installs Doxygen (and LaTeX on Linux).</li>
-<li>Generates documentation (HTML and PDF).</li>
-<li>Uploads the generated artifacts so they can be downloaded directly from the workflow run.</li>
+<p>This workflow automates documentation generation:</p><ul>
+<li>Installs Doxygen, Graphviz, and LaTeX.</li>
+<li>Generates both HTML and PDF documentation.</li>
+<li>Uploads the generated artifacts for download directly from the workflow summary.</li>
+<li>Deploys HTML docs to GitHub Pages when pushing to the main branch.</li>
 </ul>
-<p>This ensures that:</p><ul>
-<li>Documentation is always up to date with the source code.</li>
-<li>Both HTML and PDF docs are available without needing local generation.</li>
+<p>✅ Ensures that:</p><ul>
+<li>Documentation is always in sync with the current source code.</li>
+<li>Both HTML and PDF outputs are built automatically.</li>
+<li>Public docs can be viewed directly from the project’s GitHub Pages site.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 📂 Project Structure</h1>
-<div class="fragment"><div class="line">cola-worker-test/</div>
+<div class="fragment"><div class="line">worker_cola_multithread/</div>
 <div class="line">│</div>
-<div class="line">├── .clang-format              # Code style configuration</div>
-<div class="line">├── .dockerignore</div>
+<div class="line">├── .clang-format              # Code style configuration (Google-based, 4 spaces)</div>
+<div class="line">├── .dockerignore              # Files ignored during Docker build</div>
+<div class="line">├── .gitattributes</div>
 <div class="line">├── .gitignore</div>
-<div class="line">├── CMakeLists.txt             # Build configuration</div>
-<div class="line">├── CMakePresets.json          # Build presets (debug/release)</div>
-<div class="line">├── Dockerfile                 # Docker build context</div>
-<div class="line">├── README.md                  # Project documentation</div>
 <div class="line">│</div>
-<div class="line">├── docs/                      # Documentation</div>
+<div class="line">├── CMakeLists.txt             # Root CMake configuration</div>
+<div class="line">├── CMakePresets.json          # Build presets (Debug / Release)</div>
+<div class="line">├── Dockerfile                 # Docker build and test environment</div>
+<div class="line">├── README.md                  # Main project documentation</div>
+<div class="line">│</div>
+<div class="line">├── docs/                      # Documentation files</div>
 <div class="line">│   ├── Doxyfile               # Doxygen configuration</div>
-<div class="line">│   └── README.md              # Docs instructions</div>
+<div class="line">│   └── README.md              # Internal documentation guide</div>
 <div class="line">│</div>
-<div class="line">├── include/                   # Public headers and templates</div>
-<div class="line">│   ├── third_party/           # External headers (C++14 backports)</div>
+<div class="line">├── include/                   # Public headers</div>
+<div class="line">│   ├── third_party/           # External or vendor code (future extensions)</div>
 <div class="line">│   │   └── optional.hpp       # optional&lt;T&gt; for C++14 (optional-lite)</div>
-<div class="line">│   ├── cola.h</div>
-<div class="line">│   ├── cola.ipp</div>
-<div class="line">│   ├── i_worker_action.h</div>
-<div class="line">│   ├── logger.h</div>
-<div class="line">│   ├── print_worker_action.h</div>
-<div class="line">│   ├── worker.h</div>
-<div class="line">│   └── worker.ipp</div>
+<div class="line">│   ├── logger.h               # Thread-safe logging utility</div>
+<div class="line">│   ├── thread_safe_queue.h    # Generic thread-safe queue declaration</div>
+<div class="line">│   ├── thread_safe_queue.ipp  # Inline template implementation</div>
+<div class="line">│   └── worker_pool.h          # Worker pool managing multiple threads</div>
 <div class="line">│</div>
-<div class="line">├── scripts/                   # Utility scripts</div>
-<div class="line">│   ├── build.sh               # Linux build script</div>
-<div class="line">│   ├── build.ps1              # Windows build script</div>
-<div class="line">│   ├── generate_docs.sh       # Linux/WSL docs generation</div>
-<div class="line">│   └── generate_docs.ps1      # Windows docs generation</div>
+<div class="line">├── scripts/                   # Helper scripts</div>
+<div class="line">│   ├── build.ps1              # Windows build (PowerShell)</div>
+<div class="line">│   ├── build.sh               # Linux / WSL build script</div>
+<div class="line">│   ├── generate_docs.ps1      # Generate Doxygen docs on Windows</div>
+<div class="line">│   └── generate_docs.sh       # Generate Doxygen docs on Linux</div>
 <div class="line">│</div>
-<div class="line">├── src/                       # Source files</div>
-<div class="line">│   ├── logger.cpp</div>
-<div class="line">│   └── main.cpp</div>
+<div class="line">├── src/                       # Source code implementation</div>
+<div class="line">│   ├── logger.cpp             # Logger definitions</div>
+<div class="line">│   ├── main.cpp               # Application entry point</div>
+<div class="line">│   └── worker_pool.cpp        # Worker pool logic</div>
 <div class="line">│</div>
-<div class="line">├── tests/                     # Unit tests</div>
-<div class="line">│   └── test_main.cpp</div>
+<div class="line">├── tests/                     # Unit test suite</div>
+<div class="line">│   └── test_main.cpp          # GoogleTest entry point and test cases</div>
 <div class="line">│</div>
 <div class="line">└── .github/workflows/         # CI/CD pipelines</div>
-<div class="line">    ├── ci.yml                 # Build &amp; test workflow</div>
-<div class="line">    └── docs.yml               # Documentation workflow</div>
+<div class="line">    ├── ci.yml                 # Build, test, and Docker validation</div>
+<div class="line">    └── docs.yml               # Auto-generate and upload documentation</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md32"></a>
 📖 Documentation</h1>
 <p>This project uses <a href="https://www.doxygen.nl/">Doxygen</a> to generate API documentation from source code comments.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Generate documentation</h2>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md34"></a>
 Windows (PowerShell)</h3>
 <div class="fragment"><div class="line">Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</div>
 <div class="line">.\scripts\generate_docs.ps1</div>
 </div><!-- fragment --><p> Generates HTML (docs/html/index.html) and LaTeX sources (docs/latex/).</p>
 <p>PDF (refman.pdf) is not generated on Windows unless you install a full LaTeX toolchain (MiKTeX/TeX Live + make).</p>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md35"></a>
 Linux / WSL (Debian/Ubuntu based)</h3>
 <div class="fragment"><div class="line">sudo apt update</div>
 <div class="line">sudo apt install -y doxygen graphviz texlive-latex-base texlive-fonts-recommended texlive-latex-extra make</div>
@@ -457,25 +467,55 @@ Linux / WSL (Debian/Ubuntu based)</h3>
 <p>Open in your browser: </p><div class="fragment"><div class="line">docs/html/index.html</div>
 </div><!-- fragment --><p>For more details, see docs/README.md</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 🎨 Code Style (clang-format)</h1>
 <p>This project uses <b>clang-format</b> to enforce a consistent C++ code style. <br  />
  The formatting rules are defined in <a href="./.clang-format"><code>.clang-format</code></a>.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
-Chosen Style</h2>
-<p>This project uses a <code>.clang-format</code> configuration derived from <b>Google C++ Style</b>, <br  />
- with a few adjustments tailored for readability and consistency:</p>
-<ul>
-<li><b>IndentWidth: 4</b> → default Google style uses 2 spaces; 4 spaces give more clarity for nested code. <br  />
-</li>
-<li><b>ColumnLimit: 100</b> → avoids very long lines while still allowing expressive function names and templates. <br  />
-</li>
-<li><b>Language: Cpp</b> → ensures the formatter applies C++ rules (not generic C). <br  />
-</li>
-<li><b>Standard: Cpp11</b> → compatible setting for clang-format; matches well with the project’s target (C++14). <br  />
-</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
+🔧 Chosen Style</h2>
+<p>The configuration is based on Google C++ Style, with a few modifications to improve readability for embedded and multithreaded systems:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Setting   </th><th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>BasedOnStyle</b>   </td><td class="markdownTableBodyNone"><code>Google</code>   </td><td class="markdownTableBodyNone">Provides a solid, modern baseline for C++ formatting.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Language</b>   </td><td class="markdownTableBodyNone"><code>Cpp</code>   </td><td class="markdownTableBodyNone">Ensures C++-specific syntax rules (not generic C).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>IndentWidth / TabWidth</b>   </td><td class="markdownTableBodyNone"><code>4</code>   </td><td class="markdownTableBodyNone">Uses 4 spaces per indent (vs Google’s default 2) for improved block readability.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>UseTab</b>   </td><td class="markdownTableBodyNone"><code>Never</code>   </td><td class="markdownTableBodyNone">Enforces spaces only (consistent across editors).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>ColumnLimit</b>   </td><td class="markdownTableBodyNone"><code>100</code>   </td><td class="markdownTableBodyNone">Balances readability and long template expressions.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>BreakBeforeBraces</b>   </td><td class="markdownTableBodyNone"><code>Allman</code>   </td><td class="markdownTableBodyNone">Places braces on their own line, improving visual structure in nested code.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>AllowShortIfStatementsOnASingleLine</b>   </td><td class="markdownTableBodyNone"><code>false</code>   </td><td class="markdownTableBodyNone">Forces explicit line breaks for clarity.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>AllowShortLoopsOnASingleLine</b>   </td><td class="markdownTableBodyNone"><code>false</code>   </td><td class="markdownTableBodyNone">Prevents compact loop bodies from being overlooked.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>AllowShortFunctionsOnASingleLine</b>   </td><td class="markdownTableBodyNone"><code>Inline</code>   </td><td class="markdownTableBodyNone">Allows concise inline functions on a single line only.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>PointerAlignment</b>   </td><td class="markdownTableBodyNone"><code>Left</code>   </td><td class="markdownTableBodyNone">Keeps <code>T* ptr</code> instead of <code>T *ptr</code> — cleaner and more conventional in C++.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>DerivePointerAlignment</b>   </td><td class="markdownTableBodyNone"><code>false</code>   </td><td class="markdownTableBodyNone">Disables automatic guessing; enforces explicit <code>PointerAlignment</code>.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>SpaceBeforeParens</b>   </td><td class="markdownTableBodyNone"><code>ControlStatements</code>   </td><td class="markdownTableBodyNone">Adds a space in <code>if (</code> / <code>while (</code> for readability, not for calls.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>SortIncludes</b>   </td><td class="markdownTableBodyNone"><code>true</code>   </td><td class="markdownTableBodyNone">Automatically organizes include directives alphabetically.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>IncludeBlocks</b>   </td><td class="markdownTableBodyNone"><code>Regroup</code>   </td><td class="markdownTableBodyNone">Groups and reorders includes logically within the file.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>AlignConsecutiveAssignments</b>   </td><td class="markdownTableBodyNone"><code>true</code>   </td><td class="markdownTableBodyNone">Improves alignment of variable assignments.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>AlignConsecutiveDeclarations</b>   </td><td class="markdownTableBodyNone"><code>true</code>   </td><td class="markdownTableBodyNone">Aligns consecutive variable declarations.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>AlignOperands</b>   </td><td class="markdownTableBodyNone"><code>true</code>   </td><td class="markdownTableBodyNone">Keeps arithmetic/logical expressions neatly aligned.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>CommentPragmas</b>   </td><td class="markdownTableBodyNone">&lsquo;&rsquo;^!'<code>\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; Allows pragma-specific comment formatting. \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowOdd"&gt; &lt;td class="markdownTableBodyNone"&gt; **FixNamespaceComments** \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt;</code>true<code>\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; Automatically adds trailing</code>// namespace X<code>comments when closing. \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowEven"&gt; &lt;td class="markdownTableBodyNone"&gt; **SpacesBeforeTrailingComments** \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt;</code>2<code>\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; Keeps a consistent gap before end-of-line comments. \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowOdd"&gt; &lt;td class="markdownTableBodyNone"&gt; **KeepEmptyLinesAtTheStartOfBlocks** \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt;</code>false`   </td><td class="markdownTableBodyNone">Avoids unnecessary blank lines at block starts.   </td></tr>
+</table>
+<hr  />
+<h2><a class="anchor" id="autotoc_md40"></a>
 Windows (Visual Studio Code / PowerShell)</h2>
 <ol type="1">
 <li>Install LLVM (includes clang-format):<ul>
@@ -490,7 +530,7 @@ Windows (Visual Studio Code / PowerShell)</h2>
 <li>Format all project files: <div class="fragment"><div class="line">clang-format -i include\*.h include\*.ipp src\*.cpp tests\*.cpp</div>
 </div><!-- fragment --> </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Linux / WSL (Debian/Ubuntu based)</h2>
 <ol type="1">
 <li>Install clang-format: <div class="fragment"><div class="line">sudo apt update</div>
@@ -502,43 +542,56 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 </div><!-- fragment --></li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 📌 Notes</h1>
 <ul>
-<li>C++ Standard: C++14 (set(CMAKE_CXX_STANDARD 14)).<ul>
-<li>Since <code>std::optional</code> is only available from C++ 17, this project integrates the lightweight <b>optional-lite</b> library (<code><a class="el" href="db/dd5/optional_8hpp.html">third_party/optional.hpp</a></code>) to preserve the same semantics in C++ 14.</li>
+<li><p class="startli"><b>C++ Standard</b>: C++ 14 (set(CMAKE_CXX_STANDARD 14)).</p>
+<p class="startli">Since std::optional is only available from C++ 17, this project integrates the lightweight <a href="https://github.com/nonstd-lite/optional-lite">optional-lite</a> library (<a class="el" href="db/dd5/optional_8hpp.html">include/third_party/optional.hpp</a>) to preserve equivalent semantics while remaining compatible with C++14.</p>
+</li>
+<li><p class="startli"><b>Thread Safety</b>: Fully managed through std::mutex, std::condition_variable, and std::atomic.</p>
+<p class="startli">All shared data access is synchronized using RAII-based locking (std::lock_guard, std::unique_lock).</p>
+</li>
+<li><p class="startli"><b>Extensibility</b>:</p>
+<p class="startli">The worker logic is decoupled from its execution policy through a clear separation of responsibilities. The <a class="el" href="d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> manages concurrency, while individual tasks (via std::function&lt;void()&gt;) define behavior — allowing flexible and testable extensions.</p>
+</li>
+<li><p class="startli"><b>Logging</b>:</p>
+<p class="startli">Centralized thread-safe <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> utility with severity levels (DEBUG, INFO, WARN, ERROR), ensuring coherent runtime diagnostics across threads.</p>
+</li>
+<li><p class="startli"><b>Cross-Platform Compatibility</b>:</p>
+<p class="startli">Successfully builds and runs on: </p><pre class="fragment">- 🪟 Windows (MSVC 2022)
+- 🐧 Linux (g++)
+- 🐳 Docker container environments
+
+Each environment uses consistent CMake presets to simplify builds and CI/CD automation.
+</pre></li>
+<li><p class="startli"><b>Queue Implementation</b>:</p>
+<p class="startli">ThreadSafeQueue&lt;T&gt; uses an internal std::deque&lt;T&gt; instead of a custom circular buffer. This approach prioritizes simplicity, STL optimization, and correctness, while maintaining a deterministic FIFO order. A fixed-size limit could be trivially added, but for this design, unbounded size with explicit control (close(), clear()) provides better testability and robustness.</p>
+</li>
+<li><p class="startli"><b>Design Decision: Graceful Shutdown Philosophy</b></p>
+<p class="startli">Earlier designs included explicit shutdown signaling (shutdown() with return states like OK, TIMEOUT, CLOSED). This was intentionally removed to keep the queue a pure, passive synchronization primitive. Instead, lifecycle management occurs externally: </p><pre class="fragment">- The WorkerPool sets a closed flag and signals all waiting threads via notify_all().
+- Each worker exits naturally after completing the next pop() cycle.
+- This approach avoids adding control logic into the data structure, preserving single-responsibility and predictable synchronization semantics.
+</pre> <hr  />
+</li>
 </ul>
-</li>
-<li>Thread Safety: Managed with std::mutex, std::condition_variable, and std::atomic.</li>
-<li>Extensibility: Worker actions decoupled via <code>IWorkerAction</code> interface → new behaviors can be added without modifying worker logic.</li>
-<li>Logging: Centralized <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> utility with severity levels.</li>
-<li>Cross-Platform: Builds on Windows (MSVC), Linux (g++) and Docker.</li>
-<li>Queue implementation: <code>Cola&lt;T&gt;</code> uses <code>std::deque</code> internally rather than a custom array-based buffer. This choice favors <b>simplicity, correctness, and STL optimizations</b>, while still enforcing the bounded size (default: 5 elements). A custom queue could have been implemented, but <code>std::deque</code> provides robust, well-tested behavior with minimal overhead.</li>
-<li><b>Design decision on shutdown handling</b>: <br  />
-<ul>
-<li>Originally, the queue (<code>Cola&lt;T&gt;</code>) exposed a <code>shutdown()</code> method and returned explicit states (<code>OK</code>, <code>TIMEOUT</code>, <code>SHUTDOWN</code>). <br  />
-</li>
-<li>This was removed to keep the queue a <b>pure, passive data structure</b> without any knowledge of program flow or lifecycle. <br  />
-</li>
-<li>Workers (<code>Worker&lt;T&gt;</code>) were considered for graceful/immediate shutdown semantics, but they rely on a blocking <code>pop()</code> with a fixed timeout (5s, as required). <br  />
-</li>
-<li>Allowing workers to interrupt <code>pop()</code> would require making the queue “smarter” (e.g., introducing sentinel values or cancellation flags), which would break the intended design philosophy. <br  />
-</li>
-<li>Therefore, workers stop naturally after the next timeout cycle, and this behavior was <b>documented explicitly</b> rather than forcing extra complexity into the queue or worker.</li>
-</ul>
-</li>
-</ul>
-<hr  />
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 ❤️ Acknowledgements</h1>
-<p>This project was developed as a technical test and extended to include professional practices such as <b>templates, interfaces, logging, unit testing, CI/CD and containerization.</b> </p>
+<p>This project was originally developed as part of a technical assessment, then extended into a fully professional implementation showcasing:</p><ul>
+<li>Clean architecture and modular design.</li>
+<li>Template-based generic programming.</li>
+<li>Thread-safe data structures and concurrency patterns.</li>
+<li>Comprehensive Doxygen documentation.</li>
+<li>Automated testing (GoogleTest + CTest).</li>
+<li>CI/CD pipelines (GitHub Actions).</li>
+<li>Cross-platform Docker-based builds. </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 24 2025 11:21:45 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 14:25:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

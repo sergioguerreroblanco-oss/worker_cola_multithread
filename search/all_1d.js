@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🏗_20architecture_0',['🏗 Architecture',['../index.html#autotoc_md5',1,'']]]
+  ['🎨_20code_20style_20clang_20format_0',['🎨 Code Style (clang-format)',['../index.html#autotoc_md37',1,'']]]
 ];

@@ -5,6 +5,6 @@ var searchData=
   ['value_5for_5feval_2',['value_or_eval',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#ac18580fff74c5c53608197609c6e06a4',1,'nonstd::optional_lite::optional']]],
   ['value_5fptr_3',['value_ptr',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a232bf1c2ba2d729cc613ed060eac11e4',1,'nonstd::optional_lite::detail::storage_t::value_ptr() const'],['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a530d227843304940c16f654d4b72bd06',1,'nonstd::optional_lite::detail::storage_t::value_ptr()']]],
   ['value_5ftype_4',['value_type',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a0224db97b7cc3fb687679165fc71b70e',1,'nonstd::optional_lite::detail::storage_t::value_type'],['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#afb67abeaaad640aa25b81f8564e53476',1,'nonstd::optional_lite::optional::value_type']]],
-  ['visual_20studio_202022_5',['Windows (Visual Studio 2022)',['../index.html#autotoc_md10',1,'']]],
-  ['visual_20studio_20code_20powershell_6',['Windows (Visual Studio Code / PowerShell)',['../index.html#autotoc_md36',1,'']]]
+  ['visual_20studio_202022_5',['Windows (Visual Studio 2022)',['../index.html#autotoc_md11',1,'']]],
+  ['visual_20studio_20code_20powershell_6',['Windows (Visual Studio Code / PowerShell)',['../index.html#autotoc_md40',1,'']]]
 ];

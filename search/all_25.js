@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🧪_20unit_20tests_0',['🧪 Unit Tests',['../index.html#autotoc_md16',1,'']]]
+  ['🗂_20class_20diagram_0',['🗂 Class Diagram',['../index.html#autotoc_md8',1,'']]]
 ];

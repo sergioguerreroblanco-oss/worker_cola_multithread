@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🛠_20build_20instructions_0',['🛠 Build Instructions',['../index.html#autotoc_md9',1,'']]]
+  ['🔧_20chosen_20style_0',['🔧 Chosen Style',['../index.html#autotoc_md38',1,'']]]
 ];
