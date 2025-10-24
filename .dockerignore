@@ -1,30 +1,61 @@
-# Local build folders
-build
-out
-.vs
-
-# Versioning control
-.git
-.gitignore
-
-# Temporal files of Visual Studio / Windows
-*.suo
-*.user
-*.ipch
+# ============================================================
+# Build artifacts
+# ============================================================
+build/
+out/
+.vs/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+Testing/
 *.obj
 *.pdb
 *.idb
-*.aps
-*.ncb
-*.pch
-*.vspscc
-*_i.c
-*_p.c
-*_h.h
 *.ilk
+*.pch
 *.tmp
 *.log
+*.o
+*.a
+*.so
+*.dll
+*.exe
 
-# System files
+# ============================================================
+# Documentation and generated content
+# ============================================================
+docs/html/
+docs/latex/
+refman.pdf
+
+# ============================================================
+# Source control and metadata
+# ============================================================
+.git/
+.gitignore
+.gitattributes
+
+# ============================================================
+# System and editor files
+# ============================================================
 Thumbs.db
 Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.code-workspace
+
+# ============================================================
+# Scripts (local use only)
+# ============================================================
+*.bat
+*.ps1
+*.sh
+
+# ============================================================
+# Coverage / profiling data
+# ============================================================
+*.gcda
+*.gcno
+*.gcov
