@@ -23,9 +23,9 @@ jobs:
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
 
       - name: Build
-        run: cmake --build build -j
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON -DCMAKE_CXX_STANDARD=14
-
+        run: |
+            cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON -DCMAKE_CXX_STANDARD=14
+            cmake --build build -j
 
       - name: Run tests
         run: ctest --test-dir build --output-on-failure
