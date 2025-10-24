@@ -12,7 +12,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     ninja-build \
     wget \
- && wget -qO- https://cmake.org/files/v3.28/cmake-3.28.3-linux-x86_64.tar.gz | tar --strip-components=1 -xz -C /usr/local \
+ && mkdir -p /opt/cmake \
+ && wget -qO- https://cmake.org/files/v3.28/cmake-3.28.3-linux-x86_64.tar.gz | tar --strip-components=1 -xz -C /opt/cmake \
+ && ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake \
+ && ln -s /opt/cmake/bin/ctest /usr/local/bin/ctest \
+ && ln -s /opt/cmake/bin/cpack /usr/local/bin/cpack \
+ && ln -s /opt/cmake/bin/ccmake /usr/local/bin/ccmake \
  && rm -rf /var/lib/apt/lists/*
 
 # Working directory
