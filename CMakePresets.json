@@ -2,9 +2,10 @@
   "version": 6,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 19,
+    "minor": 21,
     "patch": 0
   },
+
   "configurePresets": [
     {
       "name": "default",
@@ -12,38 +13,53 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_CXX_STANDARD": "14"
+        "CMAKE_CXX_STANDARD": "14",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
+      },
+      "warnings": {
+        "dev": true,
+        "deprecated": true,
+        "uninitialized": true,
+        "unusedCli": true
       }
     },
+
     {
       "name": "debug",
       "inherits": "default",
-      "description": "Debug build with tests",
+      "description": "Debug build with tests enabled",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "BUILD_TESTING": "ON"
       }
     },
+
     {
       "name": "release",
       "inherits": "default",
-      "description": "Optimized Release build (tests off)",
+      "description": "Optimized Release build (tests disabled)",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "BUILD_TESTING": "OFF"
       }
     }
   ],
+
   "buildPresets": [
     {
       "name": "debug",
-      "configurePreset": "debug"
+      "configurePreset": "debug",
+      "jobs": 4
     },
     {
       "name": "release",
-      "configurePreset": "release"
+      "configurePreset": "release",
+      "jobs": 4
     }
   ],
+
   "testPresets": [
     {
       "name": "debug",
@@ -51,6 +67,33 @@
       "output": {
         "outputOnFailure": true
       }
+    },
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ],
+
+  "workflowPresets": [
+    {
+      "name": "ci",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release"
+        },
+        {
+          "type": "build",
+          "name": "release"
+        },
+        {
+          "type": "test",
+          "name": "release"
+        }
+      ]
     }
   ]
 }
