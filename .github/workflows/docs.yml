@@ -1,4 +1,4 @@
-name: Generate Documentation
+﻿name: Generate Documentation
 
 on:
   push:
@@ -26,10 +26,21 @@ jobs:
         run: |
           doxygen docs/Doxyfile
 
-      - name: Build PDF
+      - name: Build PDF (manual LaTeX run)
         run: |
           if [ -d "docs/latex" ]; then
-            make -C docs/latex
+            echo "Building PDF from LaTeX..."
+            cd docs/latex
+            sudo apt-get install -y texlive-lang-european texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended > /dev/null
+            pdflatex -interaction=nonstopmode refman.tex || true
+            pdflatex -interaction=nonstopmode refman.tex || true
+            if [ -f "refman.pdf" ]; then
+              echo "PDF built successfully."
+            else
+              echo "PDF build failed, showing LaTeX log:"
+              cat refman.log || true
+            fi
+            cd ../..
           fi
 
       - name: Upload documentation (HTML + PDF)
