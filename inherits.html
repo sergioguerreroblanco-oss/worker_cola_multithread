@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">worker_cola_multithread<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">C++ multithreaded work queue with worker pool and RAII-safe synchronization.</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,153 +98,163 @@ $(function() {
 </div><table border="0" cellspacing="10" cellpadding="0">
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#aLogger" alt=""/>
 <map name="aLogger" id="aLogger">
-<area shape="rect" href="classLogger.html" title="A thread&#45;safe static logger utility with configurable severity levels." alt="" coords="5,5,72,31"/>
+<area shape="rect" href="db/d67/classLogger.html" title="A thread&#45;safe static logger utility with configurable severity levels." alt="" coords="5,5,72,31"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_1.png" border="0" usemap="#anonstd_1_1detail_1_1in__place__index__tag_3_01K_01_4" alt=""/>
 <map name="anonstd_1_1detail_1_1in__place__index__tag_3_01K_01_4" id="anonstd_1_1detail_1_1in__place__index__tag_3_01K_01_4">
-<area shape="rect" href="structnonstd_1_1detail_1_1in__place__index__tag.html" title=" " alt="" coords="5,5,180,45"/>
+<area shape="rect" href="db/dbd/structnonstd_1_1detail_1_1in__place__index__tag.html" title=" " alt="" coords="5,5,180,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#anonstd_1_1detail_1_1in__place__type__tag_3_01T_01_4" alt=""/>
 <map name="anonstd_1_1detail_1_1in__place__type__tag_3_01T_01_4" id="anonstd_1_1detail_1_1in__place__type__tag_3_01T_01_4">
-<area shape="rect" href="structnonstd_1_1detail_1_1in__place__type__tag.html" title=" " alt="" coords="5,5,172,45"/>
+<area shape="rect" href="d7/d51/structnonstd_1_1detail_1_1in__place__type__tag.html" title=" " alt="" coords="5,5,172,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#anonstd_1_1in__place__t" alt=""/>
 <map name="anonstd_1_1in__place__t" id="anonstd_1_1in__place__t">
-<area shape="rect" href="structnonstd_1_1in__place__t.html" title=" " alt="" coords="5,5,145,31"/>
+<area shape="rect" href="da/d09/structnonstd_1_1in__place__t.html" title=" " alt="" coords="5,5,145,31"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_4.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1alignment__logic_3_01A_00_01S_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1alignment__logic_3_01A_00_01S_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1alignment__logic_3_01A_00_01S_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1alignment__logic.html" title=" " alt="" coords="5,5,184,60"/>
+<area shape="rect" href="dc/d39/structnonstd_1_1optional__lite_1_1detail_1_1alignment__logic.html" title=" " alt="" coords="5,5,184,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_5.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1alignment__of_3_01T_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1alignment__of_3_01T_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1alignment__of_3_01T_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1alignment__of.html" title=" " alt="" coords="5,5,204,45"/>
+<area shape="rect" href="d7/d5e/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of.html" title=" " alt="" coords="5,5,204,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_6.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack_3_01T_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack_3_01T_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack_3_01T_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack.html" title=" " alt="" coords="5,5,167,60"/>
+<area shape="rect" href="d0/dda/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack.html" title=" " alt="" coords="5,5,167,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_7.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1nulltype" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1nulltype" id="anonstd_1_1optional__lite_1_1detail_1_1nulltype">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1nulltype.html" title=" " alt="" coords="5,5,160,45"/>
+<area shape="rect" href="d6/d78/structnonstd_1_1optional__lite_1_1detail_1_1nulltype.html" title=" " alt="" coords="5,5,160,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_8.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01T_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01T_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01T_01_4">
-<area shape="rect" href="unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html" title="C++03 constructed union to hold value." alt="" coords="5,5,180,45"/>
+<area shape="rect" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html" title="C++03 constructed union to hold value." alt="" coords="5,5,180,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_9.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01T_01_4_1_1aligned__storage__t" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01T_01_4_1_1aligned__storage__t" id="anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01T_01_4_1_1aligned__storage__t">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1storage__t_1_1aligned__storage__t.html" title=" " alt="" coords="5,5,179,60"/>
+<area shape="rect" href="df/d42/structnonstd_1_1optional__lite_1_1detail_1_1storage__t_1_1aligned__storage__t.html" title=" " alt="" coords="5,5,179,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_10.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01value__type_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01value__type_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1storage__t_3_01value__type_01_4">
-<area shape="rect" href="unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html" title=" " alt="" coords="5,5,160,60"/>
+<area shape="rect" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html" title=" " alt="" coords="5,5,160,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_11.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1struct__t_3_01T_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1struct__t_3_01T_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1struct__t_3_01T_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1struct__t.html" title=" " alt="" coords="5,5,168,45"/>
+<area shape="rect" href="d0/d00/structnonstd_1_1optional__lite_1_1detail_1_1struct__t.html" title=" " alt="" coords="5,5,168,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_12.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01List_00_01N_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01List_00_01N_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01List_00_01N_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1type__of__size.html" title=" " alt="" coords="5,5,163,60"/>
+<area shape="rect" href="d8/d90/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size.html" title=" " alt="" coords="5,5,163,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_13.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4.html" title=" " alt="" coords="5,5,163,60"/>
+<area shape="rect" href="d4/de5/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4.html" title=" " alt="" coords="5,5,163,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_14.png" border="0" usemap="#anonstd_1_1optional__lite_1_1detail_1_1typelist_3_01Head_00_01Tail_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1detail_1_1typelist_3_01Head_00_01Tail_01_4" id="anonstd_1_1optional__lite_1_1detail_1_1typelist_3_01Head_00_01Tail_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1detail_1_1typelist.html" title=" " alt="" coords="5,5,183,60"/>
+<area shape="rect" href="d0/de3/structnonstd_1_1optional__lite_1_1detail_1_1typelist.html" title=" " alt="" coords="5,5,183,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_15.png" border="0" usemap="#anonstd_1_1optional__lite_1_1nullopt__t" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1nullopt__t" id="anonstd_1_1optional__lite_1_1nullopt__t">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1nullopt__t.html" title="disengaged state tag" alt="" coords="5,5,160,45"/>
+<area shape="rect" href="d1/d00/structnonstd_1_1optional__lite_1_1nullopt__t.html" title="disengaged state tag" alt="" coords="5,5,160,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_16.png" border="0" usemap="#anonstd_1_1optional__lite_1_1nullopt__t_1_1init" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1nullopt__t_1_1init" id="anonstd_1_1optional__lite_1_1nullopt__t_1_1init">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1nullopt__t_1_1init.html" title=" " alt="" coords="5,5,160,45"/>
+<area shape="rect" href="dc/dc6/structnonstd_1_1optional__lite_1_1nullopt__t_1_1init.html" title=" " alt="" coords="5,5,160,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_17.png" border="0" usemap="#anonstd_1_1optional__lite_1_1optional_3_01T_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1optional_3_01T_01_4" id="anonstd_1_1optional__lite_1_1optional_3_01T_01_4">
-<area shape="rect" href="classnonstd_1_1optional__lite_1_1optional.html" title="class optional" alt="" coords="5,5,160,45"/>
+<area shape="rect" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html" title="class optional" alt="" coords="5,5,160,45"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_18.png" border="0" usemap="#anonstd_1_1optional__lite_1_1std11_1_1conditional_3_01B_00_01T_00_01F_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1std11_1_1conditional_3_01B_00_01T_00_01F_01_4" id="anonstd_1_1optional__lite_1_1std11_1_1conditional_3_01B_00_01T_00_01F_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1conditional.html" title=" " alt="" coords="5,5,160,60"/>
+<area shape="rect" href="d4/dae/structnonstd_1_1optional__lite_1_1std11_1_1conditional.html" title=" " alt="" coords="5,5,160,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_19.png" border="0" usemap="#anonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4" id="anonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4.html" title=" " alt="" coords="5,5,160,60"/>
+<area shape="rect" href="d5/d61/structnonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4.html" title=" " alt="" coords="5,5,160,60"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_20.png" border="0" usemap="#anonstd_1_1optional__lite_1_1std11_1_1integral__constant_3_01bool_00_01B_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1std11_1_1integral__constant_3_01bool_00_01B_01_4" id="anonstd_1_1optional__lite_1_1std11_1_1integral__constant_3_01bool_00_01B_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="5,189,192,244"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1bool__constant.html" title=" " alt="" coords="240,197,444,237"/>
+<area shape="rect" href="da/df9/structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="5,189,192,244"/>
+<area shape="rect" href="da/d48/structnonstd_1_1optional__lite_1_1std11_1_1bool__constant.html" title=" " alt="" coords="240,197,444,237"/>
 <area shape="poly" title=" " alt="" coords="205,214,240,214,240,219,205,219"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1is__assignable.html" title=" " alt="" coords="540,5,703,60"/>
+<area shape="rect" href="dc/dc7/structnonstd_1_1optional__lite_1_1std11_1_1is__assignable.html" title=" " alt="" coords="540,5,703,60"/>
 <area shape="poly" title=" " alt="" coords="366,184,419,126,453,96,491,70,539,49,541,54,493,75,457,101,423,130,370,188"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1is__move__constructible.html" title=" " alt="" coords="492,85,751,125"/>
+<area shape="rect" href="d4/d8b/structnonstd_1_1optional__lite_1_1std11_1_1is__move__constructible.html" title=" " alt="" coords="492,85,751,125"/>
 <area shape="poly" title=" " alt="" coords="386,187,435,160,491,134,527,122,529,127,493,139,438,164,388,192"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__assignable.html" title=" " alt="" coords="527,149,716,204"/>
+<area shape="rect" href="d5/d7d/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__assignable.html" title=" " alt="" coords="527,149,716,204"/>
 <area shape="poly" title=" " alt="" coords="457,197,526,188,527,193,458,203"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__constructible.html" title=" " alt="" coords="527,228,716,283"/>
+<area shape="rect" href="d1/d24/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__constructible.html" title=" " alt="" coords="527,228,716,283"/>
 <area shape="poly" title=" " alt="" coords="458,230,527,240,526,245,457,235"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__copy__constructible.html" title=" " alt="" coords="527,307,716,361"/>
+<area shape="rect" href="d8/d6d/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__copy__constructible.html" title=" " alt="" coords="527,307,716,361"/>
 <area shape="poly" title=" " alt="" coords="391,241,493,292,527,304,525,309,491,296,389,246"/>
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html" title=" " alt="" coords="524,385,719,440"/>
+<area shape="rect" href="de/d48/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html" title=" " alt="" coords="524,385,719,440"/>
 <area shape="poly" title=" " alt="" coords="367,246,421,309,455,342,493,370,525,386,523,391,491,375,452,346,417,313,363,250"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_21.png" border="0" usemap="#anonstd_1_1optional__lite_1_1std11_1_1integral__constant_3_01T_00_01v_01_4" alt=""/>
 <map name="anonstd_1_1optional__lite_1_1std11_1_1integral__constant_3_01T_00_01v_01_4" id="anonstd_1_1optional__lite_1_1std11_1_1integral__constant_3_01T_00_01v_01_4">
-<area shape="rect" href="structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="5,5,192,60"/>
+<area shape="rect" href="da/df9/structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="5,5,192,60"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_22.png" border="0" usemap="#aThreadSafeQueue_3_01std_1_1function_3_01void_07_08_4_01_4" alt=""/>
+<tr><td><img src="inherit_graph_22.png" border="0" usemap="#atesting_1_1TestWithParam" alt=""/>
+<map name="atesting_1_1TestWithParam" id="atesting_1_1TestWithParam">
+<area shape="rect" title=" " alt="" coords="5,5,177,31"/>
+<area shape="rect" href="d9/d94/classWorkerPoolParamTest.html" title="Parameterized test fixture to validate WorkerPool scalability." alt="" coords="225,5,388,31"/>
+<area shape="poly" title=" " alt="" coords="192,15,225,15,225,21,192,21"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_23.png" border="0" usemap="#aThreadSafeQueue_3_01std_1_1function_3_01void_07_08_4_01_4" alt=""/>
 <map name="aThreadSafeQueue_3_01std_1_1function_3_01void_07_08_4_01_4" id="aThreadSafeQueue_3_01std_1_1function_3_01void_07_08_4_01_4">
-<area shape="rect" href="classThreadSafeQueue.html" title=" " alt="" coords="5,5,179,45"/>
+<area shape="rect" href="da/d7e/classThreadSafeQueue.html" title=" " alt="" coords="5,5,179,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_23.png" border="0" usemap="#aThreadSafeQueue_3_01T_01_4" alt=""/>
+<tr><td><img src="inherit_graph_24.png" border="0" usemap="#aThreadSafeQueue_3_01T_01_4" alt=""/>
 <map name="aThreadSafeQueue_3_01T_01_4" id="aThreadSafeQueue_3_01T_01_4">
-<area shape="rect" href="classThreadSafeQueue.html" title=" " alt="" coords="5,5,181,31"/>
+<area shape="rect" href="da/d7e/classThreadSafeQueue.html" title=" " alt="" coords="5,5,181,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_24.png" border="0" usemap="#aWorker" alt=""/>
+<tr><td><img src="inherit_graph_25.png" border="0" usemap="#aWorker" alt=""/>
 <map name="aWorker" id="aWorker">
-<area shape="rect" href="classWorker.html" title="Worker thread that consumes data from a queue." alt="" coords="5,5,72,31"/>
+<area shape="rect" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue." alt="" coords="5,5,72,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_25.png" border="0" usemap="#aWorkerPool" alt=""/>
+<tr><td><img src="inherit_graph_26.png" border="0" usemap="#aWorkerPool" alt=""/>
 <map name="aWorkerPool" id="aWorkerPool">
-<area shape="rect" href="classWorkerPool.html" title=" " alt="" coords="5,5,100,31"/>
+<area shape="rect" href="d7/d4d/classWorkerPool.html" title=" " alt="" coords="5,5,100,31"/>
 </map>
 </td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Fri Oct 24 2025 08:41:53 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

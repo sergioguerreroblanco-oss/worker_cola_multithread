@@ -1,0 +1,7 @@
+<map id="ThreadSafeQueue::try_pop" name="ThreadSafeQueue::try_pop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,200,31"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="248,5,347,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,15,235,15,235,21,201,21"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="395,5,489,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,15,381,15,381,21,347,21"/>
+</map>

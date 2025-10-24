@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pop_0',['pop',['../classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124',1,'ThreadSafeQueue']]],
-  ['push_1',['push',['../classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421',1,'ThreadSafeQueue']]]
+  ['log_0',['log',['../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb',1,'Logger']]]
 ];

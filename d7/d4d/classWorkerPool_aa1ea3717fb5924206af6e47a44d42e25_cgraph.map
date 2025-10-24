@@ -1,0 +1,17 @@
+<map id="WorkerPool::stop" name="WorkerPool::stop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,136,131"/>
+<area shape="rect" id="Node000002" href="$da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title=" " alt="" coords="188,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,103,128,71,183,40,201,32,203,37,185,44,131,76,89,107"/>
+<area shape="rect" id="Node000003" href="$da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title=" " alt="" coords="184,55,372,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,103,212,81,213,86,124,108"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="424,156,523,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,118,247,125,372,141,416,150,414,155,372,146,246,131,136,123"/>
+<area shape="rect" id="Node000006" href="$d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="211,156,345,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="124,128,213,150,212,155,123,133"/>
+<area shape="rect" id="Node000007" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="420,205,527,231"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="88,129,129,161,156,177,185,190,242,206,301,214,407,219,406,224,300,220,241,211,183,195,154,182,126,165,84,133"/>
+<area shape="rect" id="Node000005" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="575,181,669,207"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="523,174,561,181,561,186,522,180"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="345,166,410,166,410,171,345,171"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="527,207,561,201,561,206,527,212"/>
+</map>

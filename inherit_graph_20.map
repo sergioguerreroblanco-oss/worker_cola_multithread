@@ -1,17 +1,17 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="5,189,192,244"/>
-<area shape="rect" id="Node000001" href="$structnonstd_1_1optional__lite_1_1std11_1_1bool__constant.html" title=" " alt="" coords="240,197,444,237"/>
+<area shape="rect" id="Node000000" href="$da/df9/structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="5,189,192,244"/>
+<area shape="rect" id="Node000001" href="$da/d48/structnonstd_1_1optional__lite_1_1std11_1_1bool__constant.html" title=" " alt="" coords="240,197,444,237"/>
 <area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="205,214,240,214,240,219,205,219"/>
-<area shape="rect" id="Node000002" href="$structnonstd_1_1optional__lite_1_1std11_1_1is__assignable.html" title=" " alt="" coords="540,5,703,60"/>
+<area shape="rect" id="Node000002" href="$dc/dc7/structnonstd_1_1optional__lite_1_1std11_1_1is__assignable.html" title=" " alt="" coords="540,5,703,60"/>
 <area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="366,184,419,126,453,96,491,70,539,49,541,54,493,75,457,101,423,130,370,188"/>
-<area shape="rect" id="Node000003" href="$structnonstd_1_1optional__lite_1_1std11_1_1is__move__constructible.html" title=" " alt="" coords="492,85,751,125"/>
+<area shape="rect" id="Node000003" href="$d4/d8b/structnonstd_1_1optional__lite_1_1std11_1_1is__move__constructible.html" title=" " alt="" coords="492,85,751,125"/>
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="386,187,435,160,491,134,527,122,529,127,493,139,438,164,388,192"/>
-<area shape="rect" id="Node000004" href="$structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__assignable.html" title=" " alt="" coords="527,149,716,204"/>
+<area shape="rect" id="Node000004" href="$d5/d7d/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__assignable.html" title=" " alt="" coords="527,149,716,204"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="457,197,526,188,527,193,458,203"/>
-<area shape="rect" id="Node000005" href="$structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__constructible.html" title=" " alt="" coords="527,228,716,283"/>
+<area shape="rect" id="Node000005" href="$d1/d24/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__constructible.html" title=" " alt="" coords="527,228,716,283"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="458,230,527,240,526,245,457,235"/>
-<area shape="rect" id="Node000006" href="$structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__copy__constructible.html" title=" " alt="" coords="527,307,716,361"/>
+<area shape="rect" id="Node000006" href="$d8/d6d/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__copy__constructible.html" title=" " alt="" coords="527,307,716,361"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="391,241,493,292,527,304,525,309,491,296,389,246"/>
-<area shape="rect" id="Node000007" href="$structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html" title=" " alt="" coords="524,385,719,440"/>
+<area shape="rect" id="Node000007" href="$de/d48/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html" title=" " alt="" coords="524,385,719,440"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="367,246,421,309,455,342,493,370,525,386,523,391,491,375,452,346,417,313,363,250"/>
 </map>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">worker_cola_multithread<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">C++ multithreaded work queue with worker pool and RAII-safe synchronization.</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -69,33 +90,138 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><ul>
-<li>clear()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>close()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>debug()&#160;:&#160;<a class="el" href="classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5">Logger</a></li>
-<li>empty()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>error()&#160;:&#160;<a class="el" href="classLogger.html#a52d98131462d3254f76fae8f43b2fa90">Logger</a></li>
-<li>info()&#160;:&#160;<a class="el" href="classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger</a></li>
-<li>Level&#160;:&#160;<a class="el" href="classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">Logger</a></li>
-<li>log()&#160;:&#160;<a class="el" href="classLogger.html#aa447c3fe852645bbd1f59168295f48fb">Logger</a></li>
-<li>operator=()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#a7973611acfd314645a3fe05cd5e1a1a6">ThreadSafeQueue&lt; T &gt;</a>, <a class="el" href="classWorkerPool.html#a4ba445f0a98ff65e501a022fdb5c2d96">WorkerPool</a></li>
-<li>pop()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>push()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>set_min_level()&#160;:&#160;<a class="el" href="classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger</a></li>
-<li>size()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>start()&#160;:&#160;<a class="el" href="classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">WorkerPool</a></li>
-<li>stop()&#160;:&#160;<a class="el" href="classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">WorkerPool</a></li>
-<li>ThreadSafeQueue()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#ae20e4ca35fd7b5e4d7358b690447e90e">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>try_pop()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>warn()&#160;:&#160;<a class="el" href="classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger</a></li>
-<li>WorkerPool()&#160;:&#160;<a class="el" href="classWorkerPool.html#aa9e69469d17c278d8d301b825029500c">WorkerPool</a></li>
-<li>~ThreadSafeQueue()&#160;:&#160;<a class="el" href="classThreadSafeQueue.html#a95ea6d713ef200cbfb249a1cc16b3312">ThreadSafeQueue&lt; T &gt;</a></li>
-<li>~WorkerPool()&#160;:&#160;<a class="el" href="classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571">WorkerPool</a></li>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+
+<h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<li>_&#160;:&#160;<a class="el" href="d0/d00/structnonstd_1_1optional__lite_1_1detail_1_1struct__t.html#acbc325ac6387c0977510e637073b4e70">nonstd::optional_lite::detail::struct_t&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>alignment_of_hack()&#160;:&#160;<a class="el" href="d0/dda/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack.html#a9ba50d81201c1a0472be9810a9afa802">nonstd::optional_lite::detail::alignment_of_hack&lt; T &gt;</a></li>
+<li>as()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#ae22b696f36c40458afaa6c9bd96d5693">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>c&#160;:&#160;<a class="el" href="d0/dda/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack.html#afcefea9684c8ab257955c0b03cb4dc00">nonstd::optional_lite::detail::alignment_of_hack&lt; T &gt;</a></li>
+<li>clear()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>close()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>construct_value()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#afab300a66c2083a0772fe2123321319d">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+<li>counter&#160;:&#160;<a class="el" href="d9/d94/classWorkerPoolParamTest.html#ab74ec65d9eedb2c751144ebf9302049d">WorkerPoolParamTest</a></li>
+</ul>
+
+
+<h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>data&#160;:&#160;<a class="el" href="df/d42/structnonstd_1_1optional__lite_1_1detail_1_1storage__t_1_1aligned__storage__t.html#a234b1c07fb27e342fcd239096c8d94e7">nonstd::optional_lite::detail::storage_t&lt; T &gt;::aligned_storage_t</a>, <a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#ab076166b39226e1b9212089354f67d24">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+<li>debug()&#160;:&#160;<a class="el" href="db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5">Logger</a></li>
+<li>destruct_value()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#abb783e6f7a547920e69441cf1ae6785a">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>empty()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>error()&#160;:&#160;<a class="el" href="db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90">Logger</a></li>
+</ul>
+
+
+<h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>has_value()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a8d36137e398950bfbd63e02d2dac7789">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>head&#160;:&#160;<a class="el" href="d0/de3/structnonstd_1_1optional__lite_1_1detail_1_1typelist.html#a04089f94a2174513804b587c37fc6e3f">nonstd::optional_lite::detail::typelist&lt; Head, Tail &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>info()&#160;:&#160;<a class="el" href="db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger</a></li>
+</ul>
+
+
+<h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>Level&#160;:&#160;<a class="el" href="db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">Logger</a></li>
+<li>log()&#160;:&#160;<a class="el" href="db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">Logger</a></li>
+</ul>
+
+
+<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>nullopt_t()&#160;:&#160;<a class="el" href="d1/d00/structnonstd_1_1optional__lite_1_1nullopt__t.html#ada08fc0bfd33dc92a05c5f2a99dbbf4b">nonstd::optional_lite::nullopt_t</a></li>
+</ul>
+
+
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>operator safe_bool()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a540ac15713bad0c4cec887505e8891c5">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>operator*()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a1016a6cc722f02dea5c2eaf9c377493d">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>operator-&gt;()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a352300d0bb7cabe46352c8e19c48e2c1">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>operator=()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#aaee895f5d8c119315ec44d2cc6763f93">nonstd::optional_lite::optional&lt; T &gt;</a>, <a class="el" href="da/d7e/classThreadSafeQueue.html#a7973611acfd314645a3fe05cd5e1a1a6">ThreadSafeQueue&lt; T &gt;</a>, <a class="el" href="d7/d4d/classWorkerPool.html#a4ba445f0a98ff65e501a022fdb5c2d96">WorkerPool</a></li>
+<li>optional()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#ab4b9bcd1052a174bc0db48f882e56316">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>optional_ALIGN_AS()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#ad642ee5232a0b9304ca58c96f02cc213">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>pop()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>ptr()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a5fecf68774b3df671df04d8aa2cf48c4">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+<li>push()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_q" name="index_q"></a>- q -</h3><ul>
+<li>queue&#160;:&#160;<a class="el" href="d9/d94/classWorkerPoolParamTest.html#a88cfda415a6685a1b95f9e758ad101b6">WorkerPoolParamTest</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>reset()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a024284c4c1a99a5bf0813c3ec5d6b5b9">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>set_min_level()&#160;:&#160;<a class="el" href="db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger</a></li>
+<li>SetUp()&#160;:&#160;<a class="el" href="d9/d94/classWorkerPoolParamTest.html#a7f2869cdff3c4398543fb3be843ab744">WorkerPoolParamTest</a></li>
+<li>size()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>start()&#160;:&#160;<a class="el" href="d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">WorkerPool</a></li>
+<li>stop()&#160;:&#160;<a class="el" href="d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">WorkerPool</a></li>
+<li>storage_t()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a8a2cfcbee5187f6a4d5f5eb3e0f359bd">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+<li>submit()&#160;:&#160;<a class="el" href="d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b">WorkerPool</a></li>
+<li>swap()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a473a8646a91f486fd499f58db3cc15a7">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>t&#160;:&#160;<a class="el" href="d0/dda/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of__hack.html#a49a0c5740025348271f2b0c7124da863">nonstd::optional_lite::detail::alignment_of_hack&lt; T &gt;</a></li>
+<li>tail&#160;:&#160;<a class="el" href="d0/de3/structnonstd_1_1optional__lite_1_1detail_1_1typelist.html#a01e0802c83c62c1121baa76bb035a6e3">nonstd::optional_lite::detail::typelist&lt; Head, Tail &gt;</a></li>
+<li>ThreadSafeQueue()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#ae20e4ca35fd7b5e4d7358b690447e90e">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>try_pop()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>type&#160;:&#160;<a class="el" href="d8/d90/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size.html#a9cf095835ae5882bee58447fe6d20d8a">nonstd::optional_lite::detail::type_of_size&lt; List, N &gt;</a>, <a class="el" href="d4/de5/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4.html#a9f974646b88f911b603872081a4c83ef">nonstd::optional_lite::detail::type_of_size&lt; nulltype, N &gt;</a>, <a class="el" href="d4/dae/structnonstd_1_1optional__lite_1_1std11_1_1conditional.html#a315f746ab3164f259fe5346999491fd7">nonstd::optional_lite::std11::conditional&lt; B, T, F &gt;</a>, <a class="el" href="d5/d61/structnonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4.html#ac963dc3aec6e3a01c70cd02470baf737">nonstd::optional_lite::std11::conditional&lt; false, T, F &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>value&#160;:&#160;<a class="el" href="d7/d5e/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of.html#aafce7a6759517238475a9e159eab3423a1fdc28ddae9f28eb7858a977f8084720">nonstd::optional_lite::detail::alignment_of&lt; T &gt;</a>, <a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#af7bccad98692f18f6ce74966c0e67a68">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a>, <a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a96d1fee2fad2bb1ae239064125d8ed78">nonstd::optional_lite::optional&lt; T &gt;</a>, <a class="el" href="da/df9/structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html#af30f78d06f0741936743107f8bfd48f3a8488bb3e7ab7da2835f2f7e1b7664bbf">nonstd::optional_lite::std11::integral_constant&lt; T, v &gt;</a></li>
+<li>value_or()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a4dd8f8fc1549fee78bd80f1977b504dd">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>value_or_eval()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#ac18580fff74c5c53608197609c6e06a4">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>value_ptr()&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a232bf1c2ba2d729cc613ed060eac11e4">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a></li>
+<li>value_type&#160;:&#160;<a class="el" href="da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a0224db97b7cc3fb687679165fc71b70e">nonstd::optional_lite::detail::storage_t&lt; T &gt;</a>, <a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#afb67abeaaad640aa25b81f8564e53476">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>warn()&#160;:&#160;<a class="el" href="db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger</a></li>
+<li>WorkerPool()&#160;:&#160;<a class="el" href="d7/d4d/classWorkerPool.html#aa9e69469d17c278d8d301b825029500c">WorkerPool</a></li>
+</ul>
+
+
+<h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~optional()&#160;:&#160;<a class="el" href="d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a85649b228f6422000d4ddbf67e4d79be">nonstd::optional_lite::optional&lt; T &gt;</a></li>
+<li>~ThreadSafeQueue()&#160;:&#160;<a class="el" href="da/d7e/classThreadSafeQueue.html#a95ea6d713ef200cbfb249a1cc16b3312">ThreadSafeQueue&lt; T &gt;</a></li>
+<li>~WorkerPool()&#160;:&#160;<a class="el" href="d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571">WorkerPool</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Fri Oct 24 2025 08:41:53 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<map id="WorkerPoolParamTest" name="WorkerPoolParamTest">
+<area shape="rect" id="Node000001" title="Parameterized test fixture to validate WorkerPool scalability." alt="" coords="105,388,259,453"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,125,169,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,218,173,387,168,389,104,220"/>
+<area shape="rect" id="Node000003" href="$da/d7e/classThreadSafeQueue.html" title=" " alt="" coords="194,5,359,325"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,327,202,373,197,372,215,325"/>
+</map>

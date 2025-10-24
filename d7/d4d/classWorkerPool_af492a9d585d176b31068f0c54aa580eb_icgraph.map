@@ -1,0 +1,16 @@
+<map id="WorkerPool::start" name="WorkerPool::start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="419,80,552,105"/>
+<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,79,370,65,233,40,126,24,127,19,234,34,371,59,429,74"/>
+<area shape="rect" id="Node000003" href="$d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,105,371,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="405,107,371,111,370,106,405,101"/>
+<area shape="rect" id="Node000004" href="$d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,56,126,81"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="405,90,126,73,126,68,405,85"/>
+<area shape="rect" id="Node000005" href="$d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,155,133,180"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="451,114,413,132,371,146,306,159,240,166,134,171,133,165,240,161,305,154,370,141,411,127,448,109"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="276,99,237,71,191,46,157,34,125,25,127,20,159,28,193,41,240,67,279,94"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="238,105,126,78,127,72,239,100"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="239,136,134,162,133,157,238,131"/>
+<area shape="rect" id="Node000006" href="$d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,105,192,131"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="226,121,192,121,192,115,226,115"/>
+</map>

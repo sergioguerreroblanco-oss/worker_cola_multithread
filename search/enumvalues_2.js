@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['info_0',['INFO',['../classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3',1,'Logger']]]
+  ['info_0',['INFO',['../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3',1,'Logger']]]
 ];

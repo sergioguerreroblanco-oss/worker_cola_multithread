@@ -1,0 +1,18 @@
+<map id="include/third_party/optional.hpp" name="include/third_party/optional.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="122,5,266,45"/>
+<area shape="rect" id="Node000002" href="$dd/df9/thread__safe__queue_8h.html" title=" " alt="" coords="119,93,269,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,59,197,93,191,93,191,59"/>
+<area shape="rect" id="Node000003" href="$d7/dd5/thread__safe__queue_8ipp.html" title=" " alt="" coords="5,181,156,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,143,100,183,97,179,149,139"/>
+<area shape="rect" id="Node000004" href="$d9/da2/worker__pool_8h.html" title=" " alt="" coords="232,189,396,214"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="233,139,299,186,296,191,230,144"/>
+<area shape="rect" id="Node000005" href="$df/d0a/main_8cpp.html" title=" " alt="" coords="109,269,215,295"/>
+<area shape="poly" id="edge8_Node000002_Node000005" title=" " alt="" coords="190,147,167,270,162,269,185,146"/>
+<area shape="rect" id="Node000007" href="$d6/dd6/test__main_8cpp.html" title="Unit tests for ThreadSafeQueue and WorkerPool components." alt="" coords="413,269,564,295"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="283,127,348,147,380,162,410,179,435,200,456,225,485,268,480,270,452,228,431,204,407,184,378,166,346,152,282,132"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="123,171,175,131,178,136,126,176"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="281,223,186,271,183,267,278,218"/>
+<area shape="rect" id="Node000006" href="$d1/d2e/worker__pool_8cpp.html" title=" " alt="" coords="239,269,389,295"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="317,228,317,269,311,269,311,228"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="353,217,464,267,462,272,351,222"/>
+</map>

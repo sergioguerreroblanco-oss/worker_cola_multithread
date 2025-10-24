@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['operator_3d_0',['operator=',['../classThreadSafeQueue.html#a7973611acfd314645a3fe05cd5e1a1a6',1,'ThreadSafeQueue::operator=(const ThreadSafeQueue &amp;)=delete'],['../classThreadSafeQueue.html#a34a85dac43be29a491a49786d7036d82',1,'ThreadSafeQueue::operator=(ThreadSafeQueue &amp;&amp;)=delete'],['../classWorkerPool.html#a4ba445f0a98ff65e501a022fdb5c2d96',1,'WorkerPool::operator=(const WorkerPool &amp;)=delete'],['../classWorkerPool.html#a5b9b5ea20e12c555e3becece3070055a',1,'WorkerPool::operator=(WorkerPool &amp;&amp;)=delete']]],
-  ['optional_1',['optional',['../classnonstd_1_1optional__lite_1_1optional.html',1,'nonstd::optional_lite']]]
+  ['has_5fvalue_0',['has_value',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a8d36137e398950bfbd63e02d2dac7789',1,'nonstd::optional_lite::optional']]],
+  ['head_1',['head',['../d0/de3/structnonstd_1_1optional__lite_1_1detail_1_1typelist.html#a04089f94a2174513804b587c37fc6e3f',1,'nonstd::optional_lite::detail::typelist']]],
+  ['highlights_2',['🌟 Project Highlights',['../index.html#autotoc_md3',1,'']]]
 ];

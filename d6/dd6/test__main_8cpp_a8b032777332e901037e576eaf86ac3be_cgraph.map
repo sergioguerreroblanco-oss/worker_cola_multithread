@@ -1,0 +1,13 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="Node000001" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="5,55,60,80"/>
+<area shape="rect" id="Node000002" href="$da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title=" " alt="" coords="112,5,292,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,55,107,39,135,32,136,37,109,45,61,60"/>
+<area shape="rect" id="Node000003" href="$da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title=" " alt="" coords="108,55,296,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="60,65,95,65,95,70,60,70"/>
+<area shape="rect" id="Node000004" href="$da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="117,104,287,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="61,74,109,89,140,98,139,103,107,94,59,79"/>
+<area shape="rect" id="Node000005" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="344,104,443,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="288,114,330,114,330,119,288,119"/>
+<area shape="rect" id="Node000006" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="491,104,585,129"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="443,114,477,114,477,119,443,119"/>
+</map>

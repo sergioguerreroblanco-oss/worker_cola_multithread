@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['test_0',['test',['../d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e',1,'TEST(ThreadSafeQueue, PushPopWorks):&#160;test_main.cpp'],['../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be',1,'TEST(ThreadSafeQueue, GracefulClose):&#160;test_main.cpp'],['../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d',1,'TEST(WorkerPool, ExecutesAllTasks):&#160;test_main.cpp'],['../d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7',1,'TEST(ThreadSafeQueue, TryPopNonBlocking):&#160;test_main.cpp'],['../d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de',1,'TEST(ThreadSafeQueue, TryPopConcurrentReaders):&#160;test_main.cpp']]],
+  ['test_5fp_1',['TEST_P',['../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa',1,'test_main.cpp']]],
+  ['threadsafequeue_2',['threadsafequeue',['../da/d7e/classThreadSafeQueue.html#ae20e4ca35fd7b5e4d7358b690447e90e',1,'ThreadSafeQueue::ThreadSafeQueue()=default'],['../da/d7e/classThreadSafeQueue.html#aa5a792b7a5e8128de32d24e03ed7b56c',1,'ThreadSafeQueue::ThreadSafeQueue(const ThreadSafeQueue &amp;)=delete'],['../da/d7e/classThreadSafeQueue.html#a71ed25542a305bda89ee8824e339738c',1,'ThreadSafeQueue::ThreadSafeQueue(ThreadSafeQueue &amp;&amp;)=delete']]],
+  ['try_5fpop_3',['try_pop',['../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e',1,'ThreadSafeQueue']]]
+];

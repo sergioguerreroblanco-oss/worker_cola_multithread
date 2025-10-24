@@ -1,0 +1,7 @@
+<map id="WorkerPool::start" name="WorkerPool::start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,139,31"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="187,5,285,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,15,173,15,173,21,139,21"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="333,5,428,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,15,320,15,320,21,285,21"/>
+</map>

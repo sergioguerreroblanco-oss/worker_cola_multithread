@@ -1,0 +1,17 @@
+<map id="nonstd::optional_lite::std11::bool_constant&lt; B &gt;" name="nonstd::optional_lite::std11::bool_constant&lt; B &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="554,148,750,228"/>
+<area shape="rect" id="Node000003" href="$dc/dc7/structnonstd_1_1optional__lite_1_1std11_1_1is__assignable.html" title=" " alt="" coords="5,276,160,371"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="541,203,365,229,268,251,173,279,161,283,159,278,171,273,267,246,364,224,540,197"/>
+<area shape="rect" id="Node000004" href="$d4/d8b/structnonstd_1_1optional__lite_1_1std11_1_1is__move__constructible.html" title=" " alt="" coords="184,283,435,363"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="542,235,410,286,408,281,540,230"/>
+<area shape="rect" id="Node000005" href="$d5/d7d/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__assignable.html" title=" " alt="" coords="459,276,640,371"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="616,241,587,278,583,274,612,237"/>
+<area shape="rect" id="Node000006" href="$d1/d24/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__constructible.html" title=" " alt="" coords="664,276,845,371"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="692,237,721,274,717,278,688,241"/>
+<area shape="rect" id="Node000007" href="$d8/d6d/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__copy__constructible.html" title=" " alt="" coords="869,276,1051,371"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="759,231,858,274,870,279,868,283,856,278,757,236"/>
+<area shape="rect" id="Node000008" href="$de/d48/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html" title=" " alt="" coords="1075,276,1261,371"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="764,204,908,232,1063,273,1075,277,1073,282,1062,279,907,237,763,209"/>
+<area shape="rect" id="Node000002" href="$da/df9/structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html" title=" " alt="" coords="563,5,741,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="655,113,655,148,649,148,649,113"/>
+</map>

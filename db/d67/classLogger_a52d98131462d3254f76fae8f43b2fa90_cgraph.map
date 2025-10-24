@@ -1,0 +1,5 @@
+<map id="Logger::error" name="Logger::error">
+<area shape="rect" id="Node000001" title="Log an error message." alt="" coords="5,5,111,31"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="159,5,253,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,15,145,15,145,21,111,21"/>
+</map>

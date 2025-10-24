@@ -1,0 +1,22 @@
+<map id="include/logger.h" name="include/logger.h">
+<area shape="rect" id="Node000001" title="Thread&#45;safe logging utility with levels." alt="" coords="261,5,386,31"/>
+<area shape="rect" id="Node000002" href="$d7/dd5/thread__safe__queue_8ipp.html" title=" " alt="" coords="163,79,313,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="302,42,260,80,257,77,299,38"/>
+<area shape="rect" id="Node000005" href="$df/d0a/main_8cpp.html" title=" " alt="" coords="5,328,111,353"/>
+<area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="248,33,197,50,173,64,152,81,127,110,107,144,92,180,80,216,66,282,61,328,56,327,61,281,75,215,87,178,103,141,123,107,148,77,170,59,195,45,246,28"/>
+<area shape="rect" id="Node000006" href="$d1/d2e/worker__pool_8cpp.html" title=" " alt="" coords="309,328,460,353"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="331,44,385,327,380,328,325,45"/>
+<area shape="rect" id="Node000008" href="$d3/d30/logger_8cpp.html" title="Thread&#45;safe logging utility with levels." alt="" coords="418,86,530,111"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="359,35,453,83,450,88,356,39"/>
+<area shape="rect" id="Node000003" href="$dd/df9/thread__safe__queue_8h.html" title=" " alt="" coords="163,167,313,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,132,233,166,228,167,227,132"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="244,153,243,119,248,119,249,153"/>
+<area shape="rect" id="Node000004" href="$d9/da2/worker__pool_8h.html" title=" " alt="" coords="128,255,292,280"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="229,220,217,255,212,253,224,219"/>
+<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="180,215,148,234,117,257,86,294,66,329,61,326,82,291,113,253,145,229,178,210"/>
+<area shape="rect" id="Node000007" href="$d6/dd6/test__main_8cpp.html" title="Unit tests for ThreadSafeQueue and WorkerPool components." alt="" coords="135,328,285,353"/>
+<area shape="poly" id="edge9_Node000003_Node000007" title=" " alt="" coords="280,214,295,228,306,245,311,263,307,281,295,298,279,311,245,330,243,326,276,307,291,294,302,279,306,263,302,247,291,232,276,217"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="175,288,84,330,82,325,172,283"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="252,283,357,325,355,330,250,288"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="213,294,213,328,207,328,207,294"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="ThreadSafeQueue::try_pop" name="ThreadSafeQueue::try_pop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="108,31,303,56"/>
+<area shape="rect" id="Node000002" href="$d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,31,60,25,60,19,105,26"/>
+<area shape="rect" id="Node000003" href="$d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,61,61,66,60,61,100,55"/>
+</map>

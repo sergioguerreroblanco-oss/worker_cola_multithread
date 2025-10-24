@@ -1,0 +1,19 @@
+<map id="WorkerPool::~WorkerPool" name="WorkerPool::~WorkerPool">
+<area shape="rect" id="Node000001" title="Destruct a Worker object." alt="" coords="5,105,192,131"/>
+<area shape="rect" id="Node000002" href="$d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,105,371,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,115,227,115,227,121,192,121"/>
+<area shape="rect" id="Node000003" href="$da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title=" " alt="" coords="423,5,603,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="320,103,363,71,418,40,436,32,438,37,420,44,365,76,324,107"/>
+<area shape="rect" id="Node000004" href="$da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title=" " alt="" coords="419,55,607,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="358,103,446,81,448,86,359,108"/>
+<area shape="rect" id="Node000005" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="659,156,757,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="371,118,482,125,607,141,650,150,649,155,606,146,481,131,371,123"/>
+<area shape="rect" id="Node000007" href="$d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="446,156,579,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="359,128,448,150,446,155,358,133"/>
+<area shape="rect" id="Node000008" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="655,205,761,231"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="322,129,364,161,391,177,420,190,476,206,535,214,641,219,641,224,535,220,475,211,418,195,388,182,361,165,319,133"/>
+<area shape="rect" id="Node000006" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="809,181,904,207"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="758,174,796,181,795,186,757,180"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="580,166,644,166,644,171,580,171"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="761,207,795,201,796,206,762,212"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="Node000001" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="5,31,60,56"/>
+<area shape="rect" id="Node000002" href="$da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421" title=" " alt="" coords="117,5,294,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,37,105,30,106,35,61,42"/>
+<area shape="rect" id="Node000003" href="$da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="108,55,303,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="61,44,101,50,100,55,60,50"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="351,55,449,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,65,337,65,337,70,303,70"/>
+<area shape="rect" id="Node000005" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="497,55,592,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="449,65,484,65,484,70,449,70"/>
+</map>
