@@ -1,23 +1,74 @@
-# Project settings
+#------------------------------------------------------
+# Project information
+#------------------------------------------------------
 PROJECT_NAME           = "worker_cola_multithread"
 PROJECT_NUMBER         = 1.0.0
+PROJECT_BRIEF          = "C++ multithreaded work queue with worker pool and RAII-safe synchronization."
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = YES
+OUTPUT_LANGUAGE        = English
 
-# Input
-INPUT                  = include src
+#------------------------------------------------------
+# Input files and structure
+#------------------------------------------------------
+INPUT                  = README.md include src tests
+USE_MDFILE_AS_MAINPAGE = README.md
 RECURSIVE              = YES
 INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.h *.hpp *.cpp *.ipp
 
-# Output
-OUTPUT_DIRECTORY       = docs
+#------------------------------------------------------
+# Extraction and documentation behavior
+#------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = NO
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = NO
+INLINE_SOURCES         = YES
+SOURCE_BROWSER         = YES
+VERBATIM_HEADERS       = YES
+
+#------------------------------------------------------
+# HTML output
+#------------------------------------------------------
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
-GENERATE_LATEX         = YES
+GENERATE_TREEVIEW      = YES
+HTML_TIMESTAMP         = YES
 
-# Misc
+#------------------------------------------------------
+# LaTeX / PDF output
+#------------------------------------------------------
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+LATEX_BATCHMODE        = YES
+LATEX_SOURCE_CODE      = YES
+
+#------------------------------------------------------
+# Graphviz diagrams
+#------------------------------------------------------
+HAVE_DOT               = YES
+DOT_IMAGE_FORMAT       = png
+DOT_GRAPH_MAX_NODES    = 80
+DOT_TRANSPARENT        = YES
+DOT_CLEANUP            = YES
+CLASS_DIAGRAMS         = YES
+UML_LOOK               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+#------------------------------------------------------
+# Warnings and logging
+#------------------------------------------------------
 QUIET                  = YES
 WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
 
-# Enable Graphviz
-HAVE_DOT           = YES
-DOT_IMAGE_FORMAT   = png
-DOT_CLEANUP        = YES
+#------------------------------------------------------
+# Repository link
+#------------------------------------------------------
+REPOSITORY_URL         = https://github.com/sergioguerreroblanco-oss/worker_cola_multithread
