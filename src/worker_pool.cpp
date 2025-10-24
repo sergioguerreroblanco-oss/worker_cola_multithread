@@ -4,9 +4,16 @@
  * @date        <2025-09-26>
  * @version     1.0.0
  *
- * @brief
+ * @brief       Implementation of the WorkerPool class.
  *
  * @details
+ * This file defines the operational behavior of the WorkerPool, including:
+ * - Thread creation and lifecycle management.
+ * - Task submission and consumption.
+ * - Graceful shutdown and queue coordination.
+ *
+ * The pool cooperates with a shared `ThreadSafeQueue<std::function<void()>>`
+ * to execute submitted tasks in parallel across multiple worker threads.
  */
 
 /*****************************************************************************/
@@ -22,8 +29,16 @@
 /* Public Methods */
 
 /**
- * @details Implementation of the Worker constructor.
- *          Initializes references to the queue and action, and sets the worker name.
+ * @brief Constructs a WorkerPool attached to a shared ThreadSafeQueue.
+ *
+ * @param queue Reference to the task queue shared among all workers.
+ *
+ * @details
+ * GIVEN an existing queue instance,
+ * WHEN the WorkerPool is constructed,
+ * THEN it initializes its internal state but does not spawn any threads yet.
+ *
+ * The actual worker threads are created only after calling `start()`.
  */
 WorkerPool::WorkerPool(ThreadSafeQueue<std::function<void()>>& queue)
     : task_queue(queue), running(false)
@@ -31,8 +46,14 @@ WorkerPool::WorkerPool(ThreadSafeQueue<std::function<void()>>& queue)
 }
 
 /**
- * @details Ensures the worker thread has finished
- *          before destruction (joins the thread if needed)
+ * @brief Destructor ensuring all threads are stopped and joined before cleanup.
+ *
+ * @details
+ * Automatically invokes `stop()` to guarantee proper shutdown and to avoid
+ * orphaned threads or deadlocks.
+ *
+ * @note
+ * If the pool was never started, this is a no-op.
  */
 WorkerPool::~WorkerPool()
 {
@@ -41,8 +62,27 @@ WorkerPool::~WorkerPool()
 }
 
 /**
- * @details Starts the worker by setting the running flag to true
- *          and launching a dedicated thread that executes the run() loop.
+ * @brief Launches multiple worker threads that consume tasks from the queue.
+ *
+ * @param number_workers Number of threads to start.
+ *
+ * @details
+ * GIVEN an idle WorkerPool,
+ * WHEN `start()` is invoked,
+ * THEN:
+ * - Sets the `running` flag to `true`.
+ * - Creates `number_workers` threads.
+ * - Each thread executes the `run()` method with a unique worker name.
+ *
+ * Example:
+ * ```cpp
+ * WorkerPool pool(queue);
+ * pool.start(4); // Launch 4 worker threads
+ * ```
+ *
+ * @note
+ * - If the pool is already running, the function returns immediately.
+ * - Each thread runs independently and blocks inside `ThreadSafeQueue::pop()`.
  */
 void WorkerPool::start(const int number_workers)
 {
@@ -60,7 +100,24 @@ void WorkerPool::start(const int number_workers)
 }
 
 /**
+ * @brief Submits a task for execution by any available worker.
+ *
+ * @param task Callable object representing a unit of work.
+ *
  * @details
+ * GIVEN an active WorkerPool,
+ * WHEN a producer thread calls `submit()`,
+ * THEN the task is enqueued into `task_queue` and will be executed asynchronously
+ * by the next available worker.
+ *
+ * Example:
+ * ```cpp
+ * pool.submit([] { std::cout << "Hello from worker!" << std::endl; });
+ * ```
+ *
+ * @note
+ * Thread-safe.
+ * If the queue is closed or the pool stopped, pushing may be ignored.
  */
 void WorkerPool::submit(std::function<void()> task)
 {
@@ -68,14 +125,25 @@ void WorkerPool::submit(std::function<void()> task)
 }
 
 /**
- * @details Stops the worker activity by setting its running flag to false.
- *          The worker thread will complete its current loop iteration and then exit.
- *          This does not affect the underlying queue.
- * @note stop() does not interrupt pop() immediately.
- *       If the worker is waiting in pop(), it will exit
- *       only after the configured timeout (5s by default).
- *       This simplifies the design and avoids pushing
- *       shutdown logic into the queue.
+ * @brief Stops all workers and ensures graceful shutdown.
+ *
+ * @details
+ * GIVEN a running WorkerPool,
+ * WHEN `stop()` is called,
+ * THEN:
+ *  - The `running` flag is set to `false`.
+ *  - The pool waits briefly for remaining tasks to drain.
+ *  - The queue is closed (`task_queue.close()`).
+ *  - All worker threads are joined safely.
+ *
+ * @note
+ * - The function blocks until all threads finish.
+ * - If the queue still contains tasks after the timeout, a warning is logged.
+ * - The method is idempotent (safe to call multiple times).
+ *
+ * @warning
+ * This call will not forcibly interrupt a thread in `pop()` — threads exit naturally
+ * once the queue closes or `pop()` returns false.
  */
 void WorkerPool::stop()
 {
@@ -111,7 +179,27 @@ void WorkerPool::stop()
 }
 
 /**
- * @details Main worker loop.
+ * @brief Worker thread loop.
+ *
+ * @param worker_name Name identifier of the worker thread.
+ *
+ * @details
+ * Each worker repeatedly attempts to retrieve tasks from the queue using `pop()`.
+ *
+ * GIVEN a running worker thread,
+ * WHEN a new task is available in the queue,
+ * THEN:
+ *  - It is retrieved and executed.
+ *  - If an exception occurs, it is caught and logged.
+ *  - When the queue closes, the loop terminates gracefully.
+ *
+ * @note
+ * This function runs indefinitely until:
+ * - The queue returns `false` (closed and empty).
+ * - Or the `running` flag becomes false.
+ *
+ * @exception std::exception
+ * Any exception thrown by a task is caught, logged, and ignored to keep the pool stable.
  */
 void WorkerPool::run(const std::string& worker_name)
 {
