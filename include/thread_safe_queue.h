@@ -93,7 +93,7 @@ class ThreadSafeQueue {
      * @brief 
      * @param 
      */
-    void pop(T& data);
+    bool pop(T& data);
 
     /**
      * @brief

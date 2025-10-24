@@ -74,9 +74,19 @@ void WorkerPool::stop() {
 
     running = false;
 
-    Logger::info("[Worker Pool] Stop request done");
+    Logger::info("[Worker Pool] Stop requested, waiting for remaining tasks...");
+    auto start = std::chrono::steady_clock::now();
+    while (!task_queue.empty()) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(5));
+
+        if (std::chrono::steady_clock::now() - start > std::chrono::seconds(1)) {
+            Logger::warn("[Worker Pool] Timeout waiting for queue to drain.");
+            break;
+        }
+    }
 
     task_queue.close();
+    Logger::info("[Worker Pool] Task queue drained, closing...");
 
     for (auto& worker_pair : workers) {
         auto& thread = worker_pair.second;
@@ -90,16 +100,15 @@ void WorkerPool::stop() {
  * @details Main worker loop.
  */
 void WorkerPool::run(const std::string& worker_name) {
-    while (running) {
+    for (;;) {
         std::function<void()> task;
-        task_queue.pop(task);
 
-        if (task) {
-            try {
-                task();
-            } catch (const std::exception& e) {
-                Logger::error("[Worker Pool][" + worker_name + "] Exception: " + e.what());
-            }
+        if (!task_queue.pop(task)) break;
+
+        try {
+            task();
+        } catch (const std::exception& e) {
+            Logger::error("[Worker Pool][" + worker_name + "] Exception: " + e.what());
         }
     }
 }

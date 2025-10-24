@@ -36,17 +36,18 @@ void ThreadSafeQueue<T>::push(T&& data) {
  * @return 
  */
 template <typename T>
-void ThreadSafeQueue<T>::pop(T& data) {
+bool ThreadSafeQueue<T>::pop(T& data) {
     std::unique_lock<std::mutex> lock(mtx);
 
     // Wait until new data is added
     cv.wait(lock, [this] { return closed || !buffer.empty(); });
 
-    if (closed && buffer.empty()) return;
+    if (closed && buffer.empty()) return false;
 
     Logger::info("[Thread Safe Queue] Task extracted successfully");
     data = std::move(buffer.front());
     buffer.pop_front();
+    return true;
 }
 
 /**

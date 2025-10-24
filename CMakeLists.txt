@@ -24,7 +24,7 @@ target_include_directories(core PUBLIC third_party/optional-lite/include)
 
 # Configure Compiler Flags
 if(MSVC)
-    target_compile_options(core PRIVATE /W4 /permissive-)
+    target_compile_options(core PRIVATE /W4 /permissive- /wd26495)
 else()
     target_compile_options(core PRIVATE -Wall -Wextra -Wpedantic)
 endif()
