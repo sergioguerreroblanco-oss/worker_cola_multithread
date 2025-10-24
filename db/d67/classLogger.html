@@ -91,14 +91,12 @@ $(document).ready(function(){initNavTree('db/d67/classLogger.html','../../'); in
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d4/d54/classLogger-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Logger Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A thread-safe static logger utility with configurable severity levels.  
+<p>Static thread-safe console logger with configurable severity filtering.  
  <a href="../../db/d67/classLogger.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>&gt;</code></p>
@@ -107,45 +105,67 @@ Collaboration diagram for Logger:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dfd/classLogger__coll__graph.png" border="0" usemap="#aLogger_coll__map" alt="Collaboration graph"/></div>
 <map name="aLogger_coll__map" id="aLogger_coll__map">
-<area shape="rect" title="A thread&#45;safe static logger utility with configurable severity levels." alt="" coords="5,5,135,171"/>
+<area shape="rect" title="Static thread&#45;safe console logger with configurable severity filtering." alt="" coords="5,5,135,391"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Severity Levels</div></td></tr>
 <tr class="memitem:ad766a24576ea8b27ad9d5649cef46d8f" id="r_ad766a24576ea8b27ad9d5649cef46d8f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">Level</a> { <a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">DBG</a> = 0
 , <a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">INFO</a> = 1
 , <a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">WARN</a> = 2
 , <a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3
  }</td></tr>
-<tr class="memdesc:ad766a24576ea8b27ad9d5649cef46d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Severity levels for log messages.  <a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">More...</a><br /></td></tr>
+<tr class="memdesc:ad766a24576ea8b27ad9d5649cef46d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log message severity levels.  <a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">More...</a><br /></td></tr>
 <tr class="separator:ad766a24576ea8b27ad9d5649cef46d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Configuration</div></td></tr>
 <tr class="memitem:a5a979e9c0f7e33c3663dcd69a0f62f98" id="r_a5a979e9c0f7e33c3663dcd69a0f62f98"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">set_min_level</a> (<a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">Level</a> lvl)</td></tr>
-<tr class="memdesc:a5a979e9c0f7e33c3663dcd69a0f62f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum log level.  <br /></td></tr>
+<tr class="memdesc:a5a979e9c0f7e33c3663dcd69a0f62f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum log level.  <br /></td></tr>
 <tr class="separator:a5a979e9c0f7e33c3663dcd69a0f62f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Logging Methods</div></td></tr>
 <tr class="memitem:a84de7b2dac788717b2c3c3cf1942d1a5" id="r_a84de7b2dac788717b2c3c3cf1942d1a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5">debug</a> (const std::string &amp;msg)</td></tr>
-<tr class="memdesc:a84de7b2dac788717b2c3c3cf1942d1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a debug message.  <br /></td></tr>
+<tr class="memdesc:a84de7b2dac788717b2c3c3cf1942d1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a debug message (<code>DBG</code> level).  <br /></td></tr>
 <tr class="separator:a84de7b2dac788717b2c3c3cf1942d1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaac8d8aba7262900267f1e3779bd657" id="r_afaac8d8aba7262900267f1e3779bd657"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">info</a> (const std::string &amp;msg)</td></tr>
-<tr class="memdesc:afaac8d8aba7262900267f1e3779bd657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log an informational message.  <br /></td></tr>
+<tr class="memdesc:afaac8d8aba7262900267f1e3779bd657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an informational message (<code>INFO</code> level).  <br /></td></tr>
 <tr class="separator:afaac8d8aba7262900267f1e3779bd657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcbe6e560903cbb4257bccf546789e52" id="r_adcbe6e560903cbb4257bccf546789e52"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">warn</a> (const std::string &amp;msg)</td></tr>
-<tr class="memdesc:adcbe6e560903cbb4257bccf546789e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a warning message.  <br /></td></tr>
+<tr class="memdesc:adcbe6e560903cbb4257bccf546789e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a warning message (<code>WARN</code> level).  <br /></td></tr>
 <tr class="separator:adcbe6e560903cbb4257bccf546789e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52d98131462d3254f76fae8f43b2fa90" id="r_a52d98131462d3254f76fae8f43b2fa90"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90">error</a> (const std::string &amp;msg)</td></tr>
-<tr class="memdesc:a52d98131462d3254f76fae8f43b2fa90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log an error message.  <br /></td></tr>
+<tr class="memdesc:a52d98131462d3254f76fae8f43b2fa90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an error message (<code>ERROR</code> level).  <br /></td></tr>
 <tr class="separator:a52d98131462d3254f76fae8f43b2fa90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa447c3fe852645bbd1f59168295f48fb" id="r_aa447c3fe852645bbd1f59168295f48fb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a> (<a class="el" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f">Level</a> lvl, const std::string &amp;msg)</td></tr>
-<tr class="memdesc:aa447c3fe852645bbd1f59168295f48fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with the specified severity level.  <br /></td></tr>
+<tr class="memdesc:aa447c3fe852645bbd1f59168295f48fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core logging function that prints a message with explicit severity.  <br /></td></tr>
 <tr class="separator:aa447c3fe852645bbd1f59168295f48fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A thread-safe static logger utility with configurable severity levels. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d1/d8c/logger_8h_source.html#l00041">41</a> of file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
+<div class="textblock"><p>Static thread-safe console logger with configurable severity filtering. </p>
+<h3><a class="anchor" id="autotoc_md42"></a>
+Features:</h3>
+<ul>
+<li>Thread-safe: synchronized via internal static <code>std::mutex</code>.</li>
+<li>Supports 4 severity levels (<code>DBG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>).</li>
+<li>Global filter level configurable at runtime (<code><a class="el" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98" title="Sets the minimum log level.">set_min_level()</a></code>).</li>
+<li>Each line includes timestamp + level + message.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md43"></a>
+Usage example:</h3>
+<div class="fragment"><div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a>);</div>
+<div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;Worker started&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a>(<span class="stringliteral">&quot;Task queue is almost full&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90">Logger::error</a>(<span class="stringliteral">&quot;Unhandled exception in worker&quot;</span>);</div>
+<div class="ttc" id="aclassLogger_html_a52d98131462d3254f76fae8f43b2fa90"><div class="ttname"><a href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90">Logger::error</a></div><div class="ttdeci">static void error(const std::string &amp;msg)</div><div class="ttdoc">Logs an error message (ERROR level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00108">logger.cpp:108</a></div></div>
+<div class="ttc" id="aclassLogger_html_a5a979e9c0f7e33c3663dcd69a0f62f98"><div class="ttname"><a href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a></div><div class="ttdeci">static void set_min_level(Level lvl)</div><div class="ttdoc">Sets the minimum log level.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00055">logger.cpp:55</a></div></div>
+<div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a></div><div class="ttdeci">@ INFO</div></div>
+<div class="ttc" id="aclassLogger_html_adcbe6e560903cbb4257bccf546789e52"><div class="ttname"><a href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a></div><div class="ttdeci">static void warn(const std::string &amp;msg)</div><div class="ttdoc">Logs a warning message (WARN level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00095">logger.cpp:95</a></div></div>
+<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../d1/d8c/logger_8h_source.html#l00059">59</a> of file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ad766a24576ea8b27ad9d5649cef46d8f" name="ad766a24576ea8b27ad9d5649cef46d8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad766a24576ea8b27ad9d5649cef46d8f">&#9670;&#160;</a></span>Level</h2>
@@ -167,27 +187,32 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Severity levels for log messages. </p>
+<p>Log message severity levels. </p>
+<p>Each level defines a minimum importance threshold:</p><ul>
+<li><b>DBG</b> → Most verbose (useful for tracing internal flow)</li>
+<li><b>INFO</b> → Regular runtime information</li>
+<li><b>WARN</b> → Indicates a potential problem</li>
+<li><b>ERROR</b> → Indicates an actual failure </li>
+</ul>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d" name="ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d"></a>DBG&#160;</td><td class="fielddoc"><p>Debug messages, most verbose. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d" name="ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d"></a>DBG&#160;</td><td class="fielddoc"><p>Debug messages — detailed runtime info. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3" name="ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"><p>Informational messages about normal operation. </p>
+<tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3" name="ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"><p>Informational messages — normal operation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277" name="ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277"></a>WARN&#160;</td><td class="fielddoc"><p>Warning messages indicating potential issues. </p>
+<tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277" name="ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277"></a>WARN&#160;</td><td class="fielddoc"><p>Warning messages — possible issue. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5" name="ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"><p>Error messages indicating failures. </p>
+<tr><td class="fieldname"><a id="ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5" name="ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"><p>Error messages — failure occurred. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8c/logger_8h_source.html#l00052">52</a> of file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">DBG</a>   = 0, </div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">INFO</a>  = 1, </div>
-<div class="line"><span class="lineno">   56</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">WARN</a>  = 2, </div>
-<div class="line"><span class="lineno">   57</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3  </div>
-<div class="line"><span class="lineno">   58</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8c/logger_8h_source.html#l00077">77</a> of file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">DBG</a>   = 0, </div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">INFO</a>  = 1, </div>
+<div class="line"><span class="lineno">   81</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">WARN</a>  = 2, </div>
+<div class="line"><span class="lineno">   82</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3  </div>
+<div class="line"><span class="lineno">   83</span>    };</div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Logger::Level::WARN</a></div><div class="ttdeci">@ WARN</div></div>
-<div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a></div><div class="ttdeci">@ INFO</div></div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">Logger::Level::DBG</a></div><div class="ttdeci">@ DBG</div></div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">Logger::Level::ERROR</a></div><div class="ttdeci">@ ERROR</div></div>
 </div><!-- fragment -->
@@ -218,26 +243,34 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Log a debug message. </p>
+<p>Logs a debug message (<code>DBG</code> level). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>The message to log. </td></tr>
+    <tr><td class="paramname">msg</td><td>The message to log.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Only printed if the current <code>minLevel</code> is <code>DBG</code> or lower. Thread-safe.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Message to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wrapper for <code>log(Level::DBG, msg)</code>. Typically used for verbose diagnostic information. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">Level::DBG</a>, msg);</div>
-<div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="aclassLogger_html_aa447c3fe852645bbd1f59168295f48fb"><div class="ttname"><a href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">Logger::log</a></div><div class="ttdeci">static void log(Level lvl, const std::string &amp;msg)</div><div class="ttdoc">Log a message with the specified severity level.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00061">logger.cpp:61</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00069">69</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">Level::DBG</a>, msg);</div>
+<div class="line"><span class="lineno">   72</span>}</div>
+<div class="ttc" id="aclassLogger_html_aa447c3fe852645bbd1f59168295f48fb"><div class="ttname"><a href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">Logger::log</a></div><div class="ttdeci">static void log(Level lvl, const std::string &amp;msg)</div><div class="ttdoc">Core logging function that prints a message with explicit severity.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00133">logger.cpp:133</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_a84de7b2dac788717b2c3c3cf1942d1a5_cgraph.png" border="0" usemap="#adb/d67/classLogger_a84de7b2dac788717b2c3c3cf1942d1a5_cgraph" alt=""/></div>
 <map name="adb/d67/classLogger_a84de7b2dac788717b2c3c3cf1942d1a5_cgraph" id="adb/d67/classLogger_a84de7b2dac788717b2c3c3cf1942d1a5_cgraph">
-<area shape="rect" title="Log a debug message." alt="" coords="5,5,120,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="168,5,263,31"/>
+<area shape="rect" title="Logs a debug message (DBG level)." alt="" coords="5,5,120,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="168,5,263,31"/>
 <area shape="poly" title=" " alt="" coords="120,15,154,15,154,21,120,21"/>
 </map>
 </div>
@@ -268,25 +301,33 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Log an error message. </p>
+<p>Logs an error message (<code>ERROR</code> level). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>The message to log. </td></tr>
+    <tr><td class="paramname">msg</td><td>The message to log.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Used for reporting critical failures or exceptions. Typically displayed regardless of the <code>minLevel</code> setting, unless the filter is set to <code>ERROR</code> itself.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Message to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wrapper for <code>log(Level::ERROR, msg)</code>. Indicates a critical issue or failure. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">Level::ERROR</a>, msg);</div>
-<div class="line"><span class="lineno">   59</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>{</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">Level::ERROR</a>, msg);</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_a52d98131462d3254f76fae8f43b2fa90_cgraph.png" border="0" usemap="#adb/d67/classLogger_a52d98131462d3254f76fae8f43b2fa90_cgraph" alt=""/></div>
 <map name="adb/d67/classLogger_a52d98131462d3254f76fae8f43b2fa90_cgraph" id="adb/d67/classLogger_a52d98131462d3254f76fae8f43b2fa90_cgraph">
-<area shape="rect" title="Log an error message." alt="" coords="5,5,111,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="159,5,253,31"/>
+<area shape="rect" title="Logs an error message (ERROR level)." alt="" coords="5,5,111,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="159,5,253,31"/>
 <area shape="poly" title=" " alt="" coords="111,15,145,15,145,21,111,21"/>
 </map>
 </div>
@@ -317,25 +358,35 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Log an informational message. </p>
+<p>Logs an informational message (<code>INFO</code> level). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>The message to log. </td></tr>
+    <tr><td class="paramname">msg</td><td>The message to log.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Commonly used to indicate normal runtime events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Message to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wrapper for <code>log(Level::INFO, msg)</code>. Used for high-level runtime information. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#a7">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
-<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Level::INFO</a>, msg);</div>
-<div class="line"><span class="lineno">   49</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00082">82</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Level::INFO</a>, msg);</div>
+<div class="line"><span class="lineno">   85</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_cgraph.png" border="0" usemap="#adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_cgraph" alt=""/></div>
 <map name="adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_cgraph" id="adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_cgraph">
-<area shape="rect" title="Log an informational message." alt="" coords="5,5,104,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="152,5,247,31"/>
+<area shape="rect" title="Logs an informational message (INFO level)." alt="" coords="5,5,104,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="152,5,247,31"/>
 <area shape="poly" title=" " alt="" coords="104,15,138,15,138,21,104,21"/>
 </map>
 </div>
@@ -344,16 +395,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph.png" border="0" usemap="#adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph" alt=""/></div>
 <map name="adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph" id="adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph">
-<area shape="rect" title="Log an informational message." alt="" coords="661,107,760,132"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="rect" title="Logs an informational message (INFO level)." alt="" coords="661,107,760,132"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="677,102,646,84,612,68,512,35,430,20,347,16,240,17,126,20,126,14,240,11,347,10,431,14,513,30,614,64,649,79,680,97"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,208,601,233"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available." alt="" coords="431,208,601,233"/>
 <area shape="poly" title=" " alt="" coords="674,141,543,210,540,206,672,136"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,107,583,132"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads." alt="" coords="449,107,583,132"/>
 <area shape="poly" title=" " alt="" coords="647,122,583,122,583,117,647,117"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,56,371,81"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,56,371,81"/>
 <area shape="poly" title=" " alt="" coords="654,106,613,97,484,81,371,73,371,68,485,75,614,91,655,101"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,307,613,332"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title="Attempts to pop an element without blocking." alt="" coords="419,307,613,332"/>
 <area shape="poly" title=" " alt="" coords="696,145,661,194,615,247,575,282,538,309,535,304,572,277,611,243,657,190,691,142"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,257,333,283"/>
 <area shape="poly" title=" " alt="" coords="448,239,333,266,332,261,447,234"/>
@@ -368,7 +419,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="239,55,126,27,127,22,240,50"/>
 <area shape="poly" title=" " alt="" coords="279,92,240,120,193,146,159,158,127,166,125,161,157,153,191,141,237,115,276,88"/>
 <area shape="poly" title=" " alt="" coords="240,87,134,114,133,108,239,82"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,56,192,81"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,56,192,81"/>
 <area shape="poly" title=" " alt="" coords="226,71,192,71,192,66,226,66"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,356,333,381"/>
 <area shape="poly" title=" " alt="" coords="448,338,333,365,332,360,447,333"/>
@@ -413,49 +464,69 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Log a message with the specified severity level. </p>
+<p>Core logging function that prints a message with explicit severity. </p>
+<p>Core method that handles message formatting and output.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lvl</td><td>Severity level of the message. </td></tr>
-    <tr><td class="paramname">msg</td><td>The message to log. </td></tr>
+    <tr><td class="paramname">lvl</td><td>Severity level (<code>DBG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>). </td></tr>
+    <tr><td class="paramname">msg</td><td>The message to print.</td></tr>
   </table>
   </dd>
 </dl>
+<p>All wrapper methods (<code><a class="el" href="../../db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level).">debug()</a></code>, <code><a class="el" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level).">info()</a></code>, etc.) call this internally. This function checks the <code>minLevel</code>, then prints a timestamped message.</p>
+<dl class="section note"><dt>Note</dt><dd>Thread-safe: a global <code>std::mutex</code> prevents output interleaving.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl</td><td>Severity level of the message. </td></tr>
+    <tr><td class="paramname">msg</td><td>Message text to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN a message and a severity level, WHEN <code><a class="el" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity.">log()</a></code> is invoked, THEN:</p><ul>
+<li>If <code>lvl &lt; minLevel</code>, the message is ignored.</li>
+<li>Otherwise, the message is printed to <code>std::cout</code> as: <div class="fragment"><div class="line">[YYYY-MM-DD HH:MM:SS] [LEVEL] message</div>
+</div><!-- fragment --></li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Thread-safe: all access to <code>std::cout</code> is serialized with a mutex.</li>
+<li>Uses <code>std::endl</code> to flush output immediately. </li>
+</ul>
+</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
-<div class="line"><span class="lineno">   63</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(lvl) &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(minLevel))</div>
-<div class="line"><span class="lineno">   65</span>    {</div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   67</span>    }</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; timestamp() &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; levelToString(lvl) &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; msg</div>
-<div class="line"><span class="lineno">   70</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   71</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
+<div class="line"><span class="lineno">  135</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(lvl) &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(minLevel))</div>
+<div class="line"><span class="lineno">  137</span>    {</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; timestamp() &lt;&lt; <span class="stringliteral">&quot;] &quot;</span></div>
+<div class="line"><span class="lineno">  142</span>              &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; levelToString(lvl) &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; msg &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  143</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph.png" border="0" usemap="#adb/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph" alt=""/></div>
 <map name="adb/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph" id="adb/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph">
-<area shape="rect" title="Log a message with the specified severity level." alt="" coords="824,231,919,256"/>
-<area shape="rect" href="../../db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Log a debug message." alt="" coords="661,156,776,181"/>
+<area shape="rect" title="Core logging function that prints a message with explicit severity." alt="" coords="824,231,919,256"/>
+<area shape="rect" href="../../db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="661,156,776,181"/>
 <area shape="poly" title=" " alt="" coords="833,227,775,196,748,184,750,179,777,192,836,222"/>
-<area shape="rect" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Log an error message." alt="" coords="666,205,771,231"/>
+<area shape="rect" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="666,205,771,231"/>
 <area shape="poly" title=" " alt="" coords="810,236,771,229,772,224,811,231"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="669,255,768,280"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="669,255,768,280"/>
 <area shape="poly" title=" " alt="" coords="811,256,769,262,768,257,810,250"/>
-<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="463,407,569,432"/>
+<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="463,407,569,432"/>
 <area shape="poly" title=" " alt="" coords="843,267,745,333,681,369,614,400,570,413,569,408,612,396,679,364,743,328,840,262"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,255,126,280"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,255,126,280"/>
 <area shape="poly" title=" " alt="" coords="656,270,126,270,126,265,656,265"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,153,601,179"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available." alt="" coords="431,153,601,179"/>
 <area shape="poly" title=" " alt="" coords="668,250,660,246,645,233,636,222,626,211,612,200,568,181,570,176,615,196,630,207,640,219,649,230,663,241,671,246"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,305,583,331"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads." alt="" coords="449,305,583,331"/>
 <area shape="poly" title=" " alt="" coords="657,285,568,308,567,303,655,280"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,407,371,432"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,407,371,432"/>
 <area shape="poly" title=" " alt="" coords="695,291,658,320,614,346,511,374,364,409,362,404,510,369,612,341,655,315,691,287"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,55,613,80"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title="Attempts to pop an element without blocking." alt="" coords="419,55,613,80"/>
 <area shape="poly" title=" " alt="" coords="664,249,659,245,641,220,633,195,626,170,611,144,575,108,538,82,541,78,578,104,615,140,631,168,638,194,645,217,663,242,668,245"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,153,333,179"/>
 <area shape="poly" title=" " alt="" coords="417,169,333,169,333,163,417,163"/>
@@ -470,7 +541,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="287,397,247,346,220,319,191,296,158,282,126,274,127,268,160,277,193,292,224,315,251,342,291,394"/>
 <area shape="poly" title=" " alt="" coords="239,406,126,378,127,373,240,401"/>
 <area shape="poly" title=" " alt="" coords="276,400,237,373,191,347,133,328,135,323,193,342,240,368,279,396"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,407,192,432"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,407,192,432"/>
 <area shape="poly" title=" " alt="" coords="226,422,192,422,192,417,226,417"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,55,333,80"/>
 <area shape="poly" title=" " alt="" coords="405,70,333,70,333,65,405,65"/>
@@ -506,26 +577,41 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Set the minimum log level. </p>
+<p>Sets the minimum log level. </p>
+<p>Sets the minimum severity level to be printed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lvl</td><td>The minimum level; messages below this level are ignored. </td></tr>
+    <tr><td class="paramname">lvl</td><td>The minimum level to display.</td></tr>
   </table>
   </dd>
 </dl>
+<p>GIVEN a desired log verbosity, WHEN <code><a class="el" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98" title="Sets the minimum log level.">set_min_level()</a></code> is called, THEN only messages with <code>level &gt;= lvl</code> will be printed to stdout.</p>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Logger::Level::WARN</a>);</div>
+<div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;This will be ignored&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90">Logger::error</a>(<span class="stringliteral">&quot;This will be shown&quot;</span>);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl</td><td>The minimum log level; messages below this level are ignored.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN a running application, WHEN <code><a class="el" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98" title="Sets the minimum log level.">set_min_level()</a></code> is called, THEN subsequent calls to <code><a class="el" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity.">log()</a></code> will only print messages with <code>level &gt;= lvl</code>.</p>
+<p>Thread-safe: uses a lock to protect shared configuration. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#a3">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
-<div class="line"><span class="lineno">   37</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   38</span>    minLevel = lvl;</div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00055">55</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   58</span>    minLevel = lvl;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_a5a979e9c0f7e33c3663dcd69a0f62f98_icgraph.png" border="0" usemap="#adb/d67/classLogger_a5a979e9c0f7e33c3663dcd69a0f62f98_icgraph" alt=""/></div>
 <map name="adb/d67/classLogger_a5a979e9c0f7e33c3663dcd69a0f62f98_icgraph" id="adb/d67/classLogger_a5a979e9c0f7e33c3663dcd69a0f62f98_icgraph">
-<area shape="rect" title="Set the minimum log level." alt="" coords="108,5,273,31"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="rect" title="Sets the minimum log level." alt="" coords="108,5,273,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
@@ -556,25 +642,33 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Log a warning message. </p>
+<p>Logs a warning message (<code>WARN</code> level). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>The message to log. </td></tr>
+    <tr><td class="paramname">msg</td><td>The message to log.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Indicates a non-critical issue or unexpected state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Message to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wrapper for <code>log(Level::WARN, msg)</code>. Used for recoverable or unexpected events. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00051">51</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Level::WARN</a>, msg);</div>
-<div class="line"><span class="lineno">   54</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Level::WARN</a>, msg);</div>
+<div class="line"><span class="lineno">   98</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_cgraph.png" border="0" usemap="#adb/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_cgraph" alt=""/></div>
 <map name="adb/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_cgraph" id="adb/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_cgraph">
-<area shape="rect" title="Log a warning message." alt="" coords="5,5,112,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="160,5,255,31"/>
+<area shape="rect" title="Logs a warning message (WARN level)." alt="" coords="5,5,112,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="160,5,255,31"/>
 <area shape="poly" title=" " alt="" coords="112,15,146,15,146,21,112,21"/>
 </map>
 </div>
@@ -583,16 +677,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_icgraph.png" border="0" usemap="#adb/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_icgraph" alt=""/></div>
 <map name="adb/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_icgraph" id="adb/d67/classLogger_adcbe6e560903cbb4257bccf546789e52_icgraph">
-<area shape="rect" title="Log a warning message." alt="" coords="419,80,525,105"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,80,371,105"/>
+<area shape="rect" title="Logs a warning message (WARN level)." alt="" coords="419,80,525,105"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,80,371,105"/>
 <area shape="poly" title=" " alt="" coords="405,95,371,95,371,90,405,90"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="266,76,191,45,125,26,127,21,193,39,268,71"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,55,126,80"/>
 <area shape="poly" title=" " alt="" coords="226,86,126,73,127,68,226,80"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,104,133,129"/>
 <area shape="poly" title=" " alt="" coords="226,104,134,115,133,110,226,99"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,153,192,179"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,153,192,179"/>
 <area shape="poly" title=" " alt="" coords="266,113,193,143,152,156,150,151,191,138,264,109"/>
 </map>
 </div>
@@ -609,7 +703,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d67/classLogger.html">Logger</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:33 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

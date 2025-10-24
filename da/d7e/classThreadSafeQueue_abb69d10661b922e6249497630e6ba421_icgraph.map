@@ -1,6 +1,6 @@
 <map id="ThreadSafeQueue::push" name="ThreadSafeQueue::push">
-<area shape="rect" id="Node000001" title=" " alt="" coords="319,129,496,155"/>
-<area shape="rect" id="Node000002" href="$d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title=" " alt="" coords="123,55,271,80"/>
+<area shape="rect" id="Node000001" title="Pushes a new element into the queue (thread&#45;safe)." alt="" coords="319,129,496,155"/>
+<area shape="rect" id="Node000002" href="$d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title="Submits a task to be executed by any available worker." alt="" coords="123,55,271,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="359,127,270,94,236,83,238,77,272,89,361,122"/>
 <area shape="rect" id="Node000006" href="$d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="169,104,224,129"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="304,132,224,123,225,117,305,127"/>
@@ -8,7 +8,7 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="305,156,225,166,224,160,304,151"/>
 <area shape="rect" id="Node000008" href="$d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="169,203,224,228"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="360,162,272,194,225,209,223,204,270,189,358,157"/>
-<area shape="rect" id="Node000003" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="13,5,67,31"/>
+<area shape="rect" id="Node000003" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="13,5,67,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="142,53,67,29,69,24,144,48"/>
 <area shape="rect" id="Node000004" href="$d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="13,55,67,80"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="109,70,68,70,68,65,109,65"/>

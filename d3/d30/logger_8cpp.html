@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('d3/d30/logger_8cpp.html','../../'); in
 </div><!--header-->
 <div class="contents">
 
-<p>Thread-safe logging utility with levels.  
+<p>Implementation of the thread-safe <a class="el" href="../../db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;ctime&gt;</code><br />
@@ -107,7 +107,7 @@ Include dependency graph for logger.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d29/logger_8cpp__incl.png" border="0" usemap="#asrc_2logger_8cpp" alt=""/></div>
 <map name="asrc_2logger_8cpp" id="asrc_2logger_8cpp">
-<area shape="rect" title="Thread&#45;safe logging utility with levels." alt="" coords="211,5,323,31"/>
+<area shape="rect" title="Implementation of the thread&#45;safe Logger class." alt="" coords="211,5,323,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,72,104"/>
 <area shape="poly" title=" " alt="" coords="231,33,86,78,85,73,229,28"/>
 <area shape="rect" title=" " alt="" coords="96,79,155,104"/>
@@ -118,7 +118,7 @@ Include dependency graph for logger.cpp:</div>
 <area shape="poly" title=" " alt="" coords="277,29,303,66,299,69,273,33"/>
 <area shape="rect" title=" " alt="" coords="381,79,456,104"/>
 <area shape="poly" title=" " alt="" coords="292,28,383,70,381,75,290,33"/>
-<area shape="rect" href="../../d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with levels." alt="" coords="480,79,555,104"/>
+<area shape="rect" href="../../d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="480,79,555,104"/>
 <area shape="poly" title=" " alt="" coords="308,28,467,73,466,78,306,33"/>
 <area shape="rect" title=" " alt="" coords="443,152,507,177"/>
 <area shape="poly" title=" " alt="" coords="513,106,491,142,486,139,508,103"/>
@@ -129,10 +129,16 @@ Include dependency graph for logger.cpp:</div>
 </div>
 <p><a href="../../d3/d30/logger_8cpp_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thread-safe logging utility with levels. </p>
+<div class="textblock"><p>Implementation of the thread-safe <a class="el" href="../../db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> class. </p>
 <dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>&lt;2025-09-15&gt; </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0.0</dd></dl>
+<p>This file implements the static methods of the <a class="el" href="../../db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> utility, including level filtering, formatted output, and time-stamping.</p>
+<p>The <a class="el" href="../../db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> ensures that:</p><ul>
+<li>Output from multiple threads is synchronized via a shared <code>std::mutex</code>.</li>
+<li>Messages are filtered according to the current <code>minLevel</code>.</li>
+<li>Each log line includes timestamp + severity + message. </li>
+</ul>
 
 <p class="definition">Definition in file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
 </div></div><!-- contents -->
@@ -141,7 +147,7 @@ Include dependency graph for logger.cpp:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d3/d30/logger_8cpp.html">logger.cpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:33 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,8 +1,8 @@
 <map id="include/thread_safe_queue.ipp" name="include/thread_safe_queue.ipp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="273,5,424,45"/>
-<area shape="rect" id="Node000002" href="$dd/df9/thread__safe__queue_8h.html" title=" " alt="" coords="269,93,428,119"/>
+<area shape="rect" id="Node000001" title="Implementation of the ThreadSafeQueue template class." alt="" coords="273,5,424,45"/>
+<area shape="rect" id="Node000002" href="$dd/df9/thread__safe__queue_8h.html" title="Thread&#45;safe FIFO queue implementation for concurrent producers and consumers." alt="" coords="269,93,428,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="343,46,343,79,338,79,338,45"/>
-<area shape="rect" id="Node000010" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with levels." alt="" coords="457,93,531,119"/>
+<area shape="rect" id="Node000010" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="457,93,531,119"/>
 <area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="385,43,462,84,459,89,382,48"/>
 <area shape="poly" id="edge9_Node000002_Node000001" title=" " alt="" coords="353,93,355,59,360,59,358,93"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,167,148,192"/>

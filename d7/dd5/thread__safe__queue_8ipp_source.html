@@ -99,123 +99,123 @@ $(document).ready(function(){initNavTree('d7/dd5/thread__safe__queue_8ipp_source
 </div><!--header-->
 <div class="contents">
 <a href="../../d7/dd5/thread__safe__queue_8ipp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/* Project libraries */</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/df9/thread__safe__queue_8h.html">thread_safe_queue.h</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="../../d1/d8c/logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/*****************************************************************************/</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/* Project libraries */</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/* Public Methods */</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue&lt;T&gt;::push</a>(T&amp;&amp; data) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    buffer.emplace_back(std::move(data));</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    cv.notify_one();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/df9/thread__safe__queue_8h.html">thread_safe_queue.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="../../d1/d8c/logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/* Public Methods */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">   49</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue&lt;T&gt;::push</a>(T&amp;&amp; data) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    buffer.emplace_back(std::move(data));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    cv.notify_one();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">   39</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">ThreadSafeQueue&lt;T&gt;::pop</a>(T&amp; data) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// Wait until new data is added</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    cv.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> closed || !buffer.empty(); });</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (closed &amp;&amp; buffer.empty()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    data = std::move(buffer.front());</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    buffer.pop_front();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">   58</a></span><a class="code hl_class" href="../../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html">nonstd::optional&lt;T&gt;</a> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">ThreadSafeQueue&lt;T&gt;::try_pop</a>() {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!closed &amp;&amp; !buffer.empty()) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        T data = std::move(buffer.front());</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        buffer.pop_front();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> data;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] No task extracted&quot;</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> nonstd::nullopt;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">   76</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue&lt;T&gt;::empty</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> buffer.empty();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
-</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">   78</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">ThreadSafeQueue&lt;T&gt;::pop</a>(T&amp; data) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">   86</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">ThreadSafeQueue&lt;T&gt;::size</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> buffer.size();</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// Wait until new data is added</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    cv.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> closed || !buffer.empty(); });</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (closed &amp;&amp; buffer.empty()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    data = std::move(buffer.front());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    buffer.pop_front();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">   96</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">ThreadSafeQueue&lt;T&gt;::clear</a>() {</div>
-<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">   97</a></span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Tasks cleaned&quot;</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    buffer.clear();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue&lt;T&gt;::close</a>() {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">  109</a></span>    closed = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task queue closed&quot;</span>);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    cv.notify_all();</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">/*****************************************************************************/</span></div>
-<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">  115</a></span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">/* Private Methods */</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">  110</a></span><a class="code hl_class" href="../../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html">nonstd::optional&lt;T&gt;</a> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">ThreadSafeQueue&lt;T&gt;::try_pop</a>() {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (!closed &amp;&amp; !buffer.empty()) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        T data = std::move(buffer.front());</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        buffer.pop_front();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> data;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] No task extracted&quot;</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> nonstd::nullopt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">  136</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue&lt;T&gt;::empty</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> buffer.empty();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">  152</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">ThreadSafeQueue&lt;T&gt;::size</a>()<span class="keyword"> const </span>{</div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">  153</a></span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">return</span> buffer.size();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">  172</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">ThreadSafeQueue&lt;T&gt;::clear</a>() {</div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">  173</a></span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Tasks cleaned&quot;</span>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    buffer.clear();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">  197</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue&lt;T&gt;::close</a>() {</div>
+<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">  198</a></span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    closed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task queue closed&quot;</span>);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    cv.notify_all();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">/* Private Methods */</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">/*****************************************************************************/</span></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Log an informational message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00046">logger.cpp:46</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_a0ae3246918c2822470271b00f7ee9e92"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00107">thread_safe_queue.ipp:107</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_a396ae3e441a80998815aafd8229d703e"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">ThreadSafeQueue::try_pop</a></div><div class="ttdeci">nonstd::optional&lt; T &gt; try_pop()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00058">thread_safe_queue.ipp:58</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_a58b5532baa6110071f697ad1f9bfbf58"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00076">thread_safe_queue.ipp:76</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_ab255a078bfa2253878a2e17fd5a7a21c"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">ThreadSafeQueue::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00086">thread_safe_queue.ipp:86</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_abb69d10661b922e6249497630e6ba421"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;data)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00028">thread_safe_queue.ipp:28</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_abcf29321d019b8827ae3353109189124"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">ThreadSafeQueue::pop</a></div><div class="ttdeci">bool pop(T &amp;data)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00039">thread_safe_queue.ipp:39</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_ad8729c0e01650afdbe28ec783e5ea9d8"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">ThreadSafeQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00096">thread_safe_queue.ipp:96</a></div></div>
+<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_a0ae3246918c2822470271b00f7ee9e92"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Closes the queue, unblocking all waiting threads.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00197">thread_safe_queue.ipp:197</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_a396ae3e441a80998815aafd8229d703e"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">ThreadSafeQueue::try_pop</a></div><div class="ttdeci">nonstd::optional&lt; T &gt; try_pop()</div><div class="ttdoc">Attempts to pop an element without blocking.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00110">thread_safe_queue.ipp:110</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_a58b5532baa6110071f697ad1f9bfbf58"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Checks whether the queue is currently empty.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00136">thread_safe_queue.ipp:136</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_ab255a078bfa2253878a2e17fd5a7a21c"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">ThreadSafeQueue::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the current number of elements in the queue.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00152">thread_safe_queue.ipp:152</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_abb69d10661b922e6249497630e6ba421"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;data)</div><div class="ttdoc">Pushes a new element into the queue (thread-safe).</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00049">thread_safe_queue.ipp:49</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_abcf29321d019b8827ae3353109189124"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">ThreadSafeQueue::pop</a></div><div class="ttdeci">bool pop(T &amp;data)</div><div class="ttdoc">Pops an element from the queue, blocking until one becomes available.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00078">thread_safe_queue.ipp:78</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_ad8729c0e01650afdbe28ec783e5ea9d8"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">ThreadSafeQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears all elements currently stored in the queue.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00172">thread_safe_queue.ipp:172</a></div></div>
 <div class="ttc" id="aclassnonstd_1_1optional__lite_1_1optional_html"><div class="ttname"><a href="../../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html">nonstd::optional_lite::optional</a></div><div class="ttdoc">class optional</div><div class="ttdef"><b>Definition</b> <a href="../../db/dd5/optional_8hpp_source.html#l00940">optional.hpp:941</a></div></div>
-<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="../../d1/d8c/logger_8h.html">logger.h</a></div><div class="ttdoc">Thread-safe logging utility with levels.</div></div>
-<div class="ttc" id="athread__safe__queue_8h_html"><div class="ttname"><a href="../../dd/df9/thread__safe__queue_8h.html">thread_safe_queue.h</a></div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="../../d1/d8c/logger_8h.html">logger.h</a></div><div class="ttdoc">Thread-safe logging utility with multiple verbosity levels.</div></div>
+<div class="ttc" id="athread__safe__queue_8h_html"><div class="ttname"><a href="../../dd/df9/thread__safe__queue_8h.html">thread_safe_queue.h</a></div><div class="ttdoc">Thread-safe FIFO queue implementation for concurrent producers and consumers.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d7/dd5/thread__safe__queue_8ipp.html">thread_safe_queue.ipp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:33 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

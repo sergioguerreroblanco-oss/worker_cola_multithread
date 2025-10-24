@@ -97,46 +97,62 @@ $(document).ready(function(){initNavTree('d7/d4d/classWorkerPool.html','../../')
 </div><!--header-->
 <div class="contents">
 
+<p>Fixed-size pool of worker threads that execute queued tasks concurrently.  
+ <a href="../../d7/d4d/classWorkerPool.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d9/da2/worker__pool_8h_source.html">worker_pool.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for WorkerPool:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d5e/classWorkerPool__coll__graph.png" border="0" usemap="#aWorkerPool_coll__map" alt="Collaboration graph"/></div>
 <map name="aWorkerPool_coll__map" id="aWorkerPool_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,128,231"/>
+<area shape="rect" title="Fixed&#45;size pool of worker threads that execute queued tasks concurrently." alt="" coords="5,5,128,231"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9e69469d17c278d8d301b825029500c" id="r_aa9e69469d17c278d8d301b825029500c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#aa9e69469d17c278d8d301b825029500c">WorkerPool</a> (<a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a>&lt; std::function&lt; void()&gt; &gt; &amp;queue)</td></tr>
-<tr class="memdesc:aa9e69469d17c278d8d301b825029500c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct.  <br /></td></tr>
+<tr class="memdesc:aa9e69469d17c278d8d301b825029500c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> attached to an existing <a class="el" href="../../da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>.  <br /></td></tr>
 <tr class="separator:aa9e69469d17c278d8d301b825029500c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ff5d62810ecbbf010558f2002b2571" id="r_af4ff5d62810ecbbf010558f2002b2571"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571">~WorkerPool</a> ()</td></tr>
-<tr class="memdesc:af4ff5d62810ecbbf010558f2002b2571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruct a <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> object.  <br /></td></tr>
+<tr class="memdesc:af4ff5d62810ecbbf010558f2002b2571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
 <tr class="separator:af4ff5d62810ecbbf010558f2002b2571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3458f13daf33a37f0dd0575e9207a0e3" id="r_a3458f13daf33a37f0dd0575e9207a0e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#a3458f13daf33a37f0dd0575e9207a0e3">WorkerPool</a> (const <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> &amp;)=delete</td></tr>
-<tr class="memdesc:a3458f13daf33a37f0dd0575e9207a0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor. A <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> cannot be copied because it manages a std::thread, which is non-copyable. Copying would imply two Workers owning the same thread, which is undefined.  <br /></td></tr>
+<tr class="memdesc:a3458f13daf33a37f0dd0575e9207a0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <br /></td></tr>
 <tr class="separator:a3458f13daf33a37f0dd0575e9207a0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ba445f0a98ff65e501a022fdb5c2d96" id="r_a4ba445f0a98ff65e501a022fdb5c2d96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#a4ba445f0a98ff65e501a022fdb5c2d96">operator=</a> (const <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> &amp;)=delete</td></tr>
-<tr class="memdesc:a4ba445f0a98ff65e501a022fdb5c2d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy assignment operator. A <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> cannot be copy-assigned because std::thread cannot be duplicated or reassigned between different owners.  <br /></td></tr>
+<tr class="memdesc:a4ba445f0a98ff65e501a022fdb5c2d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy assignment operator.  <br /></td></tr>
 <tr class="separator:a4ba445f0a98ff65e501a022fdb5c2d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1fc31f0b9194767d490d0a6c45eb19a" id="r_af1fc31f0b9194767d490d0a6c45eb19a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#af1fc31f0b9194767d490d0a6c45eb19a">WorkerPool</a> (<a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:af1fc31f0b9194767d490d0a6c45eb19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move constructor. Although std::thread supports move semantics, allowing <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> to be movable could transfer the ownership of an active thread, leaving the source <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> in an inconsistent state. To enforce strict ownership, movement is disabled.  <br /></td></tr>
+<tr class="memdesc:af1fc31f0b9194767d490d0a6c45eb19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move constructor.  <br /></td></tr>
 <tr class="separator:af1fc31f0b9194767d490d0a6c45eb19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b9b5ea20e12c555e3becece3070055a" id="r_a5b9b5ea20e12c555e3becece3070055a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#a5b9b5ea20e12c555e3becece3070055a">operator=</a> (<a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:a5b9b5ea20e12c555e3becece3070055a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move assignment operator. Move assignment is also disabled for the same reason: to prevent accidental transfer of thread ownership between <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> instances.  <br /></td></tr>
+<tr class="memdesc:a5b9b5ea20e12c555e3becece3070055a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move assignment operator.  <br /></td></tr>
 <tr class="separator:a5b9b5ea20e12c555e3becece3070055a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af492a9d585d176b31068f0c54aa580eb" id="r_af492a9d585d176b31068f0c54aa580eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> (const int number_workers)</td></tr>
+<tr class="memdesc:af492a9d585d176b31068f0c54aa580eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the specified number of worker threads.  <br /></td></tr>
 <tr class="separator:af492a9d585d176b31068f0c54aa580eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455d34d2003981e84bddefc4aca4936b" id="r_a455d34d2003981e84bddefc4aca4936b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b">submit</a> (std::function&lt; void()&gt; task)</td></tr>
+<tr class="memdesc:a455d34d2003981e84bddefc4aca4936b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits a task to be executed by any available worker.  <br /></td></tr>
 <tr class="separator:a455d34d2003981e84bddefc4aca4936b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1ea3717fb5924206af6e47a44d42e25" id="r_aa1ea3717fb5924206af6e47a44d42e25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop</a> ()</td></tr>
+<tr class="memdesc:aa1ea3717fb5924206af6e47a44d42e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops all workers and waits for remaining tasks to complete.  <br /></td></tr>
 <tr class="separator:aa1ea3717fb5924206af6e47a44d42e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d9/da2/worker__pool_8h_source.html#l00043">43</a> of file <a class="el" href="../../d9/da2/worker__pool_8h_source.html">worker_pool.h</a>.</p>
+<div class="textblock"><p>Fixed-size pool of worker threads that execute queued tasks concurrently. </p>
+<p>Each worker runs a loop (<code>run()</code>) that blocks on <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">ThreadSafeQueue::pop()</a></code> until a new task arrives or the queue closes.</p>
+<p>This implementation favors <b>simplicity and determinism</b>:</p><ul>
+<li>Each worker owns exactly one <code>std::thread</code>.</li>
+<li><code><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete.">stop()</a></code> guarantees that all threads finish cleanly.</li>
+<li><code><a class="el" href="../../d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title="Submits a task to be executed by any available worker.">submit()</a></code> is lock-free from the caller’s perspective.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> does <b>not</b> own the queue — it receives a reference to an external <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a></code> instance during construction. This allows flexible sharing or reuse between multiple components. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#_a2">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/da2/worker__pool_8h_source.html#l00068">68</a> of file <a class="el" href="../../d9/da2/worker__pool_8h_source.html">worker_pool.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9e69469d17c278d8d301b825029500c" name="aa9e69469d17c278d8d301b825029500c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9e69469d17c278d8d301b825029500c">&#9670;&#160;</a></span>WorkerPool() <span class="overload">[1/3]</span></h2>
@@ -162,20 +178,29 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct. </p>
+<p>Constructs a <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> attached to an existing <a class="el" href="../../da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>. </p>
+<p>Constructs a <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> attached to a shared <a class="el" href="../../da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">queue</td><td>Reference to the queue from which worker threads will consume tasks.</td></tr>
   </table>
   </dd>
 </dl>
-<p>param</p>
-<p>Implementation of the <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> constructor. Initializes references to the queue and action, and sets the worker name. </p>
+<p>GIVEN an external <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a>&lt;std::function&lt;void()&gt;&gt;</code>, WHEN the <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> is constructed, THEN it binds to that queue but does not start any threads yet.</p>
+<dl class="section note"><dt>Note</dt><dd>Threads are only created when <code><a class="el" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads.">start()</a></code> is explicitly called.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queue</td><td>Reference to the task queue shared among all workers.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN an existing queue instance, WHEN the <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> is constructed, THEN it initializes its internal state but does not spawn any threads yet.</p>
+<p>The actual worker threads are created only after calling <code><a class="el" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads.">start()</a></code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>    : task_queue(queue), running(<span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   30</span>{</div>
-<div class="line"><span class="lineno">   31</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>    : task_queue(queue), running(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -194,34 +219,38 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destruct a <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> object. </p>
-<p>Ensures the worker thread has finished before destruction (joins the thread if needed) </p>
+<p>Destructor. </p>
+<p>Destructor ensuring all threads are stopped and joined before cleanup.</p>
+<p>Ensures that all threads are stopped and joined before destruction.</p>
+<dl class="section note"><dt>Note</dt><dd>Calls <code><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete.">stop()</a></code> automatically for safety, even if the user forgets.</dd></dl>
+<p>Automatically invokes <code><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete.">stop()</a></code> to guarantee proper shutdown and to avoid orphaned threads or deadlocks.</p>
+<dl class="section note"><dt>Note</dt><dd>If the pool was never started, this is a no-op. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop</a>();</div>
-<div class="line"><span class="lineno">   40</span>    workers.clear();</div>
-<div class="line"><span class="lineno">   41</span>}</div>
-<div class="ttc" id="aclassWorkerPool_html_aa1ea3717fb5924206af6e47a44d42e25"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">WorkerPool::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00080">worker_pool.cpp:80</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop</a>();</div>
+<div class="line"><span class="lineno">   61</span>    workers.clear();</div>
+<div class="line"><span class="lineno">   62</span>}</div>
+<div class="ttc" id="aclassWorkerPool_html_aa1ea3717fb5924206af6e47a44d42e25"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">WorkerPool::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops all workers and waits for remaining tasks to complete.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00148">worker_pool.cpp:148</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_af4ff5d62810ecbbf010558f2002b2571_cgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_af4ff5d62810ecbbf010558f2002b2571_cgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_af4ff5d62810ecbbf010558f2002b2571_cgraph" id="ad7/d4d/classWorkerPool_af4ff5d62810ecbbf010558f2002b2571_cgraph">
-<area shape="rect" title="Destruct a Worker object." alt="" coords="5,105,192,131"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,105,371,131"/>
+<area shape="rect" title="Destructor." alt="" coords="5,105,192,131"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,105,371,131"/>
 <area shape="poly" title=" " alt="" coords="192,115,227,115,227,121,192,121"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title=" " alt="" coords="423,5,603,31"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads." alt="" coords="423,5,603,31"/>
 <area shape="poly" title=" " alt="" coords="320,103,363,71,418,40,436,32,438,37,420,44,365,76,324,107"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title=" " alt="" coords="419,55,607,80"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title="Checks whether the queue is currently empty." alt="" coords="419,55,607,80"/>
 <area shape="poly" title=" " alt="" coords="358,103,446,81,448,86,359,108"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="659,156,757,181"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="659,156,757,181"/>
 <area shape="poly" title=" " alt="" coords="371,118,482,125,607,141,650,150,649,155,606,146,481,131,371,123"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="446,156,579,181"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads." alt="" coords="446,156,579,181"/>
 <area shape="poly" title=" " alt="" coords="359,128,448,150,446,155,358,133"/>
-<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="655,205,761,231"/>
+<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="655,205,761,231"/>
 <area shape="poly" title=" " alt="" coords="322,129,364,161,391,177,420,190,476,206,535,214,641,219,641,224,535,220,475,211,418,195,388,182,361,165,319,133"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="809,181,904,207"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="809,181,904,207"/>
 <area shape="poly" title=" " alt="" coords="758,174,796,181,795,186,757,180"/>
 <area shape="poly" title=" " alt="" coords="580,166,644,166,644,171,580,171"/>
 <area shape="poly" title=" " alt="" coords="761,207,795,201,796,206,762,212"/>
@@ -254,7 +283,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable copy constructor. A <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> cannot be copied because it manages a std::thread, which is non-copyable. Copying would imply two Workers owning the same thread, which is undefined. </p>
+<p>Deleted copy constructor. </p>
+<p><a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> cannot be copied because it manages active threads and synchronization primitives. Copying would imply duplicating ownership of threads, which is undefined behavior. </p>
 
 </div>
 </div>
@@ -282,7 +312,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable move constructor. Although std::thread supports move semantics, allowing <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> to be movable could transfer the ownership of an active thread, leaving the source <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> in an inconsistent state. To enforce strict ownership, movement is disabled. </p>
+<p>Deleted move constructor. </p>
+<p>Although <code>std::thread</code> supports move semantics, allowing <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> to be movable would transfer ownership of active threads and invalidate the source object. Movement is disabled to enforce strict lifetime control. </p>
 
 </div>
 </div>
@@ -311,7 +342,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable copy assignment operator. A <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> cannot be copy-assigned because std::thread cannot be duplicated or reassigned between different owners. </p>
+<p>Deleted copy assignment operator. </p>
+<p>Prevents assignment between <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> instances for the same reason as the copy constructor: thread ownership cannot be shared safely. </p>
 
 </div>
 </div>
@@ -339,7 +371,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable move assignment operator. Move assignment is also disabled for the same reason: to prevent accidental transfer of thread ownership between <a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> instances. </p>
+<p>Deleted move assignment operator. </p>
+<p>Move assignment is disabled to avoid undefined behavior related to thread ownership transfer. </p>
 
 </div>
 </div>
@@ -358,32 +391,68 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Starts the worker by setting the running flag to true and launching a dedicated thread that executes the run() loop. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (running)</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    running = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Starting &quot;</span> + std::to_string(number_workers) + <span class="stringliteral">&quot; workers&quot;</span>);</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; number_workers; i++)</div>
-<div class="line"><span class="lineno">   55</span>    {</div>
-<div class="line"><span class="lineno">   56</span>        std::string name = std::string(DEFAULT_WORKER_NAME) + std::to_string(i);</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>        workers.emplace(name, std::thread([<span class="keyword">this</span>, name]() { run(name); }));</div>
-<div class="line"><span class="lineno">   59</span>    }</div>
-<div class="line"><span class="lineno">   60</span>}</div>
-<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Log an informational message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00046">logger.cpp:46</a></div></div>
+<p>Starts the specified number of worker threads. </p>
+<p>Launches multiple worker threads that consume tasks from the queue.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number_workers</td><td>Number of threads to create and start.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN an idle <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a>, WHEN <code>start(n)</code> is called, THEN it spawns <code>n</code> worker threads, each executing the <code>run()</code> loop.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Each worker is named <code>"Worker 0"</code>, <code>"Worker 1"</code>, etc.</li>
+<li>If the pool is already running, subsequent calls to <code><a class="el" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads.">start()</a></code> are ignored.</li>
+<li>Thread creation uses <code>std::thread</code>, and each thread blocks on <code>task_queue.pop()</code>.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number_workers</td><td>Number of threads to start.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN an idle <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a>, WHEN <code><a class="el" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads.">start()</a></code> is invoked, THEN:</p><ul>
+<li>Sets the <code>running</code> flag to <code>true</code>.</li>
+<li>Creates <code>number_workers</code> threads.</li>
+<li>Each thread executes the <code>run()</code> method with a unique worker name.</li>
+</ul>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a> pool(queue);</div>
+<div class="line">pool.start(4); <span class="comment">// Launch 4 worker threads</span></div>
+<div class="ttc" id="aclassWorkerPool_html"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html">WorkerPool</a></div><div class="ttdoc">Fixed-size pool of worker threads that execute queued tasks concurrently.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/da2/worker__pool_8h_source.html#l00068">worker_pool.h:69</a></div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd><ul>
+<li>If the pool is already running, the function returns immediately.</li>
+<li>Each thread runs independently and blocks inside <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">ThreadSafeQueue::pop()</a></code>. </li>
+</ul>
+</dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#a5">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00087">87</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (running)</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    running = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Starting &quot;</span> + std::to_string(number_workers) + <span class="stringliteral">&quot; workers&quot;</span>);</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; number_workers; i++)</div>
+<div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>        std::string name = std::string(DEFAULT_WORKER_NAME) + std::to_string(i);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>        workers.emplace(name, std::thread([<span class="keyword">this</span>, name]() { run(name); }));</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_cgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_cgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_cgraph" id="ad7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,139,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="187,5,285,31"/>
+<area shape="rect" title="Starts the specified number of worker threads." alt="" coords="5,5,139,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="187,5,285,31"/>
 <area shape="poly" title=" " alt="" coords="139,15,173,15,173,21,139,21"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="333,5,428,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="333,5,428,31"/>
 <area shape="poly" title=" " alt="" coords="285,15,320,15,320,21,285,21"/>
 </map>
 </div>
@@ -392,10 +461,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_icgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_icgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_icgraph" id="ad7/d4d/classWorkerPool_af492a9d585d176b31068f0c54aa580eb_icgraph">
-<area shape="rect" title=" " alt="" coords="419,80,552,105"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="rect" title="Starts the specified number of worker threads." alt="" coords="419,80,552,105"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="428,79,370,65,233,40,126,24,127,19,234,34,371,59,429,74"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,105,371,131"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,105,371,131"/>
 <area shape="poly" title=" " alt="" coords="405,107,371,111,370,106,405,101"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,56,126,81"/>
 <area shape="poly" title=" " alt="" coords="405,90,126,73,126,68,405,85"/>
@@ -404,7 +473,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="276,99,237,71,191,46,157,34,125,25,127,20,159,28,193,41,240,67,279,94"/>
 <area shape="poly" title=" " alt="" coords="238,105,126,78,127,72,239,100"/>
 <area shape="poly" title=" " alt="" coords="239,136,134,162,133,157,238,131"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,105,192,131"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,105,192,131"/>
 <area shape="poly" title=" " alt="" coords="226,121,192,121,192,115,226,115"/>
 </map>
 </div>
@@ -425,61 +494,89 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Stops the worker activity by setting its running flag to false. The worker thread will complete its current loop iteration and then exit. This does not affect the underlying queue. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop()</a> does not interrupt pop() immediately. If the worker is waiting in pop(), it will exit only after the configured timeout (5s by default). This simplifies the design and avoids pushing shutdown logic into the queue. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!running)</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    running = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Stop requested, waiting for remaining tasks...&quot;</span>);</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> = std::chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">while</span> (!task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">empty</a>())</div>
-<div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>        std::this_thread::sleep_for(std::chrono::milliseconds(5));</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (std::chrono::steady_clock::now() - <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> &gt; std::chrono::seconds(1))</div>
-<div class="line"><span class="lineno">   94</span>        {</div>
-<div class="line"><span class="lineno">   95</span>            <a class="code hl_function" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a>(<span class="stringliteral">&quot;[Worker Pool] Timeout waiting for queue to drain.&quot;</span>);</div>
-<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-<div class="line"><span class="lineno">   98</span>    }</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">close</a>();</div>
-<div class="line"><span class="lineno">  101</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Task queue drained, closing...&quot;</span>);</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; worker_pair : workers)</div>
-<div class="line"><span class="lineno">  104</span>    {</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keyword">auto</span>&amp; thread = worker_pair.second;</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">if</span> (thread.joinable())</div>
-<div class="line"><span class="lineno">  107</span>            thread.join();</div>
-<div class="line"><span class="lineno">  108</span>    }</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>    workers.clear();</div>
-<div class="line"><span class="lineno">  111</span>}</div>
-<div class="ttc" id="aclassLogger_html_adcbe6e560903cbb4257bccf546789e52"><div class="ttname"><a href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a></div><div class="ttdeci">static void warn(const std::string &amp;msg)</div><div class="ttdoc">Log a warning message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00051">logger.cpp:51</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_a0ae3246918c2822470271b00f7ee9e92"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00107">thread_safe_queue.ipp:107</a></div></div>
-<div class="ttc" id="aclassThreadSafeQueue_html_a58b5532baa6110071f697ad1f9bfbf58"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00076">thread_safe_queue.ipp:76</a></div></div>
-<div class="ttc" id="aclassWorkerPool_html_af492a9d585d176b31068f0c54aa580eb"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">WorkerPool::start</a></div><div class="ttdeci">void start(const int number_workers)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00047">worker_pool.cpp:47</a></div></div>
+<p>Stops all workers and waits for remaining tasks to complete. </p>
+<p>Stops all workers and ensures graceful shutdown.</p>
+<p>GIVEN a running <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a>, WHEN <code><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete.">stop()</a></code> is invoked, THEN:</p><ul>
+<li>The <code>running</code> flag is set to <code>false</code>.</li>
+<li>The queue is closed (via <code>task_queue.close()</code>).</li>
+<li>Each thread is joined safely.</li>
+</ul>
+<p>This provides a <b>graceful shutdown</b>, allowing all pending tasks to finish before termination.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Calling <code><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete.">stop()</a></code> multiple times is safe (idempotent).</li>
+<li>Must be called before destroying the <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a> to avoid leaks.</li>
+</ul>
+</dd></dl>
+<p>GIVEN a running <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a>, WHEN <code><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete.">stop()</a></code> is called, THEN:</p><ul>
+<li>The <code>running</code> flag is set to <code>false</code>.</li>
+<li>The pool waits briefly for remaining tasks to drain.</li>
+<li>The queue is closed (<code>task_queue.close()</code>).</li>
+<li>All worker threads are joined safely.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The function blocks until all threads finish.</li>
+<li>If the queue still contains tasks after the timeout, a warning is logged.</li>
+<li>The method is idempotent (safe to call multiple times).</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This call will not forcibly interrupt a thread in <code>pop()</code> � threads exit naturally once the queue closes or <code>pop()</code> returns false. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#a8">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (!running)</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    running = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Stop requested, waiting for remaining tasks...&quot;</span>);</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">while</span> (!task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">empty</a>())</div>
+<div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>        std::this_thread::sleep_for(std::chrono::milliseconds(5));</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">if</span> (std::chrono::steady_clock::now() - <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> &gt; std::chrono::seconds(1))</div>
+<div class="line"><span class="lineno">  162</span>        {</div>
+<div class="line"><span class="lineno">  163</span>            <a class="code hl_function" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a>(<span class="stringliteral">&quot;[Worker Pool] Timeout waiting for queue to drain.&quot;</span>);</div>
+<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">close</a>();</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Task queue drained, closing...&quot;</span>);</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; worker_pair : workers)</div>
+<div class="line"><span class="lineno">  172</span>    {</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keyword">auto</span>&amp; thread = worker_pair.second;</div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">if</span> (thread.joinable())</div>
+<div class="line"><span class="lineno">  175</span>            thread.join();</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    workers.clear();</div>
+<div class="line"><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aclassLogger_html_adcbe6e560903cbb4257bccf546789e52"><div class="ttname"><a href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a></div><div class="ttdeci">static void warn(const std::string &amp;msg)</div><div class="ttdoc">Logs a warning message (WARN level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00095">logger.cpp:95</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_a0ae3246918c2822470271b00f7ee9e92"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Closes the queue, unblocking all waiting threads.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00197">thread_safe_queue.ipp:197</a></div></div>
+<div class="ttc" id="aclassThreadSafeQueue_html_a58b5532baa6110071f697ad1f9bfbf58"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Checks whether the queue is currently empty.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00136">thread_safe_queue.ipp:136</a></div></div>
+<div class="ttc" id="aclassWorkerPool_html_af492a9d585d176b31068f0c54aa580eb"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">WorkerPool::start</a></div><div class="ttdeci">void start(const int number_workers)</div><div class="ttdoc">Starts the specified number of worker threads.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00087">worker_pool.cpp:87</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_cgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_cgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_cgraph" id="ad7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_cgraph">
-<area shape="rect" title=" " alt="" coords="5,105,136,131"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title=" " alt="" coords="188,5,368,31"/>
+<area shape="rect" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="5,105,136,131"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads." alt="" coords="188,5,368,31"/>
 <area shape="poly" title=" " alt="" coords="86,103,128,71,183,40,201,32,203,37,185,44,131,76,89,107"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title=" " alt="" coords="184,55,372,80"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58" title="Checks whether the queue is currently empty." alt="" coords="184,55,372,80"/>
 <area shape="poly" title=" " alt="" coords="123,103,212,81,213,86,124,108"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="424,156,523,181"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="424,156,523,181"/>
 <area shape="poly" title=" " alt="" coords="136,118,247,125,372,141,416,150,414,155,372,146,246,131,136,123"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="211,156,345,181"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads." alt="" coords="211,156,345,181"/>
 <area shape="poly" title=" " alt="" coords="124,128,213,150,212,155,123,133"/>
-<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="420,205,527,231"/>
+<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="420,205,527,231"/>
 <area shape="poly" title=" " alt="" coords="88,129,129,161,156,177,185,190,242,206,301,214,407,219,406,224,300,220,241,211,183,195,154,182,126,165,84,133"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="575,181,669,207"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="575,181,669,207"/>
 <area shape="poly" title=" " alt="" coords="523,174,561,181,561,186,522,180"/>
 <area shape="poly" title=" " alt="" coords="345,166,410,166,410,171,345,171"/>
 <area shape="poly" title=" " alt="" coords="527,207,561,201,561,206,527,212"/>
@@ -490,14 +587,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_icgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_icgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_icgraph" id="ad7/d4d/classWorkerPool_aa1ea3717fb5924206af6e47a44d42e25_icgraph">
-<area shape="rect" title=" " alt="" coords="240,80,371,105"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="rect" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,80,371,105"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="266,76,191,45,125,26,127,21,193,39,268,71"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,55,126,80"/>
 <area shape="poly" title=" " alt="" coords="226,86,126,73,127,68,226,80"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,104,133,129"/>
 <area shape="poly" title=" " alt="" coords="226,104,134,115,133,110,226,99"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,153,192,179"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,153,192,179"/>
 <area shape="poly" title=" " alt="" coords="266,113,193,143,152,156,150,151,191,138,264,109"/>
 </map>
 </div>
@@ -520,18 +617,45 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00065">65</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
-<div class="line"><span class="lineno">   67</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">push</a>(std::move(task));</div>
-<div class="line"><span class="lineno">   68</span>}</div>
-<div class="ttc" id="aclassThreadSafeQueue_html_abb69d10661b922e6249497630e6ba421"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;data)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00028">thread_safe_queue.ipp:28</a></div></div>
+<p>Submits a task to be executed by any available worker. </p>
+<p>Submits a task for execution by any available worker.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Callable object representing a task (e.g., lambda or <code>std::bind</code>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN a running pool with one or more active workers, WHEN <code><a class="el" href="../../d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title="Submits a task to be executed by any available worker.">submit()</a></code> is called, THEN the task is moved into the queue and executed asynchronously by the next available worker thread.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Thread-safe.</li>
+<li>If the queue is closed, submitting new tasks may have no effect.</li>
+<li>Uses perfect forwarding and <code>std::move()</code> for efficiency.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Callable object representing a unit of work.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN an active <a class="el" href="../../d7/d4d/classWorkerPool.html" title="Fixed-size pool of worker threads that execute queued tasks concurrently.">WorkerPool</a>, WHEN a producer thread calls <code><a class="el" href="../../d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title="Submits a task to be executed by any available worker.">submit()</a></code>, THEN the task is enqueued into <code>task_queue</code> and will be executed asynchronously by the next available worker.</p>
+<p>Example: </p><div class="fragment"><div class="line">pool.submit([] { std::cout &lt;&lt; <span class="stringliteral">&quot;Hello from worker!&quot;</span> &lt;&lt; std::endl; });</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Thread-safe. If the queue is closed or the pool stopped, pushing may be ignored. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#a6">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>{</div>
+<div class="line"><span class="lineno">  124</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">push</a>(std::move(task));</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="aclassThreadSafeQueue_html_abb69d10661b922e6249497630e6ba421"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;data)</div><div class="ttdoc">Pushes a new element into the queue (thread-safe).</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00049">thread_safe_queue.ipp:49</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_cgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_cgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_cgraph" id="ad7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,153,31"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421" title=" " alt="" coords="201,5,379,31"/>
+<area shape="rect" title="Submits a task to be executed by any available worker." alt="" coords="5,5,153,31"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421" title="Pushes a new element into the queue (thread&#45;safe)." alt="" coords="201,5,379,31"/>
 <area shape="poly" title=" " alt="" coords="153,15,188,15,188,21,153,21"/>
 </map>
 </div>
@@ -540,8 +664,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_icgraph.png" border="0" usemap="#ad7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_icgraph" alt=""/></div>
 <map name="ad7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_icgraph" id="ad7/d4d/classWorkerPool_a455d34d2003981e84bddefc4aca4936b_icgraph">
-<area shape="rect" title=" " alt="" coords="123,55,271,80"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="13,5,67,31"/>
+<area shape="rect" title="Submits a task to be executed by any available worker." alt="" coords="123,55,271,80"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="13,5,67,31"/>
 <area shape="poly" title=" " alt="" coords="142,53,67,29,69,24,144,48"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="13,55,67,80"/>
 <area shape="poly" title=" " alt="" coords="109,70,68,70,68,65,109,65"/>
@@ -562,7 +686,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:33 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('d1/d8c/logger_8h.html','../../'); init
 </div><!--header-->
 <div class="contents">
 
-<p>Thread-safe logging utility with levels.  
+<p>Thread-safe logging utility with multiple verbosity levels.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -105,7 +105,7 @@ Include dependency graph for logger.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d6/db3/logger_8h__incl.png" border="0" usemap="#ainclude_2logger_8h" alt=""/></div>
 <map name="ainclude_2logger_8h" id="ainclude_2logger_8h">
-<area shape="rect" title="Thread&#45;safe logging utility with levels." alt="" coords="17,5,143,31"/>
+<area shape="rect" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="17,5,143,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,69,104"/>
 <area shape="poly" title=" " alt="" coords="75,32,53,68,49,66,71,30"/>
 <area shape="rect" title=" " alt="" coords="93,79,152,104"/>
@@ -117,19 +117,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/dcf/logger_8h__dep__incl.png" border="0" usemap="#ainclude_2logger_8hdep" alt=""/></div>
 <map name="ainclude_2logger_8hdep" id="ainclude_2logger_8hdep">
-<area shape="rect" title="Thread&#45;safe logging utility with levels." alt="" coords="261,5,386,31"/>
-<area shape="rect" href="../../d7/dd5/thread__safe__queue_8ipp.html" title=" " alt="" coords="163,79,313,119"/>
+<area shape="rect" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="261,5,386,31"/>
+<area shape="rect" href="../../d7/dd5/thread__safe__queue_8ipp.html" title="Implementation of the ThreadSafeQueue template class." alt="" coords="163,79,313,119"/>
 <area shape="poly" title=" " alt="" coords="302,42,260,80,257,77,299,38"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html" title=" " alt="" coords="5,328,111,353"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html" title="Example entry point demonstrating the WorkerPool and ThreadSafeQueue." alt="" coords="5,328,111,353"/>
 <area shape="poly" title=" " alt="" coords="248,33,197,50,173,64,152,81,127,110,107,144,92,180,80,216,66,282,61,328,56,327,61,281,75,215,87,178,103,141,123,107,148,77,170,59,195,45,246,28"/>
-<area shape="rect" href="../../d1/d2e/worker__pool_8cpp.html" title=" " alt="" coords="309,328,460,353"/>
+<area shape="rect" href="../../d1/d2e/worker__pool_8cpp.html" title="Implementation of the WorkerPool class." alt="" coords="309,328,460,353"/>
 <area shape="poly" title=" " alt="" coords="331,44,385,327,380,328,325,45"/>
-<area shape="rect" href="../../d3/d30/logger_8cpp.html" title="Thread&#45;safe logging utility with levels." alt="" coords="418,86,530,111"/>
+<area shape="rect" href="../../d3/d30/logger_8cpp.html" title="Implementation of the thread&#45;safe Logger class." alt="" coords="418,86,530,111"/>
 <area shape="poly" title=" " alt="" coords="359,35,453,83,450,88,356,39"/>
-<area shape="rect" href="../../dd/df9/thread__safe__queue_8h.html" title=" " alt="" coords="163,167,313,207"/>
+<area shape="rect" href="../../dd/df9/thread__safe__queue_8h.html" title="Thread&#45;safe FIFO queue implementation for concurrent producers and consumers." alt="" coords="163,167,313,207"/>
 <area shape="poly" title=" " alt="" coords="232,132,233,166,228,167,227,132"/>
 <area shape="poly" title=" " alt="" coords="244,153,243,119,248,119,249,153"/>
-<area shape="rect" href="../../d9/da2/worker__pool_8h.html" title=" " alt="" coords="128,255,292,280"/>
+<area shape="rect" href="../../d9/da2/worker__pool_8h.html" title="Thread pool that manages multiple worker threads consuming tasks from a shared queue." alt="" coords="128,255,292,280"/>
 <area shape="poly" title=" " alt="" coords="229,220,217,255,212,253,224,219"/>
 <area shape="poly" title=" " alt="" coords="180,215,148,234,117,257,86,294,66,329,61,326,82,291,113,253,145,229,178,210"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html" title="Unit tests for ThreadSafeQueue and WorkerPool components." alt="" coords="135,328,285,353"/>
@@ -145,16 +145,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/classLogger.html">Logger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A thread-safe static logger utility with configurable severity levels.  <a href="../../db/d67/classLogger.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static thread-safe console logger with configurable severity filtering.  <a href="../../db/d67/classLogger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thread-safe logging utility with levels. </p>
+<div class="textblock"><p>Thread-safe logging utility with multiple verbosity levels. </p>
 <dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>&lt;2025-09-15&gt; </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0</dd></dl>
-<p>The <a class="el" href="../../db/d67/classLogger.html" title="A thread-safe static logger utility with configurable severity levels.">Logger</a> class provides a global, thread-safe mechanism to print messages to the standard output stream. Messages are categorized by severity levels (INFO, WARN, ERROR), and a configurable minimum level filter determines which messages are displayed.</p>
-<p>Internally, the <a class="el" href="../../db/d67/classLogger.html" title="A thread-safe static logger utility with configurable severity levels.">Logger</a> uses a static mutex to synchronize concurrent writes from multiple threads, ensuring that log messages are not interleaved. It also attaches a timestamp and the severity label to each printed message, providing clear context for debugging and monitoring concurrent applications. </p>
+<p>The <code><a class="el" href="../../db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></code> class provides a global, thread-safe mechanism for structured console logging in concurrent applications.</p>
+<p>Each message is prefixed with:</p><ul>
+<li>A timestamp in ISO-like format (<code>YYYY-MM-DD HH:MM:SS</code>)</li>
+<li>The log level (<code>DBG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>)</li>
+</ul>
+<p>Internally:</p><ul>
+<li>A static <code>std::mutex</code> guarantees that log messages are <b>not interleaved</b> when printed from multiple threads.</li>
+<li>A static <code>minLevel</code> acts as a <b>filter</b>: messages below the current level are ignored.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="../../db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> is purely static — no instances should be created. It is designed to be safe for concurrent use across all threads. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
 </div></div><!-- contents -->
@@ -163,7 +171,7 @@ Classes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d1/d8c/logger_8h.html">logger.h</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:33 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

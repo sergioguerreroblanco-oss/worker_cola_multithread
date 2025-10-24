@@ -90,11 +90,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Cola &amp; <a class="el" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> </div></div>
+  <div class="headertitle"><div class="title">Cola &amp; Worker </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="https://github.com/sergioguerreroblanco-oss/cola-worker-test/actions/workflows/ci.yml/badge.svg" alt="CI" style="pointer-events: none;" class="inline"/></p>
-<p>Cola &amp; <a class="el" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> is a C++ project that demonstrates a producer–consumer pattern with a bounded, thread-safe queue and multiple worker threads. <br  />
+<p>Cola &amp; Worker is a C++ project that demonstrates a producer–consumer pattern with a bounded, thread-safe queue and multiple worker threads. <br  />
  It has been designed as part of a technical test, but structured in a professional way, including <b>templates, abstract interfaces, unit tests, logging, Docker support, CI/CD pipelines, and modern C++ practices such as <code>optional</code> for safe return values.</b></p>
 <hr  />
 <h1><a class="anchor" id="autotoc_md2"></a>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </li>
 </ul>
 </li>
-<li>**Workers (<code><a class="el" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a>&lt;T&gt;</code>)** <br  />
+<li>**Workers (<code>Worker&lt;T&gt;</code>)** <br  />
 <ul>
 <li>Each worker runs in its own thread and consumes data from the queue concurrently. <br  />
 </li>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <ul>
 <li><code>IWorkerAction&lt;T&gt;</code> defines key events: <code>trabajo()</code>, <code>colaVacia()</code>, and <code>onStop()</code>. <br  />
 </li>
-<li>Makes it easy to inject different behaviors without modifying the <code><a class="el" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a></code> class. <br  />
+<li>Makes it easy to inject different behaviors without modifying the <code>Worker</code> class. <br  />
 </li>
 </ul>
 </li>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </li>
 </ul>
 </li>
-<li><b>Thread-safe <a class="el" href="db/d67/classLogger.html" title="A thread-safe static logger utility with configurable severity levels.">Logger</a></b> <br  />
+<li><b>Thread-safe <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></b> <br  />
 <ul>
 <li>Centralized utility with log levels (<code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>). <br  />
 </li>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <ul>
 <li><b>Unit tests</b> with GoogleTest, validating queue size limits, FIFO behavior, and timeout handling. <br  />
 </li>
-<li><b>Centralized logging</b> (<code><a class="el" href="db/d67/classLogger.html" title="A thread-safe static logger utility with configurable severity levels.">Logger</a></code>) with thread safety and severity levels (DEBUG, INFO, WARN, ERROR). <br  />
+<li><b>Centralized logging</b> (<code><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></code>) with thread safety and severity levels (DEBUG, INFO, WARN, ERROR). <br  />
 </li>
 <li><b>Automatic documentation</b> with Doxygen-ready headers. <br  />
 </li>
@@ -510,8 +510,8 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 </ul>
 </li>
 <li>Thread Safety: Managed with std::mutex, std::condition_variable, and std::atomic.</li>
-<li>Extensibility: <a class="el" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> actions decoupled via <code>IWorkerAction</code> interface → new behaviors can be added without modifying worker logic.</li>
-<li>Logging: Centralized <a class="el" href="db/d67/classLogger.html" title="A thread-safe static logger utility with configurable severity levels.">Logger</a> utility with severity levels.</li>
+<li>Extensibility: Worker actions decoupled via <code>IWorkerAction</code> interface → new behaviors can be added without modifying worker logic.</li>
+<li>Logging: Centralized <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> utility with severity levels.</li>
 <li>Cross-Platform: Builds on Windows (MSVC), Linux (g++) and Docker.</li>
 <li>Queue implementation: <code>Cola&lt;T&gt;</code> uses <code>std::deque</code> internally rather than a custom array-based buffer. This choice favors <b>simplicity, correctness, and STL optimizations</b>, while still enforcing the bounded size (default: 5 elements). A custom queue could have been implemented, but <code>std::deque</code> provides robust, well-tested behavior with minimal overhead.</li>
 <li><b>Design decision on shutdown handling</b>: <br  />
@@ -520,7 +520,7 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 </li>
 <li>This was removed to keep the queue a <b>pure, passive data structure</b> without any knowledge of program flow or lifecycle. <br  />
 </li>
-<li>Workers (<code><a class="el" href="da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a>&lt;T&gt;</code>) were considered for graceful/immediate shutdown semantics, but they rely on a blocking <code>pop()</code> with a fixed timeout (5s, as required). <br  />
+<li>Workers (<code>Worker&lt;T&gt;</code>) were considered for graceful/immediate shutdown semantics, but they rely on a blocking <code>pop()</code> with a fixed timeout (5s, as required). <br  />
 </li>
 <li>Allowing workers to interrupt <code>pop()</code> would require making the queue “smarter” (e.g., introducing sentinel values or cancellation flags), which would break the intended design philosophy. <br  />
 </li>
@@ -538,7 +538,7 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:34 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

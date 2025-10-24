@@ -1,6 +1,6 @@
 <map id="WorkerPool::submit" name="WorkerPool::submit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="123,55,271,80"/>
-<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="13,5,67,31"/>
+<area shape="rect" id="Node000001" title="Submits a task to be executed by any available worker." alt="" coords="123,55,271,80"/>
+<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="13,5,67,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,53,67,29,69,24,144,48"/>
 <area shape="rect" id="Node000003" href="$d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="13,55,67,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,70,68,70,68,65,109,65"/>

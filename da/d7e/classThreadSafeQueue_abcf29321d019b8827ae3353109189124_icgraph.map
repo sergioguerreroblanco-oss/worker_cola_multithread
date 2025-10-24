@@ -1,5 +1,5 @@
 <map id="ThreadSafeQueue::pop" name="ThreadSafeQueue::pop">
-<area shape="rect" id="Node000001" title=" " alt="" coords="108,31,279,56"/>
+<area shape="rect" id="Node000001" title="Pops an element from the queue, blocking until one becomes available." alt="" coords="108,31,279,56"/>
 <area shape="rect" id="Node000002" href="$d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="5,5,60,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,31,60,25,61,20,100,26"/>
 <area shape="rect" id="Node000003" href="$d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="5,55,60,80"/>

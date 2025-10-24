@@ -36,7 +36,6 @@ var annotated_dup =
     ] ],
     [ "Logger", "db/d67/classLogger.html", "db/d67/classLogger" ],
     [ "ThreadSafeQueue", "da/d7e/classThreadSafeQueue.html", "da/d7e/classThreadSafeQueue" ],
-    [ "Worker", "da/d60/classWorker.html", null ],
     [ "WorkerPool", "d7/d4d/classWorkerPool.html", "d7/d4d/classWorkerPool" ],
     [ "WorkerPoolParamTest", "d9/d94/classWorkerPoolParamTest.html", "d9/d94/classWorkerPoolParamTest" ]
 ];

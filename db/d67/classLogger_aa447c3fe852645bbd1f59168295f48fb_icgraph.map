@@ -1,22 +1,22 @@
 <map id="Logger::log" name="Logger::log">
-<area shape="rect" id="Node000001" title="Log a message with the specified severity level." alt="" coords="824,231,919,256"/>
-<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Log a debug message." alt="" coords="661,156,776,181"/>
+<area shape="rect" id="Node000001" title="Core logging function that prints a message with explicit severity." alt="" coords="824,231,919,256"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="661,156,776,181"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="833,227,775,196,748,184,750,179,777,192,836,222"/>
-<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Log an error message." alt="" coords="666,205,771,231"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="666,205,771,231"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="810,236,771,229,772,224,811,231"/>
-<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="669,255,768,280"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="669,255,768,280"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="811,256,769,262,768,257,810,250"/>
-<area shape="rect" id="Node000017" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="463,407,569,432"/>
+<area shape="rect" id="Node000017" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="463,407,569,432"/>
 <area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="843,267,745,333,681,369,614,400,570,413,569,408,612,396,679,364,743,328,840,262"/>
-<area shape="rect" id="Node000005" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,255,126,280"/>
+<area shape="rect" id="Node000005" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,255,126,280"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="656,270,126,270,126,265,656,265"/>
-<area shape="rect" id="Node000006" href="$da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,153,601,179"/>
+<area shape="rect" id="Node000006" href="$da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available." alt="" coords="431,153,601,179"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="668,250,660,246,645,233,636,222,626,211,612,200,568,181,570,176,615,196,630,207,640,219,649,230,663,241,671,246"/>
-<area shape="rect" id="Node000009" href="$d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,305,583,331"/>
+<area shape="rect" id="Node000009" href="$d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title="Starts the specified number of worker threads." alt="" coords="449,305,583,331"/>
 <area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="657,285,568,308,567,303,655,280"/>
-<area shape="rect" id="Node000010" href="$d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,407,371,432"/>
+<area shape="rect" id="Node000010" href="$d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,407,371,432"/>
 <area shape="poly" id="edge17_Node000004_Node000010" title=" " alt="" coords="695,291,658,320,614,346,511,374,364,409,362,404,510,369,612,341,655,315,691,287"/>
-<area shape="rect" id="Node000014" href="$da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,55,613,80"/>
+<area shape="rect" id="Node000014" href="$da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title="Attempts to pop an element without blocking." alt="" coords="419,55,613,80"/>
 <area shape="poly" id="edge18_Node000004_Node000014" title=" " alt="" coords="664,249,659,245,641,220,633,195,626,170,611,144,575,108,538,82,541,78,578,104,615,140,631,168,638,194,645,217,663,242,668,245"/>
 <area shape="rect" id="Node000007" href="$d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,153,333,179"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="417,169,333,169,333,163,417,163"/>
@@ -31,7 +31,7 @@
 <area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="287,397,247,346,220,319,191,296,158,282,126,274,127,268,160,277,193,292,224,315,251,342,291,394"/>
 <area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="239,406,126,378,127,373,240,401"/>
 <area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="276,400,237,373,191,347,133,328,135,323,193,342,240,368,279,396"/>
-<area shape="rect" id="Node000013" href="$d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,407,192,432"/>
+<area shape="rect" id="Node000013" href="$d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,407,192,432"/>
 <area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="226,422,192,422,192,417,226,417"/>
 <area shape="rect" id="Node000015" href="$d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,55,333,80"/>
 <area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="405,70,333,70,333,65,405,65"/>

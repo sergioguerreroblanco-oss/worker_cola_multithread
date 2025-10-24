@@ -36,6 +36,5 @@ var hierarchy =
     [ "nonstd::optional_lite::detail::type_of_size< List, N >", "d8/d90/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size.html", null ],
     [ "nonstd::optional_lite::detail::type_of_size< nulltype, N >", "d4/de5/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4.html", null ],
     [ "nonstd::optional_lite::detail::typelist< Head, Tail >", "d0/de3/structnonstd_1_1optional__lite_1_1detail_1_1typelist.html", null ],
-    [ "Worker", "da/d60/classWorker.html", null ],
     [ "WorkerPool", "d7/d4d/classWorkerPool.html", null ]
 ];

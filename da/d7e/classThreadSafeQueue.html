@@ -97,61 +97,75 @@ $(document).ready(function(){initNavTree('da/d7e/classThreadSafeQueue.html','../
 </div><!--header-->
 <div class="contents">
 
+<p>Thread-safe FIFO queue supporting multiple producers and consumers.  
+ <a href="../../da/d7e/classThreadSafeQueue.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../dd/df9/thread__safe__queue_8h_source.html">thread_safe_queue.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ThreadSafeQueue&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/dfa/classThreadSafeQueue__coll__graph.png" border="0" usemap="#aThreadSafeQueue_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aThreadSafeQueue_3_01T_01_4_coll__map" id="aThreadSafeQueue_3_01T_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,173,311"/>
+<area shape="rect" title="Thread&#45;safe FIFO queue supporting multiple producers and consumers." alt="" coords="5,5,173,311"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae20e4ca35fd7b5e4d7358b690447e90e" id="r_ae20e4ca35fd7b5e4d7358b690447e90e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#ae20e4ca35fd7b5e4d7358b690447e90e">ThreadSafeQueue</a> ()=default</td></tr>
-<tr class="memdesc:ae20e4ca35fd7b5e4d7358b690447e90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> class.  <br /></td></tr>
+<tr class="memdesc:ae20e4ca35fd7b5e4d7358b690447e90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:ae20e4ca35fd7b5e4d7358b690447e90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ea6d713ef200cbfb249a1cc16b3312" id="r_a95ea6d713ef200cbfb249a1cc16b3312"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a95ea6d713ef200cbfb249a1cc16b3312">~ThreadSafeQueue</a> ()=default</td></tr>
-<tr class="memdesc:a95ea6d713ef200cbfb249a1cc16b3312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of the <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> class.  <br /></td></tr>
+<tr class="memdesc:a95ea6d713ef200cbfb249a1cc16b3312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
 <tr class="separator:a95ea6d713ef200cbfb249a1cc16b3312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a792b7a5e8128de32d24e03ed7b56c" id="r_aa5a792b7a5e8128de32d24e03ed7b56c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#aa5a792b7a5e8128de32d24e03ed7b56c">ThreadSafeQueue</a> (const <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> &amp;)=delete</td></tr>
-<tr class="memdesc:aa5a792b7a5e8128de32d24e03ed7b56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor. <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> cannot be copied because it manages synchronization primitives (std::mutex, std::condition_variable), which are non-copyable.  <br /></td></tr>
+<tr class="memdesc:aa5a792b7a5e8128de32d24e03ed7b56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor.  <br /></td></tr>
 <tr class="separator:aa5a792b7a5e8128de32d24e03ed7b56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7973611acfd314645a3fe05cd5e1a1a6" id="r_a7973611acfd314645a3fe05cd5e1a1a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a7973611acfd314645a3fe05cd5e1a1a6">operator=</a> (const <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> &amp;)=delete</td></tr>
-<tr class="memdesc:a7973611acfd314645a3fe05cd5e1a1a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy assignment operator. <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> cannot be copy-assigned for the same reason: synchronization primitives cannot be duplicated safely.  <br /></td></tr>
+<tr class="memdesc:a7973611acfd314645a3fe05cd5e1a1a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy assignment operator.  <br /></td></tr>
 <tr class="separator:a7973611acfd314645a3fe05cd5e1a1a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ed25542a305bda89ee8824e339738c" id="r_a71ed25542a305bda89ee8824e339738c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a71ed25542a305bda89ee8824e339738c">ThreadSafeQueue</a> (<a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:a71ed25542a305bda89ee8824e339738c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move constructor. Although std::mutex and std::condition_variable technically have move operations deleted, even if they were movable, transferring them between <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> instances would break synchronization guarantees. To enforce strict ownership, movement is disabled.  <br /></td></tr>
+<tr class="memdesc:a71ed25542a305bda89ee8824e339738c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move constructor.  <br /></td></tr>
 <tr class="separator:a71ed25542a305bda89ee8824e339738c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a85dac43be29a491a49786d7036d82" id="r_a34a85dac43be29a491a49786d7036d82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a34a85dac43be29a491a49786d7036d82">operator=</a> (<a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:a34a85dac43be29a491a49786d7036d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move assignment operator. Move assignment is also disabled to avoid transferring synchronization primitives between instances, which could lead to undefined behavior.  <br /></td></tr>
+<tr class="memdesc:a34a85dac43be29a491a49786d7036d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move assignment operator.  <br /></td></tr>
 <tr class="separator:a34a85dac43be29a491a49786d7036d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb69d10661b922e6249497630e6ba421" id="r_abb69d10661b922e6249497630e6ba421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">push</a> (T &amp;&amp;data)</td></tr>
+<tr class="memdesc:abb69d10661b922e6249497630e6ba421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a new element into the queue (thread-safe).  <br /></td></tr>
 <tr class="separator:abb69d10661b922e6249497630e6ba421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcf29321d019b8827ae3353109189124" id="r_abcf29321d019b8827ae3353109189124"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124">pop</a> (T &amp;data)</td></tr>
+<tr class="memdesc:abcf29321d019b8827ae3353109189124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops an element from the queue, blocking until one becomes available.  <br /></td></tr>
 <tr class="separator:abcf29321d019b8827ae3353109189124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396ae3e441a80998815aafd8229d703e" id="r_a396ae3e441a80998815aafd8229d703e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html">nonstd::optional</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e">try_pop</a> ()</td></tr>
+<tr class="memdesc:a396ae3e441a80998815aafd8229d703e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to pop an element without blocking.  <br /></td></tr>
 <tr class="separator:a396ae3e441a80998815aafd8229d703e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58b5532baa6110071f697ad1f9bfbf58" id="r_a58b5532baa6110071f697ad1f9bfbf58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">empty</a> () const</td></tr>
+<tr class="memdesc:a58b5532baa6110071f697ad1f9bfbf58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the queue is currently empty.  <br /></td></tr>
 <tr class="separator:a58b5532baa6110071f697ad1f9bfbf58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab255a078bfa2253878a2e17fd5a7a21c" id="r_ab255a078bfa2253878a2e17fd5a7a21c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#ab255a078bfa2253878a2e17fd5a7a21c">size</a> () const</td></tr>
+<tr class="memdesc:ab255a078bfa2253878a2e17fd5a7a21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current number of elements in the queue.  <br /></td></tr>
 <tr class="separator:ab255a078bfa2253878a2e17fd5a7a21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8729c0e01650afdbe28ec783e5ea9d8" id="r_ad8729c0e01650afdbe28ec783e5ea9d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8">clear</a> ()</td></tr>
+<tr class="memdesc:ad8729c0e01650afdbe28ec783e5ea9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all elements currently stored in the queue.  <br /></td></tr>
 <tr class="separator:ad8729c0e01650afdbe28ec783e5ea9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ae3246918c2822470271b00f7ee9e92" id="r_a0ae3246918c2822470271b00f7ee9e92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">close</a> ()</td></tr>
+<tr class="memdesc:a0ae3246918c2822470271b00f7ee9e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the queue, unblocking all waiting threads.  <br /></td></tr>
 <tr class="separator:a0ae3246918c2822470271b00f7ee9e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class ThreadSafeQueue&lt; T &gt;</div><dl class="tparams"><dt>Template Parameters</dt><dd>
+class ThreadSafeQueue&lt; T &gt;</div><p>Thread-safe FIFO queue supporting multiple producers and consumers. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Type of element stored in the queue.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>This queue is designed for use in multi-threaded environments. It provides blocking (<code>pop</code>) and non-blocking (<code>try_pop</code>) retrieval operations, as well as a <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads.">close()</a></code> method for graceful termination of waiting consumers. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d49/_2home_2runner_2work_2worker_cola_multithread_2worker_cola_multithread_2src_2main_8cpp-example.html#_a1">/home/runner/work/worker_cola_multithread/worker_cola_multithread/src/main.cpp</a>.</dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df9/thread__safe__queue_8h_source.html#l00038">38</a> of file <a class="el" href="../../dd/df9/thread__safe__queue_8h_source.html">thread_safe_queue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/df9/thread__safe__queue_8h_source.html#l00058">58</a> of file <a class="el" href="../../dd/df9/thread__safe__queue_8h_source.html">thread_safe_queue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae20e4ca35fd7b5e4d7358b690447e90e" name="ae20e4ca35fd7b5e4d7358b690447e90e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae20e4ca35fd7b5e4d7358b690447e90e">&#9670;&#160;</a></span>ThreadSafeQueue() <span class="overload">[1/3]</span></h2>
@@ -178,7 +192,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Constructor of the <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> class. </p>
+<p>Default constructor. </p>
+<p>Initializes an empty queue ready for use by producer and consumer threads. </p>
 
 </div>
 </div>
@@ -207,7 +222,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Destructor of the <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> class. </p>
+<p>Destructor. </p>
+<p>Automatically releases resources. If <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads.">close()</a></code> was not called, any threads waiting on <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">pop()</a></code> may be unblocked during destruction. </p>
 
 </div>
 </div>
@@ -237,7 +253,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable copy constructor. <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> cannot be copied because it manages synchronization primitives (std::mutex, std::condition_variable), which are non-copyable. </p>
+<p>Disable copy constructor. </p>
+<p><a class="el" href="../../da/d7e/classThreadSafeQueue.html" title="Thread-safe FIFO queue supporting multiple producers and consumers.">ThreadSafeQueue</a> cannot be copied because it manages synchronization primitives (<code>std::mutex</code>, <code>std::condition_variable</code>), which are inherently non-copyable. </p>
 
 </div>
 </div>
@@ -267,7 +284,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable move constructor. Although std::mutex and std::condition_variable technically have move operations deleted, even if they were movable, transferring them between <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> instances would break synchronization guarantees. To enforce strict ownership, movement is disabled. </p>
+<p>Disable move constructor. </p>
+<p>Moving synchronization primitives would invalidate any existing waiting threads. To preserve strict ownership semantics, move operations are not supported. </p>
 
 </div>
 </div>
@@ -288,21 +306,26 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00096">96</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>                               {</div>
-<div class="line"><span class="lineno">   97</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   98</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Tasks cleaned&quot;</span>);</div>
-<div class="line"><span class="lineno">   99</span>    buffer.clear();</div>
-<div class="line"><span class="lineno">  100</span>}</div>
-<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Log an informational message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00046">logger.cpp:46</a></div></div>
+<p>Clears all elements currently stored in the queue. </p>
+<p>Removes all elements from the queue.</p>
+<p>Removes all elements from the internal buffer. Does not affect the <code>closed</code> state.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Should be used carefully in concurrent environments to avoid discarding data being produced/consumed simultaneously.</dd></dl>
+<p>GIVEN a queue that may contain elements, WHEN <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8" title="Clears all elements currently stored in the queue.">clear()</a></code> is called, THEN all stored elements are destroyed and the queue becomes empty.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Does not modify the <code>closed</code> flag.</li>
+<li>Thread-safe.</li>
+<li>Should be used cautiously in concurrent systems to avoid discarding data still being processed by consumers. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00172">172</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>                               {</div>
+<div class="line"><span class="lineno">  173</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Tasks cleaned&quot;</span>);</div>
+<div class="line"><span class="lineno">  175</span>    buffer.clear();</div>
+<div class="line"><span class="lineno">  176</span>}</div>
+<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -322,38 +345,49 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00107">107</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>                               {</div>
-<div class="line"><span class="lineno">  108</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">  109</span>    closed = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task queue closed&quot;</span>);</div>
-<div class="line"><span class="lineno">  111</span>    cv.notify_all();</div>
-<div class="line"><span class="lineno">  112</span>}</div>
+<p>Closes the queue, unblocking all waiting threads. </p>
+<p>Closes the queue and unblocks all waiting threads.</p>
+<p>Sets an internal flag (<code>closed = true</code>) and notifies all waiting threads so they can exit gracefully.</p>
+<p>After calling this, subsequent calls to <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">pop()</a></code> will return <code>false</code> once the queue is empty, and <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title="Attempts to pop an element without blocking.">try_pop()</a></code> will return <code>nullopt</code>.</p>
+<p>GIVEN a running queue with potential blocking consumers, WHEN <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads.">close()</a></code> is invoked, THEN:</p><ul>
+<li>Sets the internal <code>closed</code> flag to <code>true</code>.</li>
+<li>Notifies all threads waiting on <code>cv.wait()</code> so they can terminate gracefully.</li>
+</ul>
+<p>After closure:</p><ul>
+<li><code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">pop()</a></code> will return <code>false</code> once the queue becomes empty.</li>
+<li><code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title="Attempts to pop an element without blocking.">try_pop()</a></code> will return <code>nullopt</code> if empty.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Safe to call multiple times (idempotent).</li>
+<li>Commonly used before destruction to prevent deadlocks. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00197">197</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>                               {</div>
+<div class="line"><span class="lineno">  198</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  199</span>    closed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task queue closed&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>    cv.notify_all();</div>
+<div class="line"><span class="lineno">  202</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_a0ae3246918c2822470271b00f7ee9e92_icgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_a0ae3246918c2822470271b00f7ee9e92_icgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_a0ae3246918c2822470271b00f7ee9e92_icgraph" id="ada/d7e/classThreadSafeQueue_a0ae3246918c2822470271b00f7ee9e92_icgraph">
-<area shape="rect" title=" " alt="" coords="419,105,599,131"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,80,371,105"/>
+<area shape="rect" title="Closes the queue, unblocking all waiting threads." alt="" coords="419,105,599,131"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,80,371,105"/>
 <area shape="poly" title=" " alt="" coords="404,108,371,103,371,98,405,102"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,129,333,155"/>
 <area shape="poly" title=" " alt="" coords="405,133,333,142,333,136,404,128"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="266,76,191,45,125,26,127,21,193,39,268,71"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,55,126,80"/>
 <area shape="poly" title=" " alt="" coords="226,86,126,73,127,68,226,80"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,104,133,129"/>
 <area shape="poly" title=" " alt="" coords="226,104,134,115,133,110,226,99"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,153,192,179"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,153,192,179"/>
 <area shape="poly" title=" " alt="" coords="256,113,241,119,193,143,154,156,152,151,191,138,239,114,254,108"/>
 </map>
 </div>
@@ -376,36 +410,41 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00076">76</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>                                     {</div>
-<div class="line"><span class="lineno">   77</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> buffer.empty();</div>
-<div class="line"><span class="lineno">   79</span>}</div>
+<p>Checks whether the queue is currently empty. </p>
+<p>Checks whether the queue is empty.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the queue is empty, <code>false</code> otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method is thread-safe and can be called concurrently with other operations.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the internal buffer contains no elements, otherwise <code>false</code>.</dd></dl>
+<p>This method provides a thread-safe check on the queue’s current size.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Acquires a brief lock to safely inspect the buffer.</li>
+<li>Useful for status checks or conditional waiting logic. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00136">136</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>                                     {</div>
+<div class="line"><span class="lineno">  137</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> buffer.empty();</div>
+<div class="line"><span class="lineno">  139</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_a58b5532baa6110071f697ad1f9bfbf58_icgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_a58b5532baa6110071f697ad1f9bfbf58_icgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_a58b5532baa6110071f697ad1f9bfbf58_icgraph" id="ada/d7e/classThreadSafeQueue_a58b5532baa6110071f697ad1f9bfbf58_icgraph">
-<area shape="rect" title=" " alt="" coords="419,105,607,131"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,80,371,105"/>
+<area shape="rect" title="Checks whether the queue is currently empty." alt="" coords="419,105,607,131"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title="Stops all workers and waits for remaining tasks to complete." alt="" coords="240,80,371,105"/>
 <area shape="poly" title=" " alt="" coords="405,107,371,103,371,98,405,102"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,129,333,155"/>
 <area shape="poly" title=" " alt="" coords="406,133,333,142,333,136,405,128"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="71,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="266,76,191,45,125,26,127,21,193,39,268,71"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,55,126,80"/>
 <area shape="poly" title=" " alt="" coords="226,86,126,73,127,68,226,80"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,104,133,129"/>
 <area shape="poly" title=" " alt="" coords="226,104,134,115,133,110,226,99"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,153,192,179"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destructor." alt="" coords="5,153,192,179"/>
 <area shape="poly" title=" " alt="" coords="256,113,241,119,193,143,154,156,152,151,191,138,239,114,254,108"/>
 </map>
 </div>
@@ -438,7 +477,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable copy assignment operator. <a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a> cannot be copy-assigned for the same reason: synchronization primitives cannot be duplicated safely. </p>
+<p>Disable copy assignment operator. </p>
+<p>Copy assignment is forbidden for the same reason as the copy constructor: synchronization primitives cannot be duplicated safely. </p>
 
 </div>
 </div>
@@ -468,7 +508,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Disable move assignment operator. Move assignment is also disabled to avoid transferring synchronization primitives between instances, which could lead to undefined behavior. </p>
+<p>Disable move assignment operator. </p>
+<p>Moving the queue could break thread synchronization guarantees, so it is disabled. </p>
 
 </div>
 </div>
@@ -489,37 +530,66 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pops an element from the queue, blocking until one becomes available. </p>
+<p>Pops an element from the queue, blocking until one becomes available or the queue closes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Reference to a variable where the popped value will be stored. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was successfully retrieved, or <code>false</code> if the queue was closed and empty.</dd></dl>
+<p>This method will block the calling thread until:</p><ul>
+<li>An element is available to pop, or</li>
+<li>The queue has been closed via <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads.">close()</a></code>.</li>
+</ul>
+<p>If the queue is closed and empty, the method returns <code>false</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Reference where the extracted element will be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if an element was successfully retrieved, or <code>false</code> if the queue was closed and no more data is available.</dd></dl>
+<p>GIVEN one or more consumer threads waiting for tasks, WHEN the queue is empty, <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">pop()</a></code> blocks the thread until either:</p><ul>
+<li>A producer pushes a new element (<code>cv.notify_one()</code>), or</li>
+<li>The queue is closed via <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads.">close()</a></code>.</li>
+</ul>
+<p>THEN, once unblocked:</p><ul>
+<li>If there is data available, the front element is popped and returned.</li>
+<li>If the queue is closed and empty, the function returns <code>false</code>.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>This call <em>will block</em> if the queue is empty and not closed.</li>
+<li>Once <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92" title="Closes the queue, unblocking all waiting threads.">close()</a></code> is invoked, all blocked threads are awakened.</li>
+<li>Thread safety is guaranteed via <code>std::unique_lock</code>. </li>
+</ul>
+</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00039">39</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                    {</div>
-<div class="line"><span class="lineno">   40</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="comment">// Wait until new data is added</span></div>
-<div class="line"><span class="lineno">   43</span>    cv.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> closed || !buffer.empty(); });</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (closed &amp;&amp; buffer.empty()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
-<div class="line"><span class="lineno">   48</span>    data = std::move(buffer.front());</div>
-<div class="line"><span class="lineno">   49</span>    buffer.pop_front();</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00078">78</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                    {</div>
+<div class="line"><span class="lineno">   79</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="comment">// Wait until new data is added</span></div>
+<div class="line"><span class="lineno">   82</span>    cv.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> closed || !buffer.empty(); });</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (closed &amp;&amp; buffer.empty()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span>    data = std::move(buffer.front());</div>
+<div class="line"><span class="lineno">   88</span>    buffer.pop_front();</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   90</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_cgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_cgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_cgraph" id="ada/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,176,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="224,5,323,31"/>
+<area shape="rect" title="Pops an element from the queue, blocking until one becomes available." alt="" coords="5,5,176,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="224,5,323,31"/>
 <area shape="poly" title=" " alt="" coords="176,15,210,15,210,21,176,21"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="371,5,465,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="371,5,465,31"/>
 <area shape="poly" title=" " alt="" coords="323,15,357,15,357,21,323,21"/>
 </map>
 </div>
@@ -528,7 +598,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_icgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_icgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_icgraph" id="ada/d7e/classThreadSafeQueue_abcf29321d019b8827ae3353109189124_icgraph">
-<area shape="rect" title=" " alt="" coords="108,31,279,56"/>
+<area shape="rect" title="Pops an element from the queue, blocking until one becomes available." alt="" coords="108,31,279,56"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="99,31,60,25,61,20,100,26"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="5,55,60,80"/>
@@ -555,26 +625,51 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pushes a new element into the queue (thread-safe). </p>
+<p>Pushes a new element into the queue in a thread-safe manner.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">data</td><td>Rvalue reference to the element being pushed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds an element to the back of the internal buffer. If one or more threads are waiting in <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">pop()</a></code>, one of them will be notified.</p>
+<p>This method uses perfect forwarding via <code>std::move()</code>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Throws no exceptions unless the internal <code>std::deque::emplace_back</code> does.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Rvalue reference to the element to be enqueued.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>GIVEN a running producer thread, WHEN <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421" title="Pushes a new element into the queue (thread-safe).">push()</a></code> is called with a new element, THEN the element is added to the back of the internal FIFO buffer and one waiting consumer thread (if any) is notified.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Locks the mutex before accessing the internal <code>std::deque</code>.</li>
+<li>Notifies one consumer waiting on the condition variable.</li>
+<li>Does not block (non-blocking push).</li>
+</ul>
+</dd></dl>
+<p>@threadsafe Yes. </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Only</td><td>if the internal container throws during <code>emplace_back</code>. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00028">28</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>                                      {</div>
-<div class="line"><span class="lineno">   29</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   30</span>    buffer.emplace_back(std::move(data));</div>
-<div class="line"><span class="lineno">   31</span>    cv.notify_one();</div>
-<div class="line"><span class="lineno">   32</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00049">49</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                      {</div>
+<div class="line"><span class="lineno">   50</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   51</span>    buffer.emplace_back(std::move(data));</div>
+<div class="line"><span class="lineno">   52</span>    cv.notify_one();</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_abb69d10661b922e6249497630e6ba421_icgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_abb69d10661b922e6249497630e6ba421_icgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_abb69d10661b922e6249497630e6ba421_icgraph" id="ada/d7e/classThreadSafeQueue_abb69d10661b922e6249497630e6ba421_icgraph">
-<area shape="rect" title=" " alt="" coords="319,129,496,155"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title=" " alt="" coords="123,55,271,80"/>
+<area shape="rect" title="Pushes a new element into the queue (thread&#45;safe)." alt="" coords="319,129,496,155"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#a455d34d2003981e84bddefc4aca4936b" title="Submits a task to be executed by any available worker." alt="" coords="123,55,271,80"/>
 <area shape="poly" title=" " alt="" coords="359,127,270,94,236,83,238,77,272,89,361,122"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="169,104,224,129"/>
 <area shape="poly" title=" " alt="" coords="304,132,224,123,225,117,305,127"/>
@@ -582,7 +677,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="305,156,225,166,224,160,304,151"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="169,203,224,228"/>
 <area shape="poly" title=" " alt="" coords="360,162,272,194,225,209,223,204,270,189,358,157"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="13,5,67,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="13,5,67,31"/>
 <area shape="poly" title=" " alt="" coords="142,53,67,29,69,24,144,48"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="13,55,67,80"/>
 <area shape="poly" title=" " alt="" coords="109,70,68,70,68,65,109,65"/>
@@ -609,19 +704,23 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00086">86</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>                                      {</div>
-<div class="line"><span class="lineno">   87</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> buffer.size();</div>
-<div class="line"><span class="lineno">   89</span>}</div>
+<p>Returns the current number of elements in the queue. </p>
+<p>Returns the number of elements currently stored in the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>Number of elements stored in the internal buffer.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method acquires a lock briefly to read the size safely.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements in the internal buffer.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Thread-safe read operation.</li>
+<li>Acquires a short-lived lock on the internal mutex. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00152">152</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>                                      {</div>
+<div class="line"><span class="lineno">  153</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> buffer.size();</div>
+<div class="line"><span class="lineno">  155</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -641,36 +740,43 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00058">58</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>                                              {</div>
-<div class="line"><span class="lineno">   59</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!closed &amp;&amp; !buffer.empty()) {</div>
-<div class="line"><span class="lineno">   62</span>        T data = std::move(buffer.front());</div>
-<div class="line"><span class="lineno">   63</span>        buffer.pop_front();</div>
-<div class="line"><span class="lineno">   64</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> data;</div>
-<div class="line"><span class="lineno">   66</span>    }</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] No task extracted&quot;</span>);</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> nonstd::nullopt;</div>
-<div class="line"><span class="lineno">   69</span>}</div>
+<p>Attempts to pop an element without blocking. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>nonstd::optional&lt;T&gt;</code> containing the element if available, or <code>nonstd::nullopt</code> if the queue is empty or closed.</dd></dl>
+<p>This method is non-blocking and returns immediately. Useful for polling scenarios or single-threaded draining logic.</p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>nonstd::optional&lt;T&gt;</code> containing the popped element if available, or <code>nonstd::nullopt</code> if the queue is empty or closed.</dd></dl>
+<p>GIVEN a queue that may or may not contain elements, WHEN <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title="Attempts to pop an element without blocking.">try_pop()</a></code> is called, THEN it will immediately:</p><ul>
+<li>Return the front element (moved) if available.</li>
+<li>Return <code>nullopt</code> if the queue is empty or has been closed.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>This is a <em>non-blocking</em> call.</li>
+<li>Safe to call concurrently with <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421" title="Pushes a new element into the queue (thread-safe).">push()</a></code> and <code><a class="el" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title="Pops an element from the queue, blocking until one becomes available.">pop()</a></code>. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00110">110</a> of file <a class="el" href="../../d7/dd5/thread__safe__queue_8ipp_source.html">thread_safe_queue.ipp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                              {</div>
+<div class="line"><span class="lineno">  111</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> (!closed &amp;&amp; !buffer.empty()) {</div>
+<div class="line"><span class="lineno">  114</span>        T data = std::move(buffer.front());</div>
+<div class="line"><span class="lineno">  115</span>        buffer.pop_front();</div>
+<div class="line"><span class="lineno">  116</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] Task extracted successfully&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">return</span> data;</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Thread Safe Queue] No task extracted&quot;</span>);</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> nonstd::nullopt;</div>
+<div class="line"><span class="lineno">  121</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_cgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_cgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_cgraph" id="ada/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,200,31"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="248,5,347,31"/>
+<area shape="rect" title="Attempts to pop an element without blocking." alt="" coords="5,5,200,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="248,5,347,31"/>
 <area shape="poly" title=" " alt="" coords="201,15,235,15,235,21,201,21"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Log a message with the specified severity level." alt="" coords="395,5,489,31"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="395,5,489,31"/>
 <area shape="poly" title=" " alt="" coords="347,15,381,15,381,21,347,21"/>
 </map>
 </div>
@@ -679,7 +785,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_icgraph.png" border="0" usemap="#ada/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_icgraph" alt=""/></div>
 <map name="ada/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_icgraph" id="ada/d7e/classThreadSafeQueue_a396ae3e441a80998815aafd8229d703e_icgraph">
-<area shape="rect" title=" " alt="" coords="108,31,303,56"/>
+<area shape="rect" title="Attempts to pop an element without blocking." alt="" coords="108,31,303,56"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="105,31,60,25,60,19,105,26"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="5,55,60,80"/>
@@ -699,7 +805,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d7e/classThreadSafeQueue.html">ThreadSafeQueue</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:56:59 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 10:40:33 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
