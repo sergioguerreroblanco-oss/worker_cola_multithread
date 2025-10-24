@@ -1,0 +1,25 @@
+<map id="include/thread_safe_queue.ipp" name="include/thread_safe_queue.ipp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="273,5,424,45"/>
+<area shape="rect" id="Node000002" href="$thread__safe__queue_8h.html" title=" " alt="" coords="269,93,428,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="343,46,343,79,338,79,338,45"/>
+<area shape="rect" id="Node000010" href="$logger_8h.html" title="Thread&#45;safe logging utility with levels." alt="" coords="457,93,531,119"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="385,43,462,84,459,89,382,48"/>
+<area shape="poly" id="edge9_Node000002_Node000001" title=" " alt="" coords="353,93,355,59,360,59,358,93"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,148,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,121,134,166,133,161,304,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,167,235,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="326,121,240,163,238,158,324,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="462,167,526,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="373,116,459,158,457,163,371,121"/>
+<area shape="rect" id="Node000006" href="$optional_8hpp_source.html" title=" " alt="" coords="259,167,438,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="351,119,351,153,346,153,346,119"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="219,240,289,265"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="335,194,282,234,279,229,332,190"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="314,240,383,265"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="351,192,351,226,346,226,346,192"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="408,240,468,265"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="365,190,414,229,411,233,361,194"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="497,119,497,153,491,153,491,119"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="550,167,609,192"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="509,117,557,156,553,160,506,121"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="include/logger.h" name="include/logger.h">
+<area shape="rect" id="Node000001" title="Thread&#45;safe logging utility with levels." alt="" coords="175,5,301,31"/>
+<area shape="rect" id="Node000002" href="$thread__safe__queue_8ipp.html" title=" " alt="" coords="103,79,253,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,43,195,80,190,77,219,40"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="5,328,111,353"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="163,36,124,53,107,65,92,80,73,111,61,146,53,182,50,218,52,283,58,328,53,328,47,283,45,218,48,181,55,144,68,109,88,77,103,61,121,48,161,31"/>
+<area shape="rect" id="Node000006" href="$worker__pool_8cpp.html" title=" " alt="" coords="179,328,329,353"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="254,42,267,78,279,134,283,179,281,224,274,281,261,328,256,327,269,279,276,223,278,179,273,135,262,79,249,44"/>
+<area shape="rect" id="Node000007" href="$logger_8cpp.html" title="Thread&#45;safe logging utility with levels." alt="" coords="335,86,447,111"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="274,35,370,83,367,88,272,39"/>
+<area shape="rect" id="Node000003" href="$thread__safe__queue_8h.html" title=" " alt="" coords="103,167,253,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="172,132,173,166,168,167,167,132"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="184,153,183,119,188,119,189,153"/>
+<area shape="rect" id="Node000004" href="$worker__pool_8h.html" title=" " alt="" coords="96,255,260,280"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="181,220,181,254,175,254,175,220"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="130,216,106,234,85,256,75,274,68,294,62,328,56,327,63,293,71,272,81,253,102,230,127,212"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="148,289,79,330,76,325,145,285"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="202,287,243,326,240,330,198,291"/>
+</map>
