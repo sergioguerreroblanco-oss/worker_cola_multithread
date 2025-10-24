@@ -6,13 +6,14 @@ FROM ubuntu:22.04 AS builder
 # Avoid apt interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install build essentials and CMake
+# Install toolchain and latest CMake
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    cmake \
-    ninja-build \
     git \
-    && rm -rf /var/lib/apt/lists/*
+    ninja-build \
+    wget \
+ && wget -qO- https://cmake.org/files/v3.28/cmake-3.28.3-linux-x86_64.tar.gz | tar --strip-components=1 -xz -C /usr/local \
+ && rm -rf /var/lib/apt/lists/*
 
 # Working directory
 WORKDIR /app
