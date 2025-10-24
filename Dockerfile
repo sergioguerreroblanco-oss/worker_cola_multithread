@@ -1,48 +1,30 @@
-# ===========================================================
-# === Stage 1: Build and Test ===============================
-# ===========================================================
+# ---------------------------------------------------------------
+# Stage 1: Builder
+# ---------------------------------------------------------------
 FROM ubuntu:22.04 AS builder
-
-# Avoid apt interactive prompts
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Install toolchain and CMake
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    git \
-    ninja-build \
-    wget \
-    ca-certificates \
-    tar \
- && wget -q https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.sh \
- && chmod +x cmake-3.28.3-linux-x86_64.sh \
- && bash ./cmake-3.28.3-linux-x86_64.sh --skip-license --prefix=/usr/local \
- && rm cmake-3.28.3-linux-x86_64.sh \
- && rm -rf /var/lib/apt/lists/*
-
-# Working directory
 WORKDIR /app
 
-# Copy source
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential cmake git ninja-build wget \
+ && rm -rf /var/lib/apt/lists/*
+
+# Copy project
 COPY . .
 
-# Configure and build using CMake presets
+# Build and run tests
 RUN cmake --preset release \
  && cmake --build --preset release -j$(nproc) \
  && ctest --preset release --output-on-failure
 
-# ===========================================================
-# === Stage 2: Runtime image (minimal) ======================
-# ===========================================================
-FROM ubuntu:22.04
-
-# Copy compiled binaries only (lightweight runtime)
+# ---------------------------------------------------------------
+# Stage 2: Runtime
+# ---------------------------------------------------------------
 FROM ubuntu:22.04 AS runtime
-RUN apt-get update && apt-get install -y --no-install-recommends cmake && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-COPY --from=builder /app/build /app/build
-ENTRYPOINT ["/bin/bash"]
 
-# Default command: run the compiled binary
-CMD ["cola_worker"]
+# Copy only the compiled binary
+COPY --from=builder /app/build/release/cola_worker /usr/local/bin/cola_worker
 
+# Default entrypoint
+ENTRYPOINT ["cola_worker"]
