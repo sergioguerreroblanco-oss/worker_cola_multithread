@@ -37,8 +37,12 @@ RUN cmake --preset release \
 FROM ubuntu:22.04
 
 # Copy compiled binaries only (lightweight runtime)
+FROM ubuntu:22.04 AS runtime
+RUN apt-get update && apt-get install -y --no-install-recommends cmake && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-COPY --from=builder /app/build/release/cola_worker /usr/local/bin/cola_worker
+COPY --from=builder /app/build /app/build
+ENTRYPOINT ["/bin/bash"]
 
 # Default command: run the compiled binary
 CMD ["cola_worker"]
+
