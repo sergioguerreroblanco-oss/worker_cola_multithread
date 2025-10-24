@@ -179,13 +179,13 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d8c/logger_8h_source.html#l00051">51</a> of file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                     {</div>
-<div class="line"><span class="lineno">   52</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">DBG</a> = 0,  </div>
-<div class="line"><span class="lineno">   53</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">INFO</a> = 1, </div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">WARN</a> = 2, </div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3 </div>
-<div class="line"><span class="lineno">   56</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d8c/logger_8h_source.html#l00052">52</a> of file <a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">DBG</a>   = 0, </div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">INFO</a>  = 1, </div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">WARN</a>  = 2, </div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3  </div>
+<div class="line"><span class="lineno">   58</span>    };</div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Logger::Level::WARN</a></div><div class="ttdeci">@ WARN</div></div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a></div><div class="ttdeci">@ INFO</div></div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">Logger::Level::DBG</a></div><div class="ttdeci">@ DBG</div></div>
@@ -226,9 +226,11 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">Level::DBG</a>, msg); }</div>
-<div class="ttc" id="aclassLogger_html_aa447c3fe852645bbd1f59168295f48fb"><div class="ttname"><a href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">Logger::log</a></div><div class="ttdeci">static void log(Level lvl, const std::string &amp;msg)</div><div class="ttdoc">Log a message with the specified severity level.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00048">logger.cpp:48</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8faa642a85aab89544a289fb1f29eab689d">Level::DBG</a>, msg);</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aclassLogger_html_aa447c3fe852645bbd1f59168295f48fb"><div class="ttname"><a href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">Logger::log</a></div><div class="ttdeci">static void log(Level lvl, const std::string &amp;msg)</div><div class="ttdoc">Log a message with the specified severity level.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00061">logger.cpp:61</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -274,8 +276,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">Level::ERROR</a>, msg); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5">Level::ERROR</a>, msg);</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -321,8 +325,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Level::INFO</a>, msg); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Level::INFO</a>, msg);</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -338,38 +344,36 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph.png" border="0" usemap="#adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph" alt=""/></div>
 <map name="adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph" id="adb/d67/classLogger_afaac8d8aba7262900267f1e3779bd657_icgraph">
-<area shape="rect" title="Log an informational message." alt="" coords="661,183,760,208"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8" title=" " alt="" coords="427,5,605,31"/>
-<area shape="poly" title=" " alt="" coords="697,171,664,111,640,80,612,52,575,33,577,28,615,48,644,76,669,108,701,169"/>
-<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,107,126,132"/>
-<area shape="poly" title=" " alt="" coords="656,181,613,169,492,137,439,127,370,118,305,115,240,118,126,121,126,116,240,113,305,110,371,113,440,122,494,132,614,163,658,176"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,309,601,335"/>
-<area shape="poly" title=" " alt="" coords="680,218,538,311,535,307,677,213"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,208,583,233"/>
-<area shape="poly" title=" " alt="" coords="647,206,583,215,582,209,647,201"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,157,371,183"/>
-<area shape="poly" title=" " alt="" coords="648,194,371,177,371,171,648,189"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,408,613,433"/>
-<area shape="poly" title=" " alt="" coords="699,221,665,281,615,348,576,383,539,410,536,406,573,379,611,344,660,278,695,219"/>
-<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,359,333,384"/>
-<area shape="poly" title=" " alt="" coords="448,340,333,368,332,363,447,335"/>
-<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="278,309,333,335"/>
-<area shape="poly" title=" " alt="" coords="417,325,333,325,333,319,417,319"/>
-<area shape="poly" title=" " alt="" coords="483,203,432,173,370,147,302,132,234,124,126,121,126,116,234,119,303,127,371,142,434,168,486,198"/>
-<area shape="poly" title=" " alt="" coords="449,207,358,185,359,180,450,202"/>
-<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,257,126,283"/>
-<area shape="poly" title=" " alt="" coords="436,233,127,270,126,264,435,227"/>
-<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,208,133,233"/>
-<area shape="poly" title=" " alt="" coords="435,223,134,223,134,218,435,218"/>
-<area shape="poly" title=" " alt="" coords="239,157,126,128,127,123,240,151"/>
-<area shape="poly" title=" " alt="" coords="279,194,240,221,193,247,159,260,127,268,125,263,157,254,191,242,237,217,276,189"/>
-<area shape="poly" title=" " alt="" coords="240,189,134,215,133,210,239,183"/>
-<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,157,192,183"/>
-<area shape="poly" title=" " alt="" coords="226,173,192,173,192,167,226,167"/>
-<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,457,333,483"/>
-<area shape="poly" title=" " alt="" coords="448,439,333,466,332,461,447,434"/>
-<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="278,408,333,433"/>
-<area shape="poly" title=" " alt="" coords="405,423,333,423,333,418,405,418"/>
+<area shape="rect" title="Log an informational message." alt="" coords="661,107,760,132"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="poly" title=" " alt="" coords="677,102,646,84,612,68,512,35,430,20,347,16,240,17,126,20,126,14,240,11,347,10,431,14,513,30,614,64,649,79,680,97"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,208,601,233"/>
+<area shape="poly" title=" " alt="" coords="674,141,543,210,540,206,672,136"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,107,583,132"/>
+<area shape="poly" title=" " alt="" coords="647,122,583,122,583,117,647,117"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,56,371,81"/>
+<area shape="poly" title=" " alt="" coords="654,106,613,97,484,81,371,73,371,68,485,75,614,91,655,101"/>
+<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,307,613,332"/>
+<area shape="poly" title=" " alt="" coords="696,145,661,194,615,247,575,282,538,309,535,304,572,277,611,243,657,190,691,142"/>
+<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,257,333,283"/>
+<area shape="poly" title=" " alt="" coords="448,239,333,266,332,261,447,234"/>
+<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="278,208,333,233"/>
+<area shape="poly" title=" " alt="" coords="417,223,333,223,333,218,417,218"/>
+<area shape="poly" title=" " alt="" coords="483,101,432,72,370,46,302,31,234,23,126,20,126,14,234,18,303,26,371,41,434,67,486,97"/>
+<area shape="poly" title=" " alt="" coords="449,106,358,84,359,79,450,101"/>
+<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,156,126,181"/>
+<area shape="poly" title=" " alt="" coords="436,131,127,168,126,163,435,126"/>
+<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,107,133,132"/>
+<area shape="poly" title=" " alt="" coords="435,122,134,122,134,117,435,117"/>
+<area shape="poly" title=" " alt="" coords="239,55,126,27,127,22,240,50"/>
+<area shape="poly" title=" " alt="" coords="279,92,240,120,193,146,159,158,127,166,125,161,157,153,191,141,237,115,276,88"/>
+<area shape="poly" title=" " alt="" coords="240,87,134,114,133,108,239,82"/>
+<area shape="rect" href="../../d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,56,192,81"/>
+<area shape="poly" title=" " alt="" coords="226,71,192,71,192,66,226,66"/>
+<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,356,333,381"/>
+<area shape="poly" title=" " alt="" coords="448,338,333,365,332,360,447,333"/>
+<area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="278,307,333,332"/>
+<area shape="poly" title=" " alt="" coords="405,322,333,322,333,317,405,317"/>
 </map>
 </div>
 
@@ -418,42 +422,41 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                {</div>
-<div class="line"><span class="lineno">   49</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(lvl) &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(minLevel)) {</div>
-<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; timestamp() &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; levelToString(lvl) &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; msg</div>
-<div class="line"><span class="lineno">   55</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
+<div class="line"><span class="lineno">   63</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(lvl) &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(minLevel))</div>
+<div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; timestamp() &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; levelToString(lvl) &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; msg</div>
+<div class="line"><span class="lineno">   70</span>              &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   71</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph.png" border="0" usemap="#adb/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph" alt=""/></div>
 <map name="adb/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph" id="adb/d67/classLogger_aa447c3fe852645bbd1f59168295f48fb_icgraph">
-<area shape="rect" title="Log a message with the specified severity level." alt="" coords="824,180,919,205"/>
-<area shape="rect" href="../../db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Log a debug message." alt="" coords="661,105,776,131"/>
-<area shape="poly" title=" " alt="" coords="833,176,775,146,748,133,750,128,777,141,836,171"/>
-<area shape="rect" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Log an error message." alt="" coords="666,155,771,180"/>
-<area shape="poly" title=" " alt="" coords="810,185,771,179,772,173,811,180"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="669,204,768,229"/>
-<area shape="poly" title=" " alt="" coords="811,205,769,212,768,206,810,200"/>
-<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="665,329,772,355"/>
-<area shape="poly" title=" " alt="" coords="849,217,735,331,731,327,846,213"/>
-<area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8" title=" " alt="" coords="427,104,605,129"/>
-<area shape="poly" title=" " alt="" coords="668,200,660,195,645,181,636,168,627,156,612,144,584,132,586,127,615,140,630,152,640,165,649,178,663,191,671,195"/>
+<area shape="rect" title="Log a message with the specified severity level." alt="" coords="824,231,919,256"/>
+<area shape="rect" href="../../db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Log a debug message." alt="" coords="661,156,776,181"/>
+<area shape="poly" title=" " alt="" coords="833,227,775,196,748,184,750,179,777,192,836,222"/>
+<area shape="rect" href="../../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Log an error message." alt="" coords="666,205,771,231"/>
+<area shape="poly" title=" " alt="" coords="810,236,771,229,772,224,811,231"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Log an informational message." alt="" coords="669,255,768,280"/>
+<area shape="poly" title=" " alt="" coords="811,256,769,262,768,257,810,250"/>
+<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Log a warning message." alt="" coords="463,407,569,432"/>
+<area shape="poly" title=" " alt="" coords="843,267,745,333,681,369,614,400,570,413,569,408,612,396,679,364,743,328,840,262"/>
 <area shape="rect" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,255,126,280"/>
-<area shape="poly" title=" " alt="" coords="656,224,127,268,126,263,655,219"/>
+<area shape="poly" title=" " alt="" coords="656,270,126,270,126,265,656,265"/>
 <area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,153,601,179"/>
-<area shape="poly" title=" " alt="" coords="655,204,567,181,568,176,657,199"/>
+<area shape="poly" title=" " alt="" coords="668,250,660,246,645,233,636,222,626,211,612,200,568,181,570,176,615,196,630,207,640,219,649,230,663,241,671,246"/>
 <area shape="rect" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,305,583,331"/>
-<area shape="poly" title=" " alt="" coords="681,238,544,308,541,303,679,233"/>
+<area shape="poly" title=" " alt="" coords="657,285,568,308,567,303,655,280"/>
 <area shape="rect" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,407,371,432"/>
-<area shape="poly" title=" " alt="" coords="706,243,670,295,644,323,615,346,564,369,520,377,475,380,419,390,350,409,348,404,418,385,474,375,520,372,562,364,612,341,641,319,666,292,702,240"/>
+<area shape="poly" title=" " alt="" coords="695,291,658,320,614,346,511,374,364,409,362,404,510,369,612,341,655,315,691,287"/>
 <area shape="rect" href="../../da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,55,613,80"/>
-<area shape="poly" title=" " alt="" coords="664,199,659,194,642,168,636,142,629,118,623,106,612,95,591,82,594,78,615,91,627,103,634,116,641,141,647,166,663,191,668,195"/>
+<area shape="poly" title=" " alt="" coords="664,249,659,245,641,220,633,195,626,170,611,144,575,108,538,82,541,78,578,104,615,140,631,168,638,194,645,217,663,242,668,245"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,153,333,179"/>
 <area shape="poly" title=" " alt="" coords="417,169,333,169,333,163,417,163"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="278,104,333,129"/>
@@ -473,7 +476,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="405,70,333,70,333,65,405,65"/>
 <area shape="rect" href="../../d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="278,5,333,31"/>
 <area shape="poly" title=" " alt="" coords="447,54,332,27,333,22,448,49"/>
-<area shape="poly" title=" " alt="" coords="683,363,650,378,614,390,550,404,485,413,371,421,371,416,485,407,549,398,613,385,648,373,681,358"/>
+<area shape="poly" title=" " alt="" coords="449,422,371,422,371,417,449,417"/>
 </map>
 </div>
 
@@ -512,10 +515,10 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>                                    {</div>
-<div class="line"><span class="lineno">   36</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   37</span>    minLevel = lvl;</div>
-<div class="line"><span class="lineno">   38</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   38</span>    minLevel = lvl;</div>
+<div class="line"><span class="lineno">   39</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -561,8 +564,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Level::WARN</a>, msg); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d30/logger_8cpp_source.html#l00051">51</a> of file <a class="el" href="../../d3/d30/logger_8cpp_source.html">logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb">log</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277">Level::WARN</a>, msg);</div>
+<div class="line"><span class="lineno">   54</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -604,7 +609,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d67/classLogger.html">Logger</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:17:36 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 09:33:42 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -172,8 +172,10 @@ Public Member Functions</h2></td></tr>
 <p>param</p>
 <p>Implementation of the <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> constructor. Initializes references to the queue and action, and sets the worker name. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00027">27</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>    : task_queue(queue), running(<span class="keyword">false</span>) {}</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    : task_queue(queue), running(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,12 +197,12 @@ Public Member Functions</h2></td></tr>
 <p>Destruct a <a class="el" href="../../da/d60/classWorker.html" title="Worker thread that consumes data from a queue.">Worker</a> object. </p>
 <p>Ensures the worker thread has finished before destruction (joins the thread if needed) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                        {</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop</a>();</div>
-<div class="line"><span class="lineno">   36</span>    workers.clear();</div>
-<div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="aclassWorkerPool_html_aa1ea3717fb5924206af6e47a44d42e25"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">WorkerPool::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00072">worker_pool.cpp:72</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop</a>();</div>
+<div class="line"><span class="lineno">   40</span>    workers.clear();</div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassWorkerPool_html_aa1ea3717fb5924206af6e47a44d42e25"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">WorkerPool::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00080">worker_pool.cpp:80</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -358,20 +360,21 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Starts the worker by setting the running flag to true and launching a dedicated thread that executes the run() loop. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                               {</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (running) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    running = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Starting &quot;</span> + std::to_string(number_workers) + <span class="stringliteral">&quot; workers&quot;</span>);</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; number_workers; i++)</div>
-<div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        std::string name = std::string(DEFAULT_WORKER_NAME) + std::to_string(i);</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (running)</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>         workers.emplace(name, std::thread([<span class="keyword">this</span>, name]() { run(name); }));</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="line"><span class="lineno">   54</span>}</div>
-<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Log an informational message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00042">logger.cpp:42</a></div></div>
+<div class="line"><span class="lineno">   52</span>    running = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Starting &quot;</span> + std::to_string(number_workers) + <span class="stringliteral">&quot; workers&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; number_workers; i++)</div>
+<div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        std::string name = std::string(DEFAULT_WORKER_NAME) + std::to_string(i);</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>        workers.emplace(name, std::thread([<span class="keyword">this</span>, name]() { run(name); }));</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Log an informational message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00046">logger.cpp:46</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -424,37 +427,42 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Stops the worker activity by setting its running flag to false. The worker thread will complete its current loop iteration and then exit. This does not affect the underlying queue. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="../../d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25">stop()</a> does not interrupt pop() immediately. If the worker is waiting in pop(), it will exit only after the configured timeout (5s by default). This simplifies the design and avoids pushing shutdown logic into the queue. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>                      {</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (!running) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    running = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Stop requested, waiting for remaining tasks...&quot;</span>);</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> = std::chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">while</span> (!task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">empty</a>()) {</div>
-<div class="line"><span class="lineno">   80</span>        std::this_thread::sleep_for(std::chrono::milliseconds(5));</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span> (std::chrono::steady_clock::now() - <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> &gt; std::chrono::seconds(1)) {</div>
-<div class="line"><span class="lineno">   83</span>            <a class="code hl_function" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a>(<span class="stringliteral">&quot;[Worker Pool] Timeout waiting for queue to drain.&quot;</span>);</div>
-<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   85</span>        }</div>
-<div class="line"><span class="lineno">   86</span>    }</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">close</a>();</div>
-<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Task queue drained, closing...&quot;</span>);</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; worker_pair : workers) {</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keyword">auto</span>&amp; thread = worker_pair.second;</div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (thread.joinable()) thread.join();</div>
-<div class="line"><span class="lineno">   94</span>    }</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    workers.clear();</div>
-<div class="line"><span class="lineno">   97</span>}</div>
-<div class="ttc" id="aclassLogger_html_adcbe6e560903cbb4257bccf546789e52"><div class="ttname"><a href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a></div><div class="ttdeci">static void warn(const std::string &amp;msg)</div><div class="ttdoc">Log a warning message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00044">logger.cpp:44</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!running)</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    running = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Stop requested, waiting for remaining tasks...&quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">while</span> (!task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">empty</a>())</div>
+<div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>        std::this_thread::sleep_for(std::chrono::milliseconds(5));</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (std::chrono::steady_clock::now() - <a class="code hl_function" href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">start</a> &gt; std::chrono::seconds(1))</div>
+<div class="line"><span class="lineno">   94</span>        {</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_function" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a>(<span class="stringliteral">&quot;[Worker Pool] Timeout waiting for queue to drain.&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">close</a>();</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Worker Pool] Task queue drained, closing...&quot;</span>);</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; worker_pair : workers)</div>
+<div class="line"><span class="lineno">  104</span>    {</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keyword">auto</span>&amp; thread = worker_pair.second;</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">if</span> (thread.joinable())</div>
+<div class="line"><span class="lineno">  107</span>            thread.join();</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    workers.clear();</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="aclassLogger_html_adcbe6e560903cbb4257bccf546789e52"><div class="ttname"><a href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a></div><div class="ttdeci">static void warn(const std::string &amp;msg)</div><div class="ttdoc">Log a warning message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00051">logger.cpp:51</a></div></div>
 <div class="ttc" id="aclassThreadSafeQueue_html_a0ae3246918c2822470271b00f7ee9e92"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a0ae3246918c2822470271b00f7ee9e92">ThreadSafeQueue::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00107">thread_safe_queue.ipp:107</a></div></div>
 <div class="ttc" id="aclassThreadSafeQueue_html_a58b5532baa6110071f697ad1f9bfbf58"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#a58b5532baa6110071f697ad1f9bfbf58">ThreadSafeQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00076">thread_safe_queue.ipp:76</a></div></div>
-<div class="ttc" id="aclassWorkerPool_html_af492a9d585d176b31068f0c54aa580eb"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">WorkerPool::start</a></div><div class="ttdeci">void start(const int number_workers)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00043">worker_pool.cpp:43</a></div></div>
+<div class="ttc" id="aclassWorkerPool_html_af492a9d585d176b31068f0c54aa580eb"><div class="ttname"><a href="../../d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb">WorkerPool::start</a></div><div class="ttdeci">void start(const int number_workers)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d2e/worker__pool_8cpp_source.html#l00047">worker_pool.cpp:47</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -512,8 +520,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>{ task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">push</a>(std::move(task)); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html#l00065">65</a> of file <a class="el" href="../../d1/d2e/worker__pool_8cpp_source.html">worker_pool.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    task_queue.<a class="code hl_function" href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">push</a>(std::move(task));</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 <div class="ttc" id="aclassThreadSafeQueue_html_abb69d10661b922e6249497630e6ba421"><div class="ttname"><a href="../../da/d7e/classThreadSafeQueue.html#abb69d10661b922e6249497630e6ba421">ThreadSafeQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;data)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd5/thread__safe__queue_8ipp_source.html#l00028">thread_safe_queue.ipp:28</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -552,7 +562,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d4d/classWorkerPool.html">WorkerPool</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 09:17:36 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 09:33:42 for worker_cola_multithread by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

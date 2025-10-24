@@ -1,34 +1,32 @@
 <map id="Logger::info" name="Logger::info">
-<area shape="rect" id="Node000001" title="Log an informational message." alt="" coords="661,183,760,208"/>
-<area shape="rect" id="Node000002" href="$da/d7e/classThreadSafeQueue.html#ad8729c0e01650afdbe28ec783e5ea9d8" title=" " alt="" coords="427,5,605,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="697,171,664,111,640,80,612,52,575,33,577,28,615,48,644,76,669,108,701,169"/>
-<area shape="rect" id="Node000003" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,107,126,132"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="656,181,613,169,492,137,439,127,370,118,305,115,240,118,126,121,126,116,240,113,305,110,371,113,440,122,494,132,614,163,658,176"/>
-<area shape="rect" id="Node000004" href="$da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,309,601,335"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="680,218,538,311,535,307,677,213"/>
-<area shape="rect" id="Node000007" href="$d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,208,583,233"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="647,206,583,215,582,209,647,201"/>
-<area shape="rect" id="Node000008" href="$d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,157,371,183"/>
-<area shape="poly" id="edge15_Node000001_Node000008" title=" " alt="" coords="648,194,371,177,371,171,648,189"/>
-<area shape="rect" id="Node000012" href="$da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,408,613,433"/>
-<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="699,221,665,281,615,348,576,383,539,410,536,406,573,379,611,344,660,278,695,219"/>
-<area shape="rect" id="Node000005" href="$d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,359,333,384"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="448,340,333,368,332,363,447,335"/>
-<area shape="rect" id="Node000006" href="$d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="278,309,333,335"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="417,325,333,325,333,319,417,319"/>
-<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="483,203,432,173,370,147,302,132,234,124,126,121,126,116,234,119,303,127,371,142,434,168,486,198"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="449,207,358,185,359,180,450,202"/>
-<area shape="rect" id="Node000009" href="$d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,257,126,283"/>
-<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="436,233,127,270,126,264,435,227"/>
-<area shape="rect" id="Node000010" href="$d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,208,133,233"/>
-<area shape="poly" id="edge14_Node000007_Node000010" title=" " alt="" coords="435,223,134,223,134,218,435,218"/>
-<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="239,157,126,128,127,123,240,151"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="279,194,240,221,193,247,159,260,127,268,125,263,157,254,191,242,237,217,276,189"/>
-<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="240,189,134,215,133,210,239,183"/>
-<area shape="rect" id="Node000011" href="$d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,157,192,183"/>
-<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="226,173,192,173,192,167,226,167"/>
-<area shape="rect" id="Node000013" href="$d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,457,333,483"/>
-<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="448,439,333,466,332,461,447,434"/>
-<area shape="rect" id="Node000014" href="$d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="278,408,333,433"/>
-<area shape="poly" id="edge18_Node000012_Node000014" title=" " alt="" coords="405,423,333,423,333,418,405,418"/>
+<area shape="rect" id="Node000001" title="Log an informational message." alt="" coords="661,107,760,132"/>
+<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="71,5,126,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="677,102,646,84,612,68,512,35,430,20,347,16,240,17,126,20,126,14,240,11,347,10,431,14,513,30,614,64,649,79,680,97"/>
+<area shape="rect" id="Node000003" href="$da/d7e/classThreadSafeQueue.html#abcf29321d019b8827ae3353109189124" title=" " alt="" coords="431,208,601,233"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="674,141,543,210,540,206,672,136"/>
+<area shape="rect" id="Node000006" href="$d7/d4d/classWorkerPool.html#af492a9d585d176b31068f0c54aa580eb" title=" " alt="" coords="449,107,583,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="647,122,583,122,583,117,647,117"/>
+<area shape="rect" id="Node000007" href="$d7/d4d/classWorkerPool.html#aa1ea3717fb5924206af6e47a44d42e25" title=" " alt="" coords="240,56,371,81"/>
+<area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="654,106,613,97,484,81,371,73,371,68,485,75,614,91,655,101"/>
+<area shape="rect" id="Node000011" href="$da/d7e/classThreadSafeQueue.html#a396ae3e441a80998815aafd8229d703e" title=" " alt="" coords="419,307,613,332"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="696,145,661,194,615,247,575,282,538,309,535,304,572,277,611,243,657,190,691,142"/>
+<area shape="rect" id="Node000004" href="$d6/dd6/test__main_8cpp.html#a8b032777332e901037e576eaf86ac3be" title="Ensure pop() unblocks gracefully when the queue is closed." alt="" coords="278,257,333,283"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="448,239,333,266,332,261,447,234"/>
+<area shape="rect" id="Node000005" href="$d6/dd6/test__main_8cpp.html#a0ea56b44eb62535202738571103e494e" title="Verify basic push/pop behavior in a single&#45;thread context." alt="" coords="278,208,333,233"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="417,223,333,223,333,218,417,218"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="483,101,432,72,370,46,302,31,234,23,126,20,126,14,234,18,303,26,371,41,434,67,486,97"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="449,106,358,84,359,79,450,101"/>
+<area shape="rect" id="Node000008" href="$d6/dd6/test__main_8cpp.html#a90621841298106ae6ede0f38a50b059d" title="Validate that all submitted tasks are executed." alt="" coords="71,156,126,181"/>
+<area shape="poly" id="edge12_Node000006_Node000008" title=" " alt="" coords="436,131,127,168,126,163,435,126"/>
+<area shape="rect" id="Node000009" href="$d6/dd6/test__main_8cpp.html#ad8b532fe8022f4919b45a3c8059ef0aa" title="Check correctness with varying number of workers." alt="" coords="64,107,133,132"/>
+<area shape="poly" id="edge13_Node000006_Node000009" title=" " alt="" coords="435,122,134,122,134,117,435,117"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="239,55,126,27,127,22,240,50"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="279,92,240,120,193,146,159,158,127,166,125,161,157,153,191,141,237,115,276,88"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="240,87,134,114,133,108,239,82"/>
+<area shape="rect" id="Node000010" href="$d7/d4d/classWorkerPool.html#af4ff5d62810ecbbf010558f2002b2571" title="Destruct a Worker object." alt="" coords="5,56,192,81"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="226,71,192,71,192,66,226,66"/>
+<area shape="rect" id="Node000012" href="$d6/dd6/test__main_8cpp.html#a6505c9a0d54fd927810c9de5781362de" title="Validate thread&#45;safety when multiple readers use try_pop()." alt="" coords="278,356,333,381"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="448,338,333,365,332,360,447,333"/>
+<area shape="rect" id="Node000013" href="$d6/dd6/test__main_8cpp.html#a0f42b1098ec3fd845de3ee1e31206cf7" title="Validate that try_pop() behaves correctly without blocking." alt="" coords="278,307,333,332"/>
+<area shape="poly" id="edge17_Node000011_Node000013" title=" " alt="" coords="405,322,333,322,333,317,405,317"/>
 </map>
