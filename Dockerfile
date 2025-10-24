@@ -14,9 +14,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
  && mkdir -p /opt/cmake \
  && wget -qO /tmp/cmake.tar.gz https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.tar.gz \
- && tar --strip-components=1 -xzvf /tmp/cmake.tar.gz -C /opt/cmake \
- && ln -s /opt/cmake/bin/* /usr/local/bin/ \
- && rm -rf /tmp/cmake.tar.gz /var/lib/apt/lists/*
+ && tar -xzf /tmp/cmake.tar.gz -C /opt/cmake --strip-components=0 \
+ && cp -r /opt/cmake/cmake-3.28.3-linux-x86_64/bin/* /usr/local/bin/ \
+ && cp -r /opt/cmake/cmake-3.28.3-linux-x86_64/share/* /usr/local/share/ \
+ && rm -rf /tmp/cmake.tar.gz /opt/cmake /var/lib/apt/lists/*
 
 # Working directory
 WORKDIR /app
