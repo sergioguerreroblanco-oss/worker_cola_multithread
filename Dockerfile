@@ -6,18 +6,19 @@ FROM ubuntu:22.04 AS builder
 # Avoid apt interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install toolchain and latest CMake
+# Install toolchain and CMake
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     git \
     ninja-build \
     wget \
- && mkdir -p /opt/cmake \
- && wget -qO /tmp/cmake.tar.gz https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.tar.gz \
- && tar -xzf /tmp/cmake.tar.gz -C /opt/cmake --strip-components=0 \
- && cp -r /opt/cmake/cmake-3.28.3-linux-x86_64/bin/* /usr/local/bin/ \
- && cp -r /opt/cmake/cmake-3.28.3-linux-x86_64/share/* /usr/local/share/ \
- && rm -rf /tmp/cmake.tar.gz /opt/cmake /var/lib/apt/lists/*
+    ca-certificates \
+    tar \
+ && wget -q https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.sh \
+ && chmod +x cmake-3.28.3-linux-x86_64.sh \
+ && bash ./cmake-3.28.3-linux-x86_64.sh --skip-license --prefix=/usr/local \
+ && rm cmake-3.28.3-linux-x86_64.sh \
+ && rm -rf /var/lib/apt/lists/*
 
 # Working directory
 WORKDIR /app
